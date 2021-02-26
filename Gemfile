@@ -19,7 +19,7 @@ gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "release/0
 # gem "decidim-calendar", git: "https://github.com/alabs/decidim-module-calendar"
 # gem "decidim-cookies", git: "https://github.com/OpenSourcePolitics/decidim-module_cookies", branch: "feature/orejime"
 # gem "decidim-combined_budgeting", git: "https://github.com/mainio/decidim-module-combined_budgeting"
-gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
+# gem "decidim-decidim_awesome", git: "https://github.com/Platoniq/decidim-module-decidim_awesome"
 # gem "decidim-comparative_stats", git: "https://github.com/Platoniq/decidim-module-comparative_stats"
 # gem "decidim-direct_verifications", git: "https://github.com/Platoniq/decidim-verifications-direct_verifications"
 # gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git"
@@ -34,6 +34,8 @@ gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis",
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
 gem "bootsnap", "~> 1.3"
+
+gem "dotenv-rails"
 
 gem "puma", "~> 4.3"
 gem "uglifier", "~> 4.1"
@@ -51,7 +53,6 @@ gem "omniauth-saml", "~> 1.10"
 gem "omniauth-rails_csrf_protection"
 
 group :development, :test do
-  gem "dotenv-rails"
   gem "byebug", "~> 11.0", platform: :mri
 
   gem "decidim-dev", git: "https://github.com/decidim/decidim.git", branch: "release/0.23-stable"

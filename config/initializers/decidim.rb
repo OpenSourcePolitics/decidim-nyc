@@ -3,7 +3,7 @@
 Decidim.configure do |config|
   config.skip_first_login_authorization = ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"] ? ActiveRecord::Type::Boolean.new.cast(ENV["SKIP_FIRST_LOGIN_AUTHORIZATION"]) : true
   config.application_name = "OSP Agora"
-  config.mailer_sender = "OSP Agora <ne-pas-repondre@opensourcepolitics.eu>"
+  config.mailer_sender = "OSP Agora <no-reply@opensourcepolitics.eu>"
 
   # Change these lines to set your preferred locales
   config.default_locale = :en
@@ -14,8 +14,8 @@ Decidim.configure do |config|
   # Geocoder configuration
   if !Rails.application.secrets.geocoder[:here_api_key].blank?
     config.geocoder = {
-        static_map_url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview",
-        here_api_key: Rails.application.secrets.geocoder[:here_api_key]
+      static_map_url: "https://image.maps.ls.hereapi.com/mia/1.6/mapview",
+      here_api_key: Rails.application.secrets.geocoder[:here_api_key]
     }
   end
 
@@ -35,7 +35,7 @@ Decidim.configure do |config|
   # end
 
   # Currency unit
-  # config.currency_unit = "€"
+  config.currency_unit = "$"
 
   # The number of reports which an object can receive before hiding it
   # config.max_reports_before_hiding = 3
@@ -86,9 +86,9 @@ Decidim.configure do |config|
 
   if !Rails.application.secrets.etherpad[:server].blank?
     config.etherpad = {
-        server: Rails.application.secrets.etherpad[:server],
-        api_key: Rails.application.secrets.etherpad[:api_key],
-        api_version: Rails.application.secrets.etherpad[:api_version]
+      server: Rails.application.secrets.etherpad[:server],
+      api_key: Rails.application.secrets.etherpad[:api_key],
+      api_version: Rails.application.secrets.etherpad[:api_version]
     }
   end
 
