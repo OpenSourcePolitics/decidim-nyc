@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "release/0.23-stable"
+gem "decidim", "0.23.5"
 # gem "decidim", path: "../decidim"
 # gem "decidim-map", path: "../decidim-map"
 
@@ -27,9 +27,9 @@ gem "decidim", git: "https://github.com/decidim/decidim.git", branch: "release/0
 # gem "decidim-navigation_maps", git: "https://github.com/Platoniq/decidim-module-navigation_maps"
 
 
-gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links.git", branch: "0.23-stable"
+gem "decidim-navbar_links", git: "https://github.com/OpenSourcePolitics/decidim-module-navbar_links.git", branch: "0.23.5"
 
-gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis", branch: "0.23-stable"
+gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis", branch: "0.23.5"
 
 gem "decidim-term_customizer", git: "https://github.com/OpenSourcePolitics/decidim-module-term_customizer.git", branch: "0.dev"
 
@@ -55,7 +55,7 @@ gem "omniauth-rails_csrf_protection"
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
-  gem "decidim-dev", git: "https://github.com/decidim/decidim.git", branch: "release/0.23-stable"
+  gem "decidim-dev", "0.23.5"
   # gem "decidim-dev", path: "../decidim"
 end
 
