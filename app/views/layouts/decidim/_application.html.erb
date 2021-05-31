@@ -19,7 +19,7 @@
 
   <body>
     <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= Rails.application.secrets.dig(:googletagmanager) %>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<%= Rails.application.secrets.dig(:google_tag_manager_id) %>" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
     <%= render partial: "layouts/decidim/impersonation_warning" %>
