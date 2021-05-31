@@ -23,6 +23,16 @@ GIT
     decidim-polis (0.23.5)
       decidim-core (= 0.23.5)
 
+GIT
+  remote: https://github.com/Platoniq/decidim-module-decidim_awesome
+  revision: dec29921ef89d3179a5ad0309c944fee751c9ec3
+  specs:
+    decidim-decidim_awesome (0.7.0)
+      decidim-admin (>= 0.23.0, < 0.25)
+      decidim-core (>= 0.23.0, < 0.25)
+      redcarpet (~> 3.4)
+      sassc (~> 2.3)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -860,6 +870,7 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim (= 0.23.5)
+  decidim-decidim_awesome!
   decidim-dev (= 0.23.5)
   decidim-navbar_links!
   decidim-polis!
@@ -887,7 +898,7 @@ DEPENDENCIES
   web-console (~> 3.5)
 
 RUBY VERSION
-   ruby 2.6.3p62
+   ruby 2.7.1p83
 
 BUNDLED WITH
-   2.2.11
+   2.2.18
