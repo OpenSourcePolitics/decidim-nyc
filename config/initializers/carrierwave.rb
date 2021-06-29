@@ -19,7 +19,7 @@ if Rails.env.production? && Rails.application.secrets.dig(:aws_secret_access_key
     config.fog_attributes = { 'Cache-Control' => "max-age=#{365.day.to_i}" }    # optional, defaults to {}
     config.storage = :fog
     if Rails.application.secrets.dig(:asset_host).present?
-      config.asset_host = "https://#{Rails.application.secrets.dig(:asset_host)}/"
+      config.asset_host = "https://#{Rails.application.secrets.dig(:asset_host)}"
     end
   end
 
@@ -31,7 +31,7 @@ else
     config.storage = :file
     config.enable_processing = !Rails.env.test?
     if Rails.application.secrets.dig(:asset_host).present?
-      config.asset_host = "https://#{Rails.application.secrets.dig(:asset_host)}/"
+      config.asset_host = "https://#{Rails.application.secrets.dig(:asset_host)}"
     end
   end
 end
