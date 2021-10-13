@@ -49,6 +49,21 @@ en:
     decidim:
       footer:
         download_open_data: Open data
+      language:
+        selector: Select a language
+        arabic: Arabic
+        bengali: Bengali
+        simplifiedchinese: Simplified chinese
+        traditionalchinese: Traditional chinese
+        english: English
+        french: French
+        haitian: Haitian
+        korean: Korean
+        polish: Polish
+        russian: Russian
+        spanish: Spanish
+        urdu: Urdu
+        yiddish: Yiddish
   omniauth:
     strategies:
       nyc:

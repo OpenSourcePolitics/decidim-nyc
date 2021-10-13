@@ -1,3 +1,79 @@
-<div class="topbar__dropmenu language-choose show-for-medium" data-set="language-holder">
-  <div class="js-append" id="google_translate_element"></div>
+<div class="topbar__dropmenu language-choose sl_norewrite">
+  <ul class="dropdown menu" data-dropdown-menu
+    data-autoclose="false"
+    data-disable-hover="true"
+    data-click-open="true"
+    data-close-on-click="true"
+    tabindex="-1">
+    <li class="is-dropdown-submenu-parent" tabindex="-1">
+      <%= link_to I18n.t("layouts.decidim.language.selector"), "#language-chooser-menu", id: "language-chooser-control", "aria-label": t("layouts.decidim.language_chooser.choose_language"), "aria-controls": "language-chooser-menu", "aria-haspopup": "true" %>
+      <ul class="menu is-dropdown-submenu sl_opaque" id="language-chooser-menu" role="menu" aria-labelledby="language-chooser-control" tabindex="-1">
+        <li>
+          <a href="https://arabic.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.arabic") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://bengali.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.bengali") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://simplifiedchinese.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.simplifiedchinese") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://traditionalchinese.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.traditionalchinese") %>
+          </a>
+        </li>
+        <li class="notranslate">
+          <a href="https://www.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.english") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://french.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.french") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://haitian.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.haitian") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://korean.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.korean") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://polish.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.polish") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://russian.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.russian") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://spanish.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.spanish") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://urdu.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.urdu") %>
+          </a>
+        </li>
+        <li>
+          <a href="https://yiddish.participate.nyc.gov">
+            <%= I18n.t("layouts.decidim.language.yiddish") %>
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
 </div>
