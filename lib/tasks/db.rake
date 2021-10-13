@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 namespace :decidim do
-  Rails.logger = Logger.new(STDOUT)
+  # Rails.logger = Logger.new(STDOUT)
   # ActiveRecord::Base.logger = Logger.new(STDOUT)
 
   namespace :db do
@@ -17,7 +17,7 @@ namespace :decidim do
             .where.not(decidim_resource_id: [model.ids])
             .pluck(:event_name, :decidim_resource_id, :extra).count
         end
-        Rails.logger.close
+        # Rails.logger.close
       end
 
       desc "Delete notifications related to orphans data"
@@ -43,7 +43,7 @@ namespace :decidim do
             .where.not(resource_id: [model.ids])
             .pluck(:action, :resource_id, :extra).count
         end
-        Rails.logger.close
+        # Rails.logger.close
       end
 
       desc "Delete admin log related to orphans data"
@@ -66,7 +66,7 @@ namespace :decidim do
           .pluck(:id, :title, :decidim_component_id).each do |s|
             puts s.inspect
           end
-        Rails.logger.close
+        # Rails.logger.close
       end
 
       desc "Delete surveys related to deleted component"
@@ -75,7 +75,7 @@ namespace :decidim do
           .where.not(decidim_component_id: [Decidim::Component.ids])
           .destroy_all
 
-        Rails.logger.close
+        # Rails.logger.close
       end
     end
 

@@ -28,3 +28,5 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
+      language:
+        selector: Sélectionner une langue​
