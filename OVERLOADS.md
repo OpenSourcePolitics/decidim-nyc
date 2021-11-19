@@ -1,5 +1,10 @@
 # Overrides
 
+## Update admin settings and fix title bar
+### Modified
+- **app/views/layouts/decidim/admin/_title_bar.html.erb**
+- **app/views/layouts/decidim/admin/settings.html.erb**
+
 ## Fix metrics issue in admin dashboard
  - **app/stylesheets/decidim/vizzs/_areachart.scss**
 ```scss
