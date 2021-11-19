@@ -219,6 +219,15 @@ GIT
     decidim-verifications (0.24.3)
       decidim-core (= 0.24.3)
 
+GIT
+  remote: https://github.com/mainio/decidim-module-term_customizer.git
+  revision: 0e823f4f768f6255de57559c618dcad784c5d655
+  branch: master
+  specs:
+    decidim-term_customizer (0.24.0)
+      decidim-admin (~> 0.24.0)
+      decidim-core (~> 0.24.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -936,6 +945,7 @@ DEPENDENCIES
   decidim-decidim_awesome (~> 0.7.0)
   decidim-dev!
   decidim-polis!
+  decidim-term_customizer!
   dotenv-rails
   faker (~> 2.14)
   fog-aws
