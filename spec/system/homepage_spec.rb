@@ -38,7 +38,7 @@ describe "Homepage", type: :system do
       end
 
       it "includes the official organization links and images" do
-        expect(page).to have_selector("a.logo-cityhall[href='#{official_url}']")
+        expect(page).to have_selector("a.logo-official[href='#{official_url}']")
         expect(page).to have_selector("a.main-footer__badge[href='#{official_url}']")
       end
 
@@ -100,7 +100,7 @@ describe "Homepage", type: :system do
 
             expect(page).to have_current_path decidim.new_user_session_path
             expect(page).to have_content("Sign in")
-            expect(page).to have_content("New to the platform?")
+            expect(page).to have_content("Are you new?")
           end
         end
 

@@ -1,39 +1,124 @@
 ---
 en:
+  activemodel:
+    attributes:
+      osp_authorization_handler:
+        birthday: Date de naissance
+        document_number: Numéro unique
+        postal_code: Code postal
+      participatory_process:
+        private_space: Espace privé
   decidim:
-    system:
-      organizations:
-        omniauth_settings:
-          nyc:
-            icon_path: Icon path
-            provider_name: Provider name
-            idp_sso_target_url: Provider URL (idp_sso_target_url)
-            assertion_consumer_service_url: Callback URL (assertion_consumer_service_url)
-            authn_context: Authentication context (authn_context)
-            issuer: Issuer URL
-            idp_slo_target_url: Logout URL (idp_slo_target_url)
-            idp_cert_fingerprint : Certificate fingerprint
-            idp_cert: Certificate
-            idp_key: Certificate private key
+    accessibility:
+      logo: Logo
+      skip_button: Passer au contenu principal
+    admin:
+      participatory_space_private_users:
+        create:
+          error: Erreur
+          success: Succès
+    amendments:
+      emendation:
+        announcement:
+          evaluating: |-
+            Cet amendement pour le %{amendable_type} %{proposal_link}
+            est en cours d’évaluation.
+    authorization_handlers:
+      osp_authorization_handler:
+        explanation: Vérifier votre identité en saisissant un numéro unique
+        fields:
+          birthday: Date de naissance
+          document_number: Numéro unique
+          postal_code: Code postal
+        name: Formulaire de vérification d'identité
+      osp_authorization_workflow:
+        name: Procédure d'autorisation
+    devise:
+      sessions:
+        new:
+          are_you_new?: Are you new?
+          register: Register
+          sign_in_disabled: Sign in disabled
+      shared:
+        omniauth_buttons:
+          or: Or
+    events:
+      budgets:
+        pending_order:
+          email_intro: The vote on budget "%{resource_title}" is not confirmed yet in "%{participatory_space_title}".
+          email_outro: You have received this notification because you are participating in "%{participatory_space_title}"
+          email_subject: Your vote is still pending in %{participatory_space_title}
+          notification_title: The vote on budget <a href="%{resource_path}">%{resource_title}</a> is still waiting for your confirmation in %{participatory_space_title}
+    meetings:
+      directory:
+        meetings:
+          index:
+            all: Tous
+      meeting:
+        not_allowed: Vous n'êtes pas autorisé à vous inscrire à cette rencontre.
+      meetings:
+        create:
+          invalid: Il y a eu une erreur lors de la création de la rencontre.
+          success: La rencontre a été créée avec succès.
+        update:
+          invalid: Il y a eu une erreur lors de la mise à jour de la rencontre.
+          success: La rencontre a été mise à jour avec succès.
+    pages:
+      terms_and_conditions:
+        form:
+          agreement: I agree with these terms
+          legend: Legend
+    shared:
+      login_modal:
+        close_modal: Close modal
+        please_sign_in: Please sign in
+        sign_up: Sign up
+    verifications:
+      authorizations:
+        first_login:
+          actions:
+            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    sessions:
+      new:
+        sign_in: Sign in
+    shared:
+      links:
+        forgot_your_password: Forgot your password
+        sign_in_with_provider: Sign in with provider
   layouts:
     decidim:
       footer:
         download_open_data: Open data
+        made_with_open_source: Made with open source
+      header:
+        close_menu: Fermer
+        navigation: Navigation
+        sign_in: Se connecter
+        sign_up: S'inscrire
       language:
-        selector: Select a language
         arabic: Arabic
         bengali: Bengali
-        simplifiedchinese: Simplified chinese
-        traditionalchinese: Traditional chinese
         english: English
         french: French
         haitian: Haitian
         korean: Korean
         polish: Polish
         russian: Russian
+        selector: Select a language
+        simplifiedchinese: Simplified chinese
         spanish: Spanish
+        traditionalchinese: Traditional chinese
         urdu: Urdu
         yiddish: Yiddish
+      language_chooser:
+        choose_language: Choose language
+      user_menu:
+        account: Mon compte
+        conversations: Conversations
+        notifications: Notifications
+        sign_out: Sign out
   omniauth:
     strategies:
       nyc:

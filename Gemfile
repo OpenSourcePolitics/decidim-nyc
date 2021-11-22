@@ -30,8 +30,8 @@ gem "sprockets", "~> 3.7"
 
 gem "fog-aws"
 
-gem "omniauth-saml", "~> 1.10"
 gem "omniauth-rails_csrf_protection"
+gem "omniauth-saml", "~> 1.10"
 
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri

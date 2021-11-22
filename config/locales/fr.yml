@@ -10,6 +10,7 @@ fr:
         private_space: Espace privé
   decidim:
     accessibility:
+      logo: Logo
       skip_button: Passer au contenu principal
     admin:
       participatory_space_private_users:
@@ -32,6 +33,15 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    devise:
+      sessions:
+        new:
+          are_you_new?: Are you new?
+          register: Register
+          sign_in_disabled: Sign in disabled
+      shared:
+        omniauth_buttons:
+          or: Or
     events:
       budgets:
         pending_order:
@@ -53,12 +63,30 @@ fr:
         update:
           invalid: Il y a eu une erreur lors de la mise à jour de la rencontre.
           success: La rencontre a été mise à jour avec succès.
+    pages:
+      terms_and_conditions:
+        form:
+          agreement: Agreement
+          legend: Legend
+    shared:
+      login_modal:
+        close_modal: Close modal
+        please_sign_in: Please sign in
+        sign_up: Sign up
     verifications:
       authorizations:
         first_login:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+  devise:
+    sessions:
+      new:
+        sign_in: Sign in
+    shared:
+      links:
+        forgot_your_password: Forgot your password
+        sign_in_with_provider: Sign in with provider
   faker:
     address:
       country_code:
@@ -77,15 +105,35 @@ fr:
     decidim:
       footer:
         download_open_data: Données ouvertes
-      language:
-        selector: Sélectionner une langue​
-        made_with_open_source: Site réalisé par <a target="_blank" href="https://opensourcepolitics.eu">Open Source Politics</a> grâce au <a target="_blank" href="https://github.com/decidim/decidim">logiciel libre Decidim</a>.
+        made_with_open_source: Made with open source
       header:
         close_menu: Fermer
         navigation: Navigation
         sign_in: Se connecter
         sign_up: S'inscrire
+      language:
+        arabic: Arabic
+        bengali: Bengali
+        english: English
+        french: French
+        haitian: Haitian
+        korean: Korean
+        polish: Polish
+        russian: Russian
+        selector: Sélectionner une langue​
+        simplifiedchinese: Simplified chinese
+        spanish: Spanish
+        traditionalchinese: Traditional chinese
+        urdu: Urdu
+        yiddish: Yiddish
+      language_chooser:
+        choose_language: Choose language
       user_menu:
         account: Mon compte
         conversations: Conversations
         notifications: Notifications
+        sign_out: Sign out
+  omniauth:
+    strategies:
+      nyc:
+        email_not_validated: your email is not confirmed on your NYC.Id account
