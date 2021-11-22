@@ -6,7 +6,9 @@ module Decidim
     class SessionsController < ::Devise::SessionsController
       include Decidim::DeviseControllers
 
+      # rubocop:disable Rails/LexicallyScopedActionFilter
       before_action :check_sign_in_enabled, only: :create
+      # rubocop:enable Rails/LexicallyScopedActionFilter
 
       def destroy
         saml_uid = session["saml_uid"]
