@@ -6,19 +6,17 @@ module Decidim
     class SessionsController < ::Devise::SessionsController
       include Decidim::DeviseControllers
 
+      # rubocop:disable Rails/LexicallyScopedActionFilter
       before_action :check_sign_in_enabled, only: :create
-
-      def create
-        super
-      end
+      # rubocop:enable Rails/LexicallyScopedActionFilter
 
       def destroy
-        saml_uid = session['saml_uid']
-        saml_session_index = session['saml_session_index']
+        saml_uid = session["saml_uid"]
+        saml_session_index = session["saml_session_index"]
         current_user.invalidate_all_sessions!
         super do
-          session['saml_uid'] = saml_uid
-          session['saml_session_index'] = saml_session_index
+          session["saml_uid"] = saml_uid
+          session["saml_session_index"] = saml_session_index
         end
       end
 
@@ -43,8 +41,8 @@ module Decidim
       end
 
       def after_sign_out_path_for(user)
-        if session['saml_uid'] && session['saml_session_index'] && current_organization.enabled_omniauth_providers.dig(:nyc, :idp_slo_target_url)
-          user_nyc_omniauth_authorize_path + "/spslo"
+        if session["saml_uid"] && session["saml_session_index"] && current_organization.enabled_omniauth_providers.dig(:nyc, :idp_slo_target_url)
+          "#{user_nyc_omniauth_authorize_path}/spslo"
         else
           request.referer || super
         end
