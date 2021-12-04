@@ -33,6 +33,10 @@ gem "fog-aws"
 gem "omniauth-rails_csrf_protection"
 gem "omniauth-saml", "~> 1.10"
 
+gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
+gem "fog-aws"
+gem "sys-filesystem"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
