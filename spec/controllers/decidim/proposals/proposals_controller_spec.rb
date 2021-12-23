@@ -53,6 +53,22 @@ module Decidim
             expect(assigns(:proposals).count).to eq 12
             expect(assigns(:all_geocoded_proposals)).to match_array(geocoded_proposals)
           end
+
+          context "when latitude and longitude are not properly geocoded" do
+            it "doesn't includes it in collection" do
+              geocoded_proposals = create_list :proposal, 10, component: component, latitude: 1.1, longitude: 2.2
+              improperly_geocoded_proposal = create :proposal, component: component, latitude: (0.0 / 0.0), longitude: (0.0 / 0.0)
+              _non_geocoded_proposals = create_list :proposal, 2, component: component, latitude: nil, longitude: nil
+
+              get :index
+              expect(response).to have_http_status(:ok)
+              expect(subject).to render_template(:index)
+
+              expect(assigns(:proposals).count).to eq 13
+              expect(assigns(:all_geocoded_proposals)).to match_array(geocoded_proposals)
+              expect(assigns(:all_geocoded_proposals).include?(improperly_geocoded_proposal)).to eq(false)
+            end
+          end
         end
 
         context "when participatory texts are enabled" do
