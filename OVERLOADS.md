@@ -1,5 +1,14 @@
 # Overrides
 
+## Fix geocoded map broken when latitude or longitude is NaN
+
+* `app/controllers/decidim/proposals/proposals_controller.rb`
+
+```ruby
+# on line 44
+@all_geocoded_proposals = @base_query.geocoded.where.not(latitude: Float::NAN, longitude: Float::NAN)
+```
+
 ## Update admin settings and fix title bar
 ### Modified
 - **app/views/layouts/decidim/admin/_title_bar.html.erb**
