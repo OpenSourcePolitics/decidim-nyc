@@ -28,5 +28,9 @@ module DevelopmentApp
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
+
+    initializer "session cookie domain", after: "Expire sessions" do
+      Rails.application.config.session_store :cookie_store, expire_after: Decidim.config.expire_session_after, domain: :all, tld_length: 3
+    end
   end
 end
