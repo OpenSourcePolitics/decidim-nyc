@@ -77,3 +77,6 @@ git-status.txt
 
 # Ignore all backups
 **/**.old
+**/**-bkp
+**/**.bkp
+**/**.backup
