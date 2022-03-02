@@ -1,39 +1,27 @@
-FROM ruby:2.6.3
+# Use ruby image to build our own image
+FROM ruby:2.7
 
-ENV LANG C.UTF-8
-ENV LC_ALL C.UTF-8
-ENV RAILS_ENV=production
-ENV RAILS_LOG_TO_STDOUT=true
-ENV PORT=3000
-ENV SECRET_KEY_BASE=f97271c0788641d98a8a7feaa2b8b40fdc28f83285a4f23703abdaf3ac0641a4f047788fd15e4b698e026325ebda371573c370fd6a3bdb720d7e04a580b84882
-ENV RAILS_SERVE_STATIC_FILES=true
-
-# Installs bundler dependencies
-ENV \
-  BUNDLE_BIN=/usr/local/bundle/bin \
-  BUNDLE_JOBS=10 \
-  BUNDLE_PATH=/usr/local/bundle \
-  BUNDLE_RETRY=3 \
-  GEM_HOME=/bundle
-ENV PATH="${BUNDLE_BIN}:${PATH}"
-
-RUN apt-get update -qq
-RUN apt-get install -y git imagemagick wget \
-    && apt-get clean
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash - \
-    && apt-get install -y nodejs \
-    && apt-get clean
-RUN npm install -g npm@6.3.0
-
+# We specify everythink will happen within the /app folder in the container
 WORKDIR /app
-RUN mkdir -p /app
 
-COPY docker-entrypoint.sh /app/
-RUN chmod +x /app/docker-entrypoint.sh
+# We copy these files from our current application to the /app container
+COPY Gemfile Gemfile.lock ./
 
-COPY Gemfile* /app/
-RUN export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")
-RUN gem install bundler
-RUN bundle check || bundle install --system
-COPY . /app/
-EXPOSE 3000
+RUN apt-get update -yq \
+    && apt-get -yq install curl gnupg ca-certificates \
+    && curl -L https://deb.nodesource.com/setup_12.x | bash \
+    && apt-get update -yq \
+    && apt-get install -yq \
+        dh-autoreconf=19 \
+        ruby=1:2.5.* \
+        ruby-dev=1:2.5.* \
+        nodejs
+
+# We install all the dependencies
+RUN bundle install
+
+# We copy all the files from our current application to the /app container
+COPY . .
+
+# Start the main process.
+CMD ["rails", "server", "-b", "0.0.0.0"]
