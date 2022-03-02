@@ -17,19 +17,19 @@ if Rails.env.production? && Rails.application.secrets[:aws_secret_access_key].pr
 
   CarrierWave.configure do |config|
     config.storage = :fog
-    config.fog_provider = 'fog/aws'
+    config.fog_provider = "fog/aws"
     config.fog_credentials = {
-      provider: 'AWS',
+      provider: "AWS",
       aws_access_key_id: Rails.application.secrets[:aws_access_key_id],
       aws_secret_access_key: Rails.application.secrets[:aws_secret_access_key],
       region: Rails.application.secrets[:aws_region],
-      host: Rails.application.secrets[:aws_host],
+      host: Rails.application.secrets[:aws_host]
       # endpoint:              'https://s3.example.com:8080'
     }
     config.fog_directory = Rails.application.secrets[:aws_bucket_name]
     config.fog_attributes = {
-      'Cache-Control' => "max-age=#{365.day.to_i}",
-      'X-Content-Type-Options' => "nosniff"
+      "Cache-Control" => "max-age=#{365.days.to_i}",
+      "X-Content-Type-Options" => "nosniff"
     }
   end
 end
