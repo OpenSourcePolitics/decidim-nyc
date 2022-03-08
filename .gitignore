@@ -70,6 +70,13 @@ terraform.rc
 
 # Ignore .env file
 .env
+.env-bkp
 
 # Ignore git status file
 git-status.txt
+
+# Ignore all backups
+**/**.old
+**/**-bkp
+**/**.bkp
+**/**.backup
