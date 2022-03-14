@@ -22,17 +22,12 @@ namespace :anonymization do
       logger.info("[Updating error] An error occured when updating user ID (#{user.id}), retrying with email '#{user.email}'...")
     end
 
-    Decidim::User.where(admin: false).update_all(last_sign_in_ip: nil, current_sign_in_ip: nil, unconfirmed_email: nil, avatar: nil, personal_url: "", extended_data: {})
+    Decidim::User.where(admin: false).update_all(last_sign_in_ip: nil,
+                                                 current_sign_in_ip: nil,
+                                                 unconfirmed_email: nil,
+                                                 avatar: nil,
+                                                 personal_url: "",
+                                                 extended_data: {})
     logger.info("Operation terminated")
   end
-end
-
-def build_user_from(user, logger)
-  user.email = Faker::Internet.unique.email
-  user.name = "#{Faker::Name.unique.first_name} #{Faker::Name.unique.last_name}"
-  user.nickname = user.name[0..18].split(" ").join("_").downcase
-
-  logger.info("[Updating] user ID (#{user.id}) with email '#{user.email}'...")
-
-  user
 end
