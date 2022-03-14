@@ -87,6 +87,8 @@ Rails/ScopeArgs:
 
 Rails/SkipsModelValidations:
   Enabled: true
+  Exclude:
+    - lib/tasks/anonymization.rake
 
 Rails/Validation:
   Include:
