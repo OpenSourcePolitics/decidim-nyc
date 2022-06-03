@@ -14,7 +14,6 @@ gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis",
 gem "decidim-spam_detection", git: "https://github.com/OpenSourcePolitics/decidim-spam_detection.git", branch: "release/0.24-stable"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: "master"
 
-
 gem "bootsnap", "~> 1.4"
 
 gem "dotenv-rails"
