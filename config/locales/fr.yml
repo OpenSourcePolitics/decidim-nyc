@@ -80,6 +80,19 @@ fr:
         close_modal: Close modal
         please_sign_in: Please sign in
         sign_up: Sign up
+    system:
+      organizations:
+        omniauth_settings:
+          nyc:
+            assertion_consumer_service_url: Assertion consumer service url
+            authn_context: Authn context
+            idp_cert: idp_cert
+            idp_cert_fingerprint: idp_cert_fingerprint
+            idp_key: idp_key
+            idp_slo_target_url: idp_slo_target_url
+            idp_sso_target_url: idp sso target url
+            issuer: Issuer
+            provider_name: Provider name
     verifications:
       authorizations:
         first_login:
