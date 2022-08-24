@@ -19,6 +19,7 @@ gem "bootsnap", "~> 1.4"
 gem "dotenv-rails"
 
 gem "puma", "~> 5.3.1"
+gem "repost"
 gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 2.14"

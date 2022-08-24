@@ -34,6 +34,13 @@ en:
       osp_authorization_workflow:
         name: Procédure d'autorisation
     devise:
+      registrations:
+        new:
+          already_have_an_account?: Already have an account?
+          create: Create
+          sign_in: Sign in
+          sign_up: Sign up
+          subtitle: Subtitle
       sessions:
         new:
           are_you_new?: Are you new?
