@@ -34,13 +34,6 @@ fr:
       osp_authorization_workflow:
         name: Procédure d'autorisation
     devise:
-      registrations:
-        new:
-          already_have_an_account?: Already have an account?
-          create: Create
-          sign_in: Sign in
-          sign_up: Sign up
-          subtitle: Subtitle
       sessions:
         new:
           are_you_new?: Are you new?
@@ -74,7 +67,7 @@ fr:
       terms_and_conditions:
         form:
           agreement: Agreement
-          legend: Legend
+          legend: Accepter les conditions d'utilisation
     shared:
       login_modal:
         close_modal: Close modal
@@ -104,9 +97,11 @@ fr:
       new:
         sign_in: Sign in
     shared:
+      explanation: NYC ID explanation
       links:
         forgot_your_password: Forgot your password
         sign_in_with_provider: Sign in with provider
+        sign_up_with_provider: Create an account with %{provider}
   faker:
     address:
       country_code:

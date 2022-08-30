@@ -3,20 +3,20 @@ en:
   activemodel:
     attributes:
       osp_authorization_handler:
-        birthday: Date de naissance
-        document_number: Numéro unique
+        birthday: Birthday
+        document_number: Unique number
         postal_code: Code postal
       participatory_process:
-        private_space: Espace privé
+        private_space: Private space
   decidim:
     accessibility:
       logo: Logo
-      skip_button: Passer au contenu principal
+      skip_button: Skip to main content
     admin:
       participatory_space_private_users:
         create:
-          error: Erreur
-          success: Succès
+          error: There was an error creating the private participant.
+          success: The private participant was successfully created!
     amendments:
       emendation:
         announcement:
@@ -25,22 +25,15 @@ en:
             est en cours d’évaluation.
     authorization_handlers:
       osp_authorization_handler:
-        explanation: Vérifier votre identité en saisissant un numéro unique
+        explanation: Verify your identity by adding a unique number
         fields:
-          birthday: Date de naissance
-          document_number: Numéro unique
-          postal_code: Code postal
-        name: Formulaire de vérification d'identité
+          birthday: Birthday
+          document_number: Unique number
+          postal_code: Postal code
+        name: Identity verification form
       osp_authorization_workflow:
-        name: Procédure d'autorisation
+        name: Authorization process
     devise:
-      registrations:
-        new:
-          already_have_an_account?: Already have an account?
-          create: Create
-          sign_in: Sign in
-          sign_up: Sign up
-          subtitle: Subtitle
       sessions:
         new:
           are_you_new?: Are you new?
@@ -60,26 +53,26 @@ en:
       directory:
         meetings:
           index:
-            all: Tous
+            all: All
       meeting:
-        not_allowed: Vous n'êtes pas autorisé à vous inscrire à cette rencontre.
+        not_allowed: You are not allowed to register for this meeting.
       meetings:
         create:
-          invalid: Il y a eu une erreur lors de la création de la rencontre.
-          success: La rencontre a été créée avec succès.
+          invalid: There was an error when creating the meeting.
+          success: The meeting was successfully created.
         update:
-          invalid: Il y a eu une erreur lors de la mise à jour de la rencontre.
-          success: La rencontre a été mise à jour avec succès.
+          invalid: There was an error when updating the meeting.
+          success: The meeting was successfully updated.
     pages:
       terms_and_conditions:
         form:
-          agreement: I agree with these terms
-          legend: Legend
+          agreement: J'accepte ces conditions d'utilisation
+          legend: Accept the terms of use
     shared:
       login_modal:
         close_modal: Close modal
         please_sign_in: Please sign in
-        sign_up: Sign up
+        sign_up: Register
     system:
       organizations:
         omniauth_settings:
@@ -104,19 +97,21 @@ en:
       new:
         sign_in: Sign in
     shared:
+      explanation: NYC ID explanation
       links:
         forgot_your_password: Forgot your password
-        sign_in_with_provider: Sign in with provider
+        sign_in_with_provider: Sign in with %{provider}
+        sign_up_with_provider: Create an account with %{provider}
   layouts:
     decidim:
       footer:
         download_open_data: Open data
         made_with_open_source: Made with open source
       header:
-        close_menu: Fermer
+        close_menu: Close
         navigation: Navigation
-        sign_in: Se connecter
-        sign_up: S'inscrire
+        sign_in: Sign in
+        sign_up: Register
       language:
         arabic: Arabic
         bengali: Bengali
@@ -135,11 +130,11 @@ en:
       language_chooser:
         choose_language: Choose language
       user_menu:
-        account: Mon compte
+        account: My account
         conversations: Conversations
         notifications: Notifications
         sign_out: Sign out
   omniauth:
     strategies:
       nyc:
-        email_not_validated: your email is not confirmed on your NYC.Id account
+        email_not_validated: Your email is not confirmed on your NYC.Id account
