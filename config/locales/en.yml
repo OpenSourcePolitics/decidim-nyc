@@ -66,7 +66,7 @@ en:
     pages:
       terms_and_conditions:
         form:
-          agreement: J'accepte ces conditions d'utilisation
+          agreement: I agree with these terms
           legend: Accept the terms of use
     shared:
       login_modal:
