@@ -745,6 +745,7 @@ GEM
     redlock (1.2.2)
       redis (>= 3.0.0, < 5.0)
     regexp_parser (2.1.1)
+    repost (0.4.1)
     request_store (1.5.0)
       rack (>= 1.4)
     responders (3.0.1)
@@ -974,6 +975,7 @@ DEPENDENCIES
   omniauth-saml (~> 1.10)
   passenger
   puma (~> 5.3.1)
+  repost
   rubocop-faker
   ruby-progressbar
   sendgrid-ruby

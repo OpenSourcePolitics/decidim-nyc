@@ -17,7 +17,7 @@ module OmniAuth
              email: %w(mail email),
              first_name: %w(givenName),
              last_name: %w(sn),
-             nickname: %w(uid guid GUID),
+             nickname: %w(sn),
              nycExtEmailValidationFlag: %w(nycExtEmailValidationFlag)
       option :idp_cert_fingerprint_validator, ->(fingerprint) { fingerprint }
       option :force_authn, true

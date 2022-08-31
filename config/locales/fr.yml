@@ -67,12 +67,25 @@ fr:
       terms_and_conditions:
         form:
           agreement: Agreement
-          legend: Legend
+          legend: Accepter les conditions d'utilisation
     shared:
       login_modal:
         close_modal: Close modal
         please_sign_in: Please sign in
         sign_up: Sign up
+    system:
+      organizations:
+        omniauth_settings:
+          nyc:
+            assertion_consumer_service_url: Assertion consumer service url
+            authn_context: Authn context
+            idp_cert: idp_cert
+            idp_cert_fingerprint: idp_cert_fingerprint
+            idp_key: idp_key
+            idp_slo_target_url: idp_slo_target_url
+            idp_sso_target_url: idp sso target url
+            issuer: Issuer
+            provider_name: Provider name
     verifications:
       authorizations:
         first_login:
@@ -84,9 +97,11 @@ fr:
       new:
         sign_in: Sign in
     shared:
+      explanation: NYC ID explanation
       links:
         forgot_your_password: Forgot your password
         sign_in_with_provider: Sign in with provider
+        sign_up_with_provider: Create an account with %{provider}
   faker:
     address:
       country_code:
