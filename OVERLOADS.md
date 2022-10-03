@@ -6,6 +6,11 @@ When updating decidim date format from french to american format, date on meetin
     <%= l creation_date.to_date, format: :decidim_short %>
 ```
 
+## Fix meetings orders in indexes
+* `app/controllers/decidim/meetings/meetings_controller.rb`
+* `app/controllers/decidim/meetings/directory/meetings_controller.rb`
+
+
 ## Load decidim-awesome assets only if dependencie is present
 * `app/views/layouts/decidim/_head.html.erb:33`
 
