@@ -10,5 +10,10 @@ RSpec.configure do |config|
     SocialShareButton.configure do |social_share_button|
       social_share_button.allow_sites = %w(twitter facebook whatsapp_app whatsapp_web telegram)
     end
+
+    # Mock sign_up secrets
+    Rails.application.secrets[:sign_up_button][:url] = "https://localhost:8000/"
+    Rails.application.secrets[:sign_up_button][:sp_name] = "localhost:8000"
+    Rails.application.secrets[:sign_up_button][:target] = "https://localhost:8000/sign_in_redirect/nyc"
   end
 end

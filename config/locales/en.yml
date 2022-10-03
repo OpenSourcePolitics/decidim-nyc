@@ -102,29 +102,16 @@ en:
     system:
       organizations:
         omniauth_settings:
-          france_connect:
-            client_id: Client ID
-            client_secret: Client secret
-            scope: scope
-            provider: FranceConnect
-            provider_name: FranceConnect
-            site_url: Site URL
-          france_connect_profile:
-            button_path: Button path
-            client_id: Client ID
-            client_secret: Client secret
+          nyc:
+            assertion_consumer_service_url: Assertion consumer service url
+            authn_context: Authn context
+            idp_cert: idp_cert
+            idp_cert_fingerprint: idp_cert_fingerprint
+            idp_key: idp_key
+            idp_slo_target_url: idp_slo_target_url
+            idp_sso_target_url: idp sso target url
+            issuer: Issuer
             provider_name: Provider name
-            site: Site URL
-          france_connect_uid:
-            button_path: Button path
-            client_id: Client ID
-            client_secret: Client secret
-            provider_name: Provider name
-            site: Site URL
-          publik:
-            client_id: Client ID
-            client_secret: Client secret
-            site_url: Site URL
     verifications:
       authorizations:
         create:
@@ -134,6 +121,16 @@ en:
           actions:
             osp_authorization_handler: Verify with the identity verification form
             osp_authorization_workflow: Verify with the identity verification form
+  devise:
+    sessions:
+      new:
+        sign_in: Sign in
+    shared:
+      explanation: NYC ID explanation
+      links:
+        forgot_your_password: Forgot your password
+        sign_in_with_provider: Sign in with %{provider}
+        sign_up_with_provider: Create an account with %{provider}
   faker:
     address:
       country_code:
