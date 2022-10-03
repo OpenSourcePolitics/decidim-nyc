@@ -152,13 +152,35 @@ en:
     decidim:
       footer:
         download_open_data: Open data
-        made_with_open_source: Website made by <a target="_blank" href="https://opensourcepolitics.eu/en/">Open Source Politics</a> with the <a target="_blank" href="https://github.com/decidim/decidim">decidim free software</a>.
+        made_with_open_source: Made with open source
       header:
-        close_menu: Close menu
+        close_menu: Close
         navigation: Navigation
         sign_in: Sign in
-        sign_up: Sign up
+        sign_up: Register
+      language:
+        arabic: Arabic
+        bengali: Bengali
+        english: English
+        french: French
+        haitian: Haitian
+        korean: Korean
+        polish: Polish
+        russian: Russian
+        selector: Select a language
+        simplifiedchinese: Simplified chinese
+        spanish: Spanish
+        traditionalchinese: Traditional chinese
+        urdu: Urdu
+        yiddish: Yiddish
+      language_chooser:
+        choose_language: Choose language
       user_menu:
-        account: Account
+        account: My account
         conversations: Conversations
         notifications: Notifications
+        sign_out: Sign out
+  omniauth:
+    strategies:
+      nyc:
+        email_not_validated: Your email is not confirmed on your NYC.Id account

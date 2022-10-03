@@ -576,6 +576,9 @@ GEM
     omniauth-rails_csrf_protection (1.0.1)
       actionpack (>= 4.2)
       omniauth (~> 2.0)
+    omniauth-saml (2.1.0)
+      omniauth (~> 2.0)
+      ruby-saml (~> 1.12)
     omniauth-twitter (1.4.0)
       omniauth-oauth (~> 1.1)
       rack
@@ -727,6 +730,9 @@ GEM
     rubocop-rspec (1.43.2)
       rubocop (~> 0.87)
     ruby-progressbar (1.11.0)
+    ruby-saml (1.14.0)
+      nokogiri (>= 1.10.5)
+      rexml
     ruby-vips (2.1.4)
       ffi (~> 1.12)
     ruby2_keywords (0.0.5)
@@ -874,7 +880,8 @@ DEPENDENCIES
   lograge
   newrelic_rpm
   nokogiri (= 1.13.4)
-  omniauth-rails_csrf_protection (~> 1.0)
+  omniauth-rails_csrf_protection
+  omniauth-saml
   passenger
   puma (>= 5.5.1)
   rubocop-faker
@@ -890,7 +897,7 @@ DEPENDENCIES
   web-console (= 4.0.4)
 
 RUBY VERSION
-   ruby 2.7.1p83
+   ruby 2.7.5p203
 
 BUNDLED WITH
    2.3.22
