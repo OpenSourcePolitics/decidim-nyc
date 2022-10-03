@@ -1,4 +1,10 @@
 # Overrides
+## Fix date display on meeting show view
+When updating decidim date format from french to american format, date on meeting show view doesn't change
+* `app/cells/decidim/author/date.erb`
+```html
+    <%= l creation_date.to_date, format: :decidim_short %>
+```
 
 ## Load decidim-awesome assets only if dependencie is present
 * `app/views/layouts/decidim/_head.html.erb:33`
@@ -6,7 +12,7 @@
 ## Fix geocoded proposals
 * `app/controllers/decidim/proposals/proposals_controller.rb:44`
 ```ruby
-          @all_geocoded_proposals = @base_query.geocoded.where.not(latitude: Float::NAN, longitude: Float::NAN)
+  @all_geocoded_proposals = @base_query.geocoded.where.not(latitude: Float::NAN, longitude: Float::NAN)
 ```
 
 ##  Fix meetings registration serializer
