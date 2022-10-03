@@ -8,9 +8,15 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => "/sidekiq"
   end
 
-  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+  devise_scope :user do
+    get "/admin_sign_in", to: "decidim/devise/sessions#new"
+  end
 
   get "/sign_in_redirect/:provider", to: "switch#redirect"
+
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
+
+  post "/", to: "application#post_logout_callback"
 
   mount Decidim::Core::Engine => "/"
   # mount Decidim::Map::Engine => '/map'
