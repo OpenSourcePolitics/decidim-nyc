@@ -55,6 +55,8 @@ end
 
 group :production do
   gem "dalli"
+  gem "redis"
+  gem "hiredis"
   gem "lograge"
   gem "newrelic_rpm"
   gem "passenger"
