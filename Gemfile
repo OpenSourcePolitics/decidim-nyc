@@ -55,11 +55,11 @@ end
 
 group :production do
   gem "dalli"
-  gem "redis"
   gem "hiredis"
   gem "lograge"
   gem "newrelic_rpm"
   gem "passenger"
+  gem "redis"
   gem "sentry-rails"
   gem "sentry-ruby"
   gem "sentry-sidekiq"

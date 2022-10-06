@@ -62,8 +62,8 @@ Rails.application.configure do
                          config.cache_store = :redis_cache_store, {
                            url: ENV["REDIS_URL"],
                            namespace: "#{ENV["APP_NAME"]}-memory-store"
-                         } 
-                       if ENV["MEMCACHEDCLOUD_SERVERS"].present?
+                         }
+                       elsif ENV["MEMCACHEDCLOUD_SERVERS"].present?
                          [:dalli_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(","), {
                            username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"]
                          }]
