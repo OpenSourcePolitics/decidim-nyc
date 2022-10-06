@@ -1,0 +1,1 @@
+$(document).ready(function(){let n=$("#user-conversations-add-modal"),o=$("#start-conversation-dialog-button");if(n.length){n.data("refresh-url");o.click(function(){n.foundation("open")})}});

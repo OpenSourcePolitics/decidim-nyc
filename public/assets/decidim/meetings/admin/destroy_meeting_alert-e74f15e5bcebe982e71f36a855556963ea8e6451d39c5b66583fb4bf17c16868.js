@@ -1,0 +1,1 @@
+"use strict";var removeNewlineAdjacentSpaces=function(e){return e.replace(/\n\s/g,"\n")};$(function(){var e=$(".destroy-meeting-alert");e.length>0&&e.on("click",function(){var n=e.data("invalid-destroy-message")+" \n\n";n+=removeNewlineAdjacentSpaces(e.data("proposal-titles")),alert(n)})});

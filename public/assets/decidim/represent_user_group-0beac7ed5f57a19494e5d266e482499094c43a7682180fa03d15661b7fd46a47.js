@@ -1,0 +1,1 @@
+"use strict";$(function(){var e=$(".represent-user-group").find("input#user_group"),r=$(".user-group-fields");e.click(function(){r.find("select").val()||r.toggle(),r.is(":visible")?e.prop("checked",!0):e.prop("checked",!1)})});
