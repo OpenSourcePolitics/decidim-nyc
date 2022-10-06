@@ -514,6 +514,7 @@ GEM
     hashdiff (1.0.1)
     hashie (5.0.0)
     highline (2.0.3)
+    hiredis (0.6.3)
     html_tokenizer (0.0.7)
     htmlentities (4.3.4)
     http-accept (1.7.0)
@@ -966,6 +967,7 @@ DEPENDENCIES
   dotenv-rails
   faker (~> 2.14)
   fog-aws
+  hiredis
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
   lograge
@@ -974,6 +976,7 @@ DEPENDENCIES
   omniauth-saml (~> 1.10)
   passenger
   puma (~> 5.3.1)
+  redis
   repost
   rubocop-faker
   ruby-progressbar
