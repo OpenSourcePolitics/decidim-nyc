@@ -6,6 +6,15 @@ GIT
       decidim-core (~> 0.26)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/omniauth-publik
+  revision: 1e7c6ab77084bfcb0fc652f89e309f6c71e1bfd3
+  branch: v0.0.9
+  specs:
+    omniauth-publik (0.0.9)
+      omniauth (~> 2.0)
+      omniauth-oauth2 (>= 1.7.2, < 2.0)
+
+GIT
   remote: https://github.com/decidim/decidim.git
   revision: e85c208edf36cffc095197a9eb7c1a92d91c867e
   branch: release/0.26-stable
@@ -881,6 +890,7 @@ DEPENDENCIES
   lograge
   newrelic_rpm
   nokogiri (= 1.13.4)
+  omniauth-publik!
   omniauth-rails_csrf_protection
   omniauth-saml
   passenger
@@ -899,7 +909,7 @@ DEPENDENCIES
   web-console (= 4.0.4)
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 2.7.1p83
 
 BUNDLED WITH
    2.3.22
