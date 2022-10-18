@@ -11,12 +11,12 @@ gem "decidim-conferences", git: "https://github.com/decidim/decidim.git", branch
 
 # gem "acts_as_textcaptcha", "~> 4.5.1"
 gem "decidim-decidim_awesome"
-gem "decidim-spam_detection", git: "https://github.com/OpenSourcePolitics/decidim-spam_detection.git"
-gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
-gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik", branch: "v0.0.9"
 gem "decidim-friendly_signup", git: "https://github.com/OpenSourcePolitics/decidim-module-friendly_signup.git"
 gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: DECIDIM_VERSION
 gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: DECIDIM_VERSION
+gem "decidim-spam_detection", git: "https://github.com/OpenSourcePolitics/decidim-spam_detection.git"
+gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
+gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik", branch: "v0.0.9"
 # TODO : Bump Pol.is module to v0.26
 # gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis"
 

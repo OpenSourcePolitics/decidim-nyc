@@ -364,17 +364,6 @@ describe "Homepage", type: :system do
         end
       end
 
-      describe "decidim link with external icon" do
-        before { visit current_path }
-
-        let(:webpacker_helper) do
-          Class.new do
-            include ActionView::Helpers::AssetUrlHelper
-            include Webpacker::Helper
-          end.new
-        end
-      end
-
       context "and has highlighted content banner enabled" do
         let(:organization) do
           create(:organization,
