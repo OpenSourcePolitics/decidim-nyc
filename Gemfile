@@ -17,8 +17,6 @@ gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePo
 gem "decidim-spam_detection", git: "https://github.com/OpenSourcePolitics/decidim-spam_detection.git"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
 gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik", branch: "v0.0.9"
-# TODO : Bump Pol.is module to v0.26
-# gem "decidim-polis", git: "https://github.com/OpenSourcePolitics/decidim-polis"
 
 gem "dotenv-rails"
 

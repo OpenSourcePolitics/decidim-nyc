@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_09_08_151225) do
+ActiveRecord::Schema.define(version: 2022_10_18_132437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -749,7 +749,7 @@ ActiveRecord::Schema.define(version: 2022_09_08_151225) do
   end
 
   create_table "decidim_forms_answers", id: :serial, force: :cascade do |t|
-    t.text "body"
+    t.jsonb "body", default: []
     t.integer "decidim_user_id"
     t.integer "decidim_questionnaire_id"
     t.integer "decidim_question_id"
@@ -1193,6 +1193,7 @@ ActiveRecord::Schema.define(version: 2022_09_08_151225) do
     t.boolean "rich_text_editor_in_public_views", default: false
     t.jsonb "admin_terms_of_use_body"
     t.string "time_zone", limit: 255, default: "UTC"
+    t.string "polis_site_id"
     t.boolean "enable_machine_translations", default: false
     t.jsonb "file_upload_settings"
     t.string "machine_translation_display_priority", default: "original", null: false
@@ -1291,10 +1292,6 @@ ActiveRecord::Schema.define(version: 2022_09_08_151225) do
     t.boolean "show_metrics", default: true
     t.integer "weight", default: 1, null: false
     t.integer "follows_count", default: 0, null: false
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
-    t.boolean "display_linked_assemblies", default: false
     t.index ["decidim_area_id"], name: "index_decidim_participatory_processes_on_decidim_area_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_process_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_processes_on_decidim_organization_id"
@@ -1491,7 +1488,6 @@ ActiveRecord::Schema.define(version: 2022_09_08_151225) do
     t.integer "parent_id"
     t.string "code", null: false
     t.integer "part_of", default: [], null: false, array: true
-    t.jsonb "geojson"
     t.index ["decidim_organization_id", "code"], name: "index_decidim_scopes_on_decidim_organization_id_and_code", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_scopes_on_decidim_organization_id"
     t.index ["parent_id"], name: "index_decidim_scopes_on_parent_id"
@@ -1606,18 +1602,6 @@ ActiveRecord::Schema.define(version: 2022_09_08_151225) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_decidim_system_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_decidim_system_admins_on_reset_password_token", unique: true
-  end
-
-  create_table "decidim_templates_templates", force: :cascade do |t|
-    t.integer "decidim_organization_id", null: false
-    t.string "templatable_type"
-    t.bigint "templatable_id"
-    t.jsonb "name", null: false
-    t.jsonb "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["decidim_organization_id"], name: "index_decidim_templates_organization"
-    t.index ["templatable_type", "templatable_id"], name: "index_decidim_templates_templatable"
   end
 
   create_table "decidim_term_customizer_constraints", force: :cascade do |t|
@@ -1820,17 +1804,6 @@ ActiveRecord::Schema.define(version: 2022_09_08_151225) do
     t.boolean "confidential", default: true, null: false
     t.index ["decidim_organization_id"], name: "index_oauth_applications_on_decidim_organization_id"
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
-  end
-
-  create_table "request_environment_rules", id: :serial, force: :cascade do |t|
-    t.integer "redirect_rule_id", null: false
-    t.string "environment_key_name", null: false
-    t.string "environment_value", null: false
-    t.boolean "environment_value_is_regex", default: false, null: false
-    t.boolean "environment_value_is_case_sensitive", default: true, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["redirect_rule_id"], name: "index_request_environment_rules_on_redirect_rule_id"
   end
 
   create_table "versions", force: :cascade do |t|

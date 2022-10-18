@@ -1,11 +1,8 @@
 # frozen_string_literal: true
 
+# This migration comes from decidim (originally 20180810092428)
+
 class MoveOrganizationFieldsToHeroContentBlock < ActiveRecord::Migration[5.2]
-  # This migration made use CarrierWave, which in future will be eliminated.
-  # The organization homepage image was moved to the content block background
-  # image using CarrierWave. This operation has been removed, so if there is
-  # an existing homepage image previous to this migration the content block
-  # background image should be loaded manually
   class Organization < ApplicationRecord
     self.table_name = :decidim_organizations
   end
@@ -19,7 +16,9 @@ class MoveOrganizationFieldsToHeroContentBlock < ActiveRecord::Migration[5.2]
       settings = welcome_text.inject(settings) { |acc, (k, v)| acc.update("welcome_text_#{k}" => v) }
 
       content_block.settings = settings
+      content_block.images_container.background_image = organization.homepage_image.file
       content_block.settings_will_change!
+      content_block.images_will_change!
       content_block.save!
     end
 
