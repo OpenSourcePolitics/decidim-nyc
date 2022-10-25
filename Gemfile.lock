@@ -1,11 +1,4 @@
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim-module-friendly_signup.git
-  revision: fbf147b5aae425130976807b5ed38f76393439aa
-  specs:
-    decidim-friendly_signup (0.4.2)
-      decidim-core (~> 0.26.0)
-
-GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git
   revision: 3710b53715587bd67f0a20911972077bb074cb0d
   branch: release/0.26-stable
@@ -904,7 +897,6 @@ DEPENDENCIES
   decidim-conferences!
   decidim-decidim_awesome
   decidim-dev!
-  decidim-friendly_signup!
   decidim-homepage_interactive_map!
   decidim-phone_authorization_handler!
   decidim-spam_detection!
