@@ -11,6 +11,8 @@ RSpec.configure do |config|
       social_share_button.allow_sites = %w(twitter facebook whatsapp_app whatsapp_web telegram)
     end
 
+    # Decidim.available_locales = [:en, :fr]
+
     # Mock sign_up secrets
     Rails.application.secrets[:sign_up_button][:url] = "https://localhost:8000/"
     Rails.application.secrets[:sign_up_button][:sp_name] = "localhost:8000"

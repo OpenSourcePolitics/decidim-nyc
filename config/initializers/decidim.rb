@@ -7,7 +7,7 @@ Decidim.configure do |config|
 
   # Change these lines to set your preferred locales
   config.default_locale = :en
-  config.available_locales = [:en, :fr]
+  config.available_locales = [:en]
 
   # Timeout session
   config.expire_session_after = ENV.fetch("DECIDIM_SESSION_TIMEOUT", 180).to_i.minutes

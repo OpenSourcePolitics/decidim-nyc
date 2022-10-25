@@ -89,6 +89,9 @@ ignore_missing:
  - layouts.decidim.header.user_menu
  - decidim.devise.shared.omniauth_buttons.or
  - devise.shared.links.sign_in_with_provider
+ - decidim.devise.sessions.new.*
+ - decidim.meetings.withdraw.*
+ - decidim.shared.login_modal.*
 # Consider these keys used:
 ignore_unused:
   - faker.*
@@ -110,3 +113,5 @@ ignore_unused:
   - decidim.system.organizations.omniauth_settings.publik.*
   - decidim.verifications.authorizations.create.*
   - decidim.verifications.authorizations.first_login.actions.*
+  - decidim.system.organizations.omniauth_settings.nyc.*
+  - layouts.decidim.user_menu.sign_out

@@ -216,8 +216,6 @@ describe "Homepage", type: :system do
           context "when authenticated" do
             let(:user) { create :user, :confirmed, organization: organization }
 
-            it_behaves_like "accessible page"
-
             it "displays all pages and topics in footer that are configured to display in footer" do
               expect(page).to have_content(static_page_1.title["en"])
               expect(page).to have_content(static_page_2.title["en"])
@@ -363,27 +361,6 @@ describe "Homepage", type: :system do
           expect(page).to have_xpath("//a[@href = 'https://www.facebook.com/facebook_handler']")
           expect(page).to have_xpath("//a[@href = 'https://www.youtube.com/youtube_handler']")
           expect(page).to have_xpath("//a[@href = 'https://www.github.com/github_handler']")
-        end
-      end
-
-      describe "decidim link with external icon" do
-        before { visit current_path }
-
-        let(:webpacker_helper) do
-          Class.new do
-            include ActionView::Helpers::AssetUrlHelper
-            include Webpacker::Helper
-          end.new
-        end
-
-        it "displays the decidim link with external link indicator" do
-          within ".footer .mini-footer" do
-            expect(page).to have_selector("a[target='_blank'][href='https://github.com/decidim/decidim']")
-
-            within "a[target='_blank'][href='https://github.com/decidim/decidim']" do
-              expect(page).to have_selector("svg.icon use[href='#{webpacker_helper.asset_pack_path("media/images/icons.svg")}#icon-external-link']")
-            end
-          end
         end
       end
 

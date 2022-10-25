@@ -65,11 +65,6 @@ en:
         update:
           invalid: There was a problem updating the meeting.
           success: You have updated the meeting successfully.
-    omniauth:
-      france_connect:
-        external:
-          link: https://franceconnect.gouv.fr/
-          text: What is FranceConnect ?
     proposals:
       create:
         error: There was a problem saving
@@ -112,6 +107,10 @@ en:
             idp_sso_target_url: idp sso target url
             issuer: Issuer
             provider_name: Provider name
+          publik:
+            client_id: Client ID
+            client_secret: Client secret
+            site_url: Site URL
     verifications:
       authorizations:
         create:

@@ -36,7 +36,7 @@ shared_examples "on/off confirmation codes" do
 
     shared_examples "invalid token" do
       it "redirects the user out of here" do
-        expect(page).to have_content("Log in")
+        expect(page).to have_content("Sign in")
         within_flash_messages do
           expect(page).to have_content("Invalid token")
         end
@@ -110,7 +110,7 @@ shared_examples "on/off standard confirmation" do
       expect(page).to have_content("Resend confirmation instructions")
       fill_email
 
-      expect(page).to have_content("Log in")
+      expect(page).to have_content("Sign in")
       within_flash_messages do
         expect(page).to have_content("If your email address exists in our database, you will receive an email with instructions")
       end
