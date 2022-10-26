@@ -72,7 +72,7 @@ describe "Account", type: :system do
         user.reload
 
         within_user_menu do
-          find("a", text: "perfil público").click
+          find("a", text: "My public profile").click
         end
 
         expect(page).to have_content("example.org")
