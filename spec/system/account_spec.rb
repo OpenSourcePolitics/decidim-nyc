@@ -29,8 +29,6 @@ describe "Account", type: :system do
       visit decidim.account_path
     end
 
-    it_behaves_like "accessible page"
-
     describe "update avatar" do
       it "can update avatar" do
         attach_file :user_avatar, Decidim::Dev.asset("avatar.jpg")
@@ -57,7 +55,6 @@ describe "Account", type: :system do
     describe "updating personal data" do
       it "updates the user's data" do
         within "form.edit_user" do
-          select "Castellano", from: :user_locale
           fill_in :user_name, with: "Nikola Tesla"
           fill_in :user_personal_url, with: "https://example.org"
           fill_in :user_about, with: "A Serbian-American inventor, electrical engineer, mechanical engineer, physicist, and futurist."
