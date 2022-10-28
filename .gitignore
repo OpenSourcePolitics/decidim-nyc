@@ -94,3 +94,12 @@ vendor/cache
 yarn-debug.log*
 .yarn-integrity
 .idea
+.env-bkp
+
+git-status.txt
+
+# Ignore all backups
+**/**.old
+**/**-bkp
+**/**.bkp
+**/**.backup
