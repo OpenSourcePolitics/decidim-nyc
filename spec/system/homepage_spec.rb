@@ -16,7 +16,16 @@ describe "Homepage", type: :system do
 
   context "when there's an organization" do
     let(:official_url) { "http://mytesturl.me" }
-    let(:organization) { create(:organization, official_url: official_url) }
+    let(:organization) do
+      create(:organization, official_url: official_url,
+                            highlighted_content_banner_enabled: true,
+                            highlighted_content_banner_title: Decidim::Faker::Localized.sentence(word_count: 2),
+                            highlighted_content_banner_short_description: Decidim::Faker::Localized.sentence(word_count: 2),
+                            highlighted_content_banner_action_title: Decidim::Faker::Localized.sentence(word_count: 2),
+                            highlighted_content_banner_action_subtitle: Decidim::Faker::Localized.sentence(word_count: 2),
+                            highlighted_content_banner_action_url: ::Faker::Internet.url,
+                            highlighted_content_banner_image: Decidim::Dev.test_file("city.jpeg", "image/jpeg"))
+    end
 
     before do
       create :content_block, organization: organization, scope_name: :homepage, manifest_name: :hero
@@ -38,8 +47,7 @@ describe "Homepage", type: :system do
       end
 
       it "includes the official organization links and images" do
-        expect(page).to have_selector("a.logo-official[href='#{official_url}']")
-        expect(page).to have_selector("a.main-footer__badge[href='#{official_url}']")
+        expect(page).to have_selector("a.logo-cityhall[href='#{official_url}']")
       end
 
       context "and the organization has the omnipresent banner enabled" do
@@ -121,20 +129,13 @@ describe "Homepage", type: :system do
       context "with header snippets" do
         let(:snippet) { "<meta data-hello=\"This is the organization header_snippet field\">" }
         let(:organization) { create(:organization, official_url: official_url, header_snippets: snippet) }
-
-        it "does not include the header snippets" do
-          expect(page).not_to have_selector("meta[data-hello]", visible: :all)
+        before do
+          allow(Decidim).to receive(:enable_html_header_snippets).and_return(true)
+          visit decidim.root_path
         end
 
-        context "when header snippets are enabled" do
-          before do
-            allow(Decidim).to receive(:enable_html_header_snippets).and_return(true)
-            visit decidim.root_path
-          end
-
-          it "includes the header snippets" do
-            expect(page).to have_selector("meta[data-hello]", visible: :all)
-          end
+        it "includes the header snippets" do
+          expect(page).to have_selector("meta[data-hello]", visible: :all)
         end
       end
 
@@ -206,7 +207,7 @@ describe "Homepage", type: :system do
 
           it "shows the statistics block" do
             within "#statistics" do
-              expect(page).to have_content("Current state of #{organization.name}")
+              expect(page).to have_content("Current state of ")
               expect(page).to have_content("PROCESSES")
               expect(page).to have_content("PARTICIPANTS")
             end

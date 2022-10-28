@@ -90,6 +90,7 @@ Rails/SkipsModelValidations:
   Exclude:
     - lib/tasks/anonymization.rake
 
+
 Rails/Validation:
   Include:
     - app/models/**/*.rb
@@ -97,3 +98,8 @@ Rails/Validation:
 Rails/BulkChangeTable:
   Exclude:
     - db/**/*
+
+RSpec/MultipleMemoizedHelpers:
+  Exclude:
+    - spec/**/**
+

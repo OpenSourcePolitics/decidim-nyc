@@ -1,14 +1,17 @@
 :concurrency: 5
 :queues:
-  - default
-  #- backups
-  - metrics
   - mailers
-  - newsletter
+  - default
+  - backups
   - events
+  - newsletter
+  - exports
   - user_report
   - block_user
+  - translation
   - scheduled
+  - translations
+  - metrics
 
 :schedule:
   CalculateAllMetrics:
@@ -31,3 +34,7 @@
   #  cron: '0 0 4 * * *' # Run at 04:00
   #  class: BackupJob
   #  queue: backups
+  Backup:
+    cron: '0 0 4 * * *' # Run at 04:00
+    class: BackupJob
+    queue: backups
