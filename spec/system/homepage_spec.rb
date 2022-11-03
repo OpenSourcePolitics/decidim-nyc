@@ -129,6 +129,7 @@ describe "Homepage", type: :system do
       context "with header snippets" do
         let(:snippet) { "<meta data-hello=\"This is the organization header_snippet field\">" }
         let(:organization) { create(:organization, official_url: official_url, header_snippets: snippet) }
+
         before do
           allow(Decidim).to receive(:enable_html_header_snippets).and_return(true)
           visit decidim.root_path

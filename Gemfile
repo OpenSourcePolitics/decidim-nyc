@@ -34,14 +34,9 @@ gem "sys-filesystem"
 gem "omniauth-rails_csrf_protection"
 gem "omniauth-saml"
 
-gem "fog-aws"
-
-gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
-gem "sys-filesystem"
-
 group :development, :test do
-  gem "byebug", "~> 11.0", platform: :mri
   gem "brakeman", "~> 5.1"
+  gem "byebug", "~> 11.0", platform: :mri
   gem "decidim-dev", git: "https://github.com/decidim/decidim.git", branch: DECIDIM_VERSION
 end
 
