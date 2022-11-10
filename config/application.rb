@@ -2,7 +2,11 @@
 
 require_relative "boot"
 
-require "rails/all"
+require "decidim/rails"
+# Add the frameworks used by your app that are not loaded by Decidim.
+require "action_cable/engine"
+# require "action_mailbox/engine"
+# require "action_text/engine"
 
 # TODO : add missing dep to decidim-initiatives/lib/decidim/initiatives/engine.rb
 # require "wicked_pdf"
@@ -20,9 +24,15 @@ module DevelopmentApp
 
     # This needs to be set for correct images URLs in emails
     # DON'T FORGET to ALSO set this in `config/initializers/carrierwave.rb`
-    config.action_mailer.asset_host = "https://#{Rails.application.secrets[:asset_host]}" if Rails.application.secrets[:asset_host].present?
+    config.action_mailer.asset_host = "https://#{Rails.application.secrets[:asset_host]}/" if Rails.application.secrets[:asset_host].present?
 
     config.backup = config_for(:backup).deep_symbolize_keys
+
+    config.action_dispatch.default_headers = {
+      "X-Frame-Options" => "SAMEORIGIN",
+      "X-XSS-Protection" => "1; mode=block",
+      "X-Content-Type-Options" => "nosniff"
+    }
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
@@ -31,6 +41,10 @@ module DevelopmentApp
 
     initializer "session cookie domain", after: "Expire sessions" do
       Rails.application.config.session_store :cookie_store, expire_after: Decidim.config.expire_session_after, domain: :all, tld_length: 3
+    end
+
+    config.after_initialize do
+      require "extends/controllers/decidim/devise/sessions_controller_extends"
     end
   end
 end

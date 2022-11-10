@@ -30,7 +30,7 @@ describe "Admin manages organization", type: :system do
                           es: "<p>Spanish - Respect the privacy of others.</p>"
 
       click_button "Update"
-      expect(page).to have_content("Success")
+      expect(page).to have_content("success")
     end
 
     context "when using the rich text editor" do
@@ -254,7 +254,7 @@ describe "Admin manages organization", type: :system do
         check "Send welcome notification"
         expect(page).not_to have_content("Welcome notification subject")
         click_button "Update"
-        expect(page).to have_content("Success")
+        expect(page).to have_content("success")
 
         organization.reload
         expect(organization[:welcome_notification_subject]).to be_nil
@@ -274,7 +274,7 @@ describe "Admin manages organization", type: :system do
                               en: "<p>Body</p>"
 
           click_button "Update"
-          expect(page).to have_content("Success")
+          expect(page).to have_content("success")
 
           organization.reload
           expect(organization.send_welcome_notification).to be_truthy

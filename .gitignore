@@ -70,11 +70,32 @@ terraform.rc
 
 # Ignore .env file
 .env
-.env-bkp
-
 # Ignore git status file
 git-status.txt
 
+/public/decidim-packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+
+# Ignore vendor/cache
+vendor/cache
+
+# Ignore RSpec failures
+.rspec-failures
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity
+.idea
+.env-bkp
+
+git-status.txt
 # Ignore all backups
 **/**.old
 **/**-bkp
