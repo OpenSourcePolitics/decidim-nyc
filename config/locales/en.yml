@@ -10,6 +10,7 @@ en:
         private_space: Private space
   decidim:
     accessibility:
+      logo: Logo
       skip_button: Skip button
     admin:
       participatory_space_private_users:

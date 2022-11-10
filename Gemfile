@@ -15,7 +15,7 @@ gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolit
 gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: DECIDIM_VERSION
 gem "decidim-spam_detection", git: "https://github.com/OpenSourcePolitics/decidim-spam_detection.git"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
-gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik", branch: "v0.0.9"
+gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik"
 
 gem "dotenv-rails"
 
@@ -24,8 +24,11 @@ gem "foundation_rails_helper", git: "https://github.com/sgruhier/foundation_rail
 
 gem "puma", ">= 5.5.1"
 gem "repost"
+gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 2.14"
+
+gem "nokogiri", "1.13.4"
 
 gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
 gem "fog-aws"
@@ -51,14 +54,14 @@ end
 
 group :production do
   gem "dalli"
+  gem "hiredis"
   gem "lograge"
   gem "newrelic_rpm"
   gem "passenger"
-  gem "sendgrid-ruby"
+  gem "redis"
   gem "sentry-rails"
   gem "sentry-ruby"
   gem "sentry-sidekiq"
   gem "sidekiq"
   gem "sidekiq-scheduler"
 end
-gem "nokogiri", "1.13.4"

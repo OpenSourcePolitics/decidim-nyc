@@ -25,7 +25,6 @@
 <%= stylesheet_pack_tag "decidim_core", media: "all" %>
 <%= invisible_captcha_styles %>
 
-
 <%# awesome styles before custom colors %>
 <%= stylesheet_pack_tag "decidim_decidim_awesome", media: "all" %>
 <%= render(partial: "layouts/decidim/decidim_awesome/custom_styles") if awesome_custom_styles.present? %>
@@ -43,4 +42,3 @@
 <%== current_organization.header_snippets if Decidim.enable_html_header_snippets %>
 <%= snippets.display(:head) %>
 <%= content_for :header_snippets %>
-

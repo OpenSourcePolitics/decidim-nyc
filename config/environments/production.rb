@@ -49,7 +49,12 @@ Rails.application.configure do
   config.log_tags = [:request_id]
 
   # Use a different cache store in production.
-  config.cache_store = if ENV["MEMCACHEDCLOUD_SERVERS"].present?
+  config.cache_store = if ENV["REDIS_URL"].present?
+                         config.cache_store = :redis_cache_store, {
+                           url: ENV["REDIS_URL"],
+                           namespace: "#{ENV["APP_NAME"]}-memory-store"
+                         }
+                       elsif ENV["MEMCACHEDCLOUD_SERVERS"].present?
                          [:dalli_store, ENV["MEMCACHEDCLOUD_SERVERS"].split(","), {
                            username: ENV["MEMCACHEDCLOUD_USERNAME"], password: ENV["MEMCACHEDCLOUD_PASSWORD"]
                          }]
