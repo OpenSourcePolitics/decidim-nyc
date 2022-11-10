@@ -1,1 +1,0 @@
-"use strict";!function(n){n.$(function(){var t=$(".impersonation-warning"),o=n.moment(t.data("session-ends-at"));setInterval(function(){var i=(o-n.moment())/6e4,e=Math.round(i);t.find(".minutes").html(e),i<=0&&window.location.reload()},1e3)})}(window);

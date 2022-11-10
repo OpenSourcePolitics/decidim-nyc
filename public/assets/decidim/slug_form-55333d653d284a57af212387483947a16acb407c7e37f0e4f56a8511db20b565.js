@@ -1,1 +1,0 @@
-"use strict";$(function(){var u=$(".slug"),n=u.find("input"),t=u.find("span.slug-url-value");n.on("keyup",function(u){t.html(u.target.value)})});
