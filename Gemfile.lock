@@ -1,14 +1,4 @@
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git
-  revision: 3710b53715587bd67f0a20911972077bb074cb0d
-  branch: release/0.26-stable
-  specs:
-    decidim-homepage_interactive_map (2.0.0)
-      decidim-admin (>= 0.25.0, < 0.27)
-      decidim-core (>= 0.25.0, < 0.27)
-      decidim-dev (>= 0.25.0, < 0.27)
-
-GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
   revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
   branch: release/0.26-stable
@@ -22,14 +12,6 @@ GIT
   specs:
     decidim-spam_detection (2.0.0)
       decidim-core (~> 0.26)
-
-GIT
-  remote: https://github.com/OpenSourcePolitics/omniauth-publik
-  revision: ab703a565c402b773ce0025593554b329f603e5c
-  specs:
-    omniauth-publik (0.1.1)
-      omniauth (~> 2.0)
-      omniauth-oauth2 (>= 1.7.2, < 2.0)
 
 GIT
   remote: https://github.com/decidim/decidim.git
@@ -892,7 +874,6 @@ DEPENDENCIES
   decidim-conferences!
   decidim-decidim_awesome
   decidim-dev!
-  decidim-homepage_interactive_map!
   decidim-phone_authorization_handler!
   decidim-spam_detection!
   decidim-term_customizer!
@@ -906,7 +887,6 @@ DEPENDENCIES
   lograge
   newrelic_rpm
   nokogiri (= 1.13.4)
-  omniauth-publik!
   omniauth-rails_csrf_protection
   omniauth-saml
   passenger

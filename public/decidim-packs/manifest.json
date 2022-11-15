@@ -42,11 +42,11 @@
   "css/decidim_conference_diploma-a606761e.css.map": "/decidim-packs/css/decidim_conference_diploma-a606761e.css.map",
   "css/decidim_conference_diploma-a606761e.css.map.br": "/decidim-packs/css/decidim_conference_diploma-a606761e.css.map.br",
   "css/decidim_conference_diploma-a606761e.css.map.gz": "/decidim-packs/css/decidim_conference_diploma-a606761e.css.map.gz",
-  "css/decidim_core-d2340e34.css.br": "/decidim-packs/css/decidim_core-d2340e34.css.br",
-  "css/decidim_core-d2340e34.css.gz": "/decidim-packs/css/decidim_core-d2340e34.css.gz",
-  "css/decidim_core-d2340e34.css.map": "/decidim-packs/css/decidim_core-d2340e34.css.map",
-  "css/decidim_core-d2340e34.css.map.br": "/decidim-packs/css/decidim_core-d2340e34.css.map.br",
-  "css/decidim_core-d2340e34.css.map.gz": "/decidim-packs/css/decidim_core-d2340e34.css.map.gz",
+  "css/decidim_core-15500a21.css.br": "/decidim-packs/css/decidim_core-15500a21.css.br",
+  "css/decidim_core-15500a21.css.gz": "/decidim-packs/css/decidim_core-15500a21.css.gz",
+  "css/decidim_core-15500a21.css.map": "/decidim-packs/css/decidim_core-15500a21.css.map",
+  "css/decidim_core-15500a21.css.map.br": "/decidim-packs/css/decidim_core-15500a21.css.map.br",
+  "css/decidim_core-15500a21.css.map.gz": "/decidim-packs/css/decidim_core-15500a21.css.map.gz",
   "css/decidim_decidim_awesome-3b96f230.css.br": "/decidim-packs/css/decidim_decidim_awesome-3b96f230.css.br",
   "css/decidim_decidim_awesome-3b96f230.css.gz": "/decidim-packs/css/decidim_decidim_awesome-3b96f230.css.gz",
   "css/decidim_decidim_awesome-3b96f230.css.map": "/decidim-packs/css/decidim_decidim_awesome-3b96f230.css.map",
@@ -121,7 +121,7 @@
   "decidim_conference_diploma.css": "/decidim-packs/css/decidim_conference_diploma-a606761e.css",
   "decidim_conference_diploma.js": "/decidim-packs/js/decidim_conference_diploma-31d6cfe0d16ae931b73c.js",
   "decidim_conferences_admin.js": "/decidim-packs/js/decidim_conferences_admin-f123c894e2d4fcf7a325.js",
-  "decidim_core.css": "/decidim-packs/css/decidim_core-d2340e34.css",
+  "decidim_core.css": "/decidim-packs/css/decidim_core-15500a21.css",
   "decidim_core.js": "/decidim-packs/js/decidim_core-9836bc10eb703d30229d.js",
   "decidim_debates_admin.js": "/decidim-packs/js/decidim_debates_admin-ddb45d894522c82b79bc.js",
   "decidim_decidim_awesome.css": "/decidim-packs/css/decidim_decidim_awesome-3b96f230.css",
@@ -220,7 +220,7 @@
           "/decidim-packs/js/decidim_core-9836bc10eb703d30229d.js"
         ],
         "css": [
-          "/decidim-packs/css/decidim_core-d2340e34.css"
+          "/decidim-packs/css/decidim_core-15500a21.css"
         ]
       }
     },
