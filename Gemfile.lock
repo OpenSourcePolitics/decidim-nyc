@@ -912,6 +912,7 @@ DEPENDENCIES
   puma (>= 5.5.1)
   redis
   repost
+  rubocop
   rubocop-faker
   sentry-rails
   sentry-ruby
