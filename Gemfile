@@ -31,7 +31,7 @@ gem "faker", "~> 2.14"
 gem "nokogiri", "1.13.4"
 
 gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
-gem "aws-sdk-s3", require: false
+gem "aws-sdk", '~> 3', require: false
 gem "fog-aws"
 gem "sys-filesystem"
 
