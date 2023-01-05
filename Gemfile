@@ -65,4 +65,5 @@ group :production do
   gem "sentry-sidekiq"
   gem "sidekiq"
   gem "sidekiq-scheduler"
+  gem "rubocop"
 end
