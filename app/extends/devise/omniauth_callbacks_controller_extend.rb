@@ -3,7 +3,7 @@
 module Devise
   class OmniauthCallbacksControllerExtend
     def dummy
-      return 0
+      0
     end
   end
 end

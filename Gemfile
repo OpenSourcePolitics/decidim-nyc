@@ -60,10 +60,10 @@ group :production do
   gem "newrelic_rpm"
   gem "passenger"
   gem "redis"
+  gem "rubocop"
   gem "sentry-rails"
   gem "sentry-ruby"
   gem "sentry-sidekiq"
   gem "sidekiq"
   gem "sidekiq-scheduler"
-  gem "rubocop"
 end
