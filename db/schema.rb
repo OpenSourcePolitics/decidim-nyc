@@ -1438,34 +1438,6 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
     t.index ["valuator_role_type", "valuator_role_id"], name: "decidim_proposals_valuation_assignment_valuator_role"
   end
 
-  create_table "decidim_reminder_deliveries", force: :cascade do |t|
-    t.bigint "decidim_reminder_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["decidim_reminder_id"], name: "index_decidim_reminder_deliveries_on_decidim_reminder_id"
-  end
-
-  create_table "decidim_reminder_records", force: :cascade do |t|
-    t.string "state", default: "active"
-    t.string "string", default: "active"
-    t.bigint "decidim_reminder_id"
-    t.string "remindable_type", null: false
-    t.bigint "remindable_id", null: false
-    t.index ["decidim_reminder_id"], name: "index_decidim_reminder_records_on_decidim_reminder_id"
-    t.index ["remindable_type", "remindable_id"], name: "index_decidim_reminder_records_remindable"
-    t.index ["state"], name: "index_decidim_reminder_records_on_state"
-    t.index ["string"], name: "index_decidim_reminder_records_on_string"
-  end
-
-  create_table "decidim_reminders", force: :cascade do |t|
-    t.bigint "decidim_user_id", null: false
-    t.bigint "decidim_component_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["decidim_component_id"], name: "index_decidim_reminders_on_decidim_component_id"
-    t.index ["decidim_user_id"], name: "index_decidim_reminders_on_decidim_user_id"
-  end
-
   create_table "decidim_reports", id: :serial, force: :cascade do |t|
     t.integer "decidim_moderation_id", null: false
     t.integer "decidim_user_id", null: false
@@ -1630,18 +1602,6 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_decidim_system_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_decidim_system_admins_on_reset_password_token", unique: true
-  end
-
-  create_table "decidim_templates_templates", force: :cascade do |t|
-    t.integer "decidim_organization_id", null: false
-    t.string "templatable_type"
-    t.bigint "templatable_id"
-    t.jsonb "name", null: false
-    t.jsonb "description"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["decidim_organization_id"], name: "index_decidim_templates_organization"
-    t.index ["templatable_type", "templatable_id"], name: "index_decidim_templates_templatable"
   end
 
   create_table "decidim_term_customizer_constraints", force: :cascade do |t|
@@ -1846,17 +1806,6 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
     t.index ["uid"], name: "index_oauth_applications_on_uid", unique: true
   end
 
-  create_table "request_environment_rules", id: :serial, force: :cascade do |t|
-    t.integer "redirect_rule_id", null: false
-    t.string "environment_key_name", null: false
-    t.string "environment_value", null: false
-    t.boolean "environment_value_is_regex", default: false, null: false
-    t.boolean "environment_value_is_case_sensitive", default: true, null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.index ["redirect_rule_id"], name: "index_request_environment_rules_on_redirect_rule_id"
-  end
-
   create_table "versions", force: :cascade do |t|
     t.string "item_type", null: false
     t.integer "item_id", null: false
@@ -1893,8 +1842,6 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
   add_foreign_key "decidim_participatory_processes", "decidim_organizations"
   add_foreign_key "decidim_participatory_processes", "decidim_scope_types"
-  add_foreign_key "decidim_reminder_deliveries", "decidim_reminders"
-  add_foreign_key "decidim_reminder_records", "decidim_reminders"
   add_foreign_key "decidim_scope_types", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_organizations"
   add_foreign_key "decidim_scopes", "decidim_scope_types", column: "scope_type_id"
