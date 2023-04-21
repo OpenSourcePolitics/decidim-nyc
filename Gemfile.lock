@@ -936,10 +936,12 @@ PLATFORMS
   ruby
   x86_64-darwin-20
   x86_64-darwin-21
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
   activejob-uniqueness
+  aws-sdk-s3
   bootsnap (~> 1.4)
   brakeman (~> 5.1)
   byebug (~> 11.0)
@@ -965,13 +967,13 @@ DEPENDENCIES
   lograge
   newrelic_rpm
   nokogiri (= 1.13.4)
-  omniauth-publik!
   omniauth-rails_csrf_protection
   omniauth-saml
   passenger
   puma (>= 5.5.1)
   redis
   repost
+  rubocop
   rubocop-faker
   sentry-rails
   sentry-ruby
@@ -985,7 +987,7 @@ DEPENDENCIES
   web-console (= 4.0.4)
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 2.7.7p221
 
 BUNDLED WITH
-   2.3.13
+   2.4.1

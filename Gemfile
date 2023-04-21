@@ -17,7 +17,7 @@ gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePo
 gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slider", branch: "main"
 gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
-gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik"
+# gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik"
 
 gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: DECIDIM_VERSION do
   # Rspec:disable Bundler/OrderedGems
@@ -40,6 +40,7 @@ gem "faker", "~> 2.14"
 gem "nokogiri", "1.13.4"
 
 gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
+gem "aws-sdk-s3", require: false
 gem "fog-aws"
 gem "sys-filesystem"
 
@@ -68,6 +69,7 @@ group :production do
   gem "newrelic_rpm"
   gem "passenger"
   gem "redis"
+  gem "rubocop"
   gem "sentry-rails"
   gem "sentry-ruby"
   gem "sentry-sidekiq"
