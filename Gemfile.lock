@@ -26,14 +26,6 @@ GIT
       decidim-core (~> 0.26)
 
 GIT
-  remote: https://github.com/OpenSourcePolitics/omniauth-publik
-  revision: ab703a565c402b773ce0025593554b329f603e5c
-  specs:
-    omniauth-publik (0.1.1)
-      omniauth (~> 2.0)
-      omniauth-oauth2 (>= 1.7.2, < 2.0)
-
-GIT
   remote: https://github.com/Pipeline-to-Power/decidim-module-ptp.git
   revision: 649b139d6d3431e9d4a9dabba58d3579b92ab312
   branch: release/0.26-stable
@@ -330,6 +322,22 @@ GEM
     addressable (2.8.1)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    aws-eventstream (1.2.0)
+    aws-partitions (1.751.0)
+    aws-sdk-core (3.171.0)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.651.0)
+      aws-sigv4 (~> 1.5)
+      jmespath (~> 1, >= 1.6.1)
+    aws-sdk-kms (1.63.0)
+      aws-sdk-core (~> 3, >= 3.165.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.121.0)
+      aws-sdk-core (~> 3, >= 3.165.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.4)
+    aws-sigv4 (1.5.2)
+      aws-eventstream (~> 1, >= 1.0.2)
     axe-core-api (4.6.1)
       dumb_delegator
       virtus
@@ -534,6 +542,7 @@ GEM
       ruby-vips (>= 2.0.17, < 3)
     invisible_captcha (0.13.0)
       rails (>= 3.2.0)
+    jmespath (1.6.2)
     json (2.6.3)
     jwt (2.5.0)
     kaminari (1.2.2)
@@ -987,7 +996,7 @@ DEPENDENCIES
   web-console (= 4.0.4)
 
 RUBY VERSION
-   ruby 2.7.7p221
+   ruby 2.7.1p83
 
 BUNDLED WITH
-   2.4.1
+   2.3.26
