@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_sms_twilio (originally 20220907074502)
 
 class CreateDecidimSmsTwilioDeliveries < ActiveRecord::Migration[6.0]

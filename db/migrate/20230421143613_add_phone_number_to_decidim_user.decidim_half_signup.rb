@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_half_signup (originally 20230215093510)
 
 class AddPhoneNumberToDecidimUser < ActiveRecord::Migration[6.0]
