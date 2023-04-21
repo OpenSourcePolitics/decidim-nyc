@@ -79,11 +79,6 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
         border-bottom: none;
       }
     }
-
-    .goog-te-gadget-simple span span:first-child{
-      font-size: .8rem;
-      font-weight: normal;
-    }
   }
 
   .topbar__user__logged {
@@ -202,6 +197,29 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
       &:hover {
         color: white;
       }
+    }
+  }
+}
+
+.g-language-choose {
+  .goog-te-gadget {
+    text-indent: -9999px;
+    font-size: 0;
+
+    & > span {
+      display: none;
+    }
+
+    & > div {
+      text-indent: 0; 
+    }
+
+    select {
+      font-family: $body-font-family;
+      font-size: 1rem;
+      background-color: transparent;
+      color: var(--secondary);
+      border-color: transparent;
     }
   }
 }
