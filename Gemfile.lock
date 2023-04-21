@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-half_sign_up
+  revision: af247799d8220bf4d88384188b82238545404686
+  branch: release/0.26-stable
+  specs:
+    decidim-half_signup (0.26.0)
+      countries (~> 5.1, >= 5.1.2)
+      decidim-core (~> 0.26.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git
   revision: 3710b53715587bd67f0a20911972077bb074cb0d
   branch: release/0.26-stable
@@ -49,9 +58,10 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-slider
-  revision: b607c70d97206c337c1a59202ebbf8e1169f3506
+  revision: 71892578ff65ccb99919ce8b156ab2f74b7e2f81
+  branch: main
   specs:
-    decidim-slider (0.26.5)
+    decidim-slider (0.0.1)
       decidim-core (= 0.26.5)
 
 GIT
@@ -577,6 +587,7 @@ GEM
     mime-types-data (3.2022.0105)
     mini_magick (4.12.0)
     mini_mime (1.1.2)
+    mini_portile2 (2.8.1)
     minitest (5.16.3)
     mixlib-cli (2.1.8)
     mixlib-config (3.0.27)
@@ -593,6 +604,9 @@ GEM
       net-protocol
     newrelic_rpm (8.12.0)
     nio4r (2.5.8)
+    nokogiri (1.13.4)
+      mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
     nokogiri (1.13.4-arm64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.4-x86_64-darwin)
@@ -919,6 +933,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  ruby
   x86_64-darwin-20
   x86_64-darwin-21
   x86_64-linux
@@ -933,6 +948,7 @@ DEPENDENCIES
   decidim-conferences!
   decidim-decidim_awesome
   decidim-dev!
+  decidim-half_signup!
   decidim-homepage_interactive_map!
   decidim-phone_authorization_handler!
   decidim-ptp!
