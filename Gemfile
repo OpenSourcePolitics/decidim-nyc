@@ -11,11 +11,21 @@ gem "decidim-conferences", git: "https://github.com/decidim/decidim.git", branch
 
 # gem "acts_as_textcaptcha", "~> 4.5.1"
 gem "decidim-decidim_awesome"
-# gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: DECIDIM_VERSION
+gem "decidim-half_signup", git: "https://github.com/OpenSourcePolitics/decidim-module-half_sign_up", branch: DECIDIM_VERSION
+gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: DECIDIM_VERSION
 gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: DECIDIM_VERSION
-gem "decidim-spam_detection", git: "https://github.com/OpenSourcePolitics/decidim-spam_detection.git"
+gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slider", branch: "main"
+gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
 # gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik"
+
+gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: DECIDIM_VERSION do
+  # Rspec:disable Bundler/OrderedGems
+  gem "decidim-budgets_booth"
+  gem "decidim-smsauth"
+  gem "decidim-sms-twilio"
+  # Rspec:enable Bundler/OrderedGems
+end
 
 gem "dotenv-rails"
 
