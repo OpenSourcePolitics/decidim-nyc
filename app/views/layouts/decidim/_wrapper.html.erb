@@ -44,13 +44,23 @@ end
               <div class="logo-wrapper">
                 <%= render partial: "layouts/decidim/logo", locals: { organization: current_organization } %>
               </div>
-              <%= render partial: "layouts/decidim/topbar_search" %>
-              <%= render partial: "layouts/decidim/language_chooser" %>
               <div class="hide-for-medium topbar__menu">
                 <button type="button" data-toggle="offCanvas" aria-label="<%= t("layouts.decidim.header.navigation") %>">
                   <%= icon "menu", aria_label: t("layouts.decidim.header.navigation"), role: "img" %>
                 </button>
               </div>
+
+              <div class="topbar__user show-for-medium" data-set="nav-login-holder">
+                  <div class="topbar__user__login js-append">
+                    <a class="" href="">About</a>
+                  </div>
+              </div>
+              <div class="topbar__user show-for-medium" data-set="nav-login-holder">
+                  <div class="topbar__user__login js-append">
+                    <a class="" href="">Election Center</a>
+                  </div>
+              </div>
+
               <% if current_user %>
                 <nav class="topbar__dropmenu topbar__user__logged" aria-label="<%= t("layouts.decidim.header.user_menu") %>">
                   <%= link_to decidim.notifications_path, class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
@@ -82,22 +92,14 @@ end
               <% else %>
                 <div class="topbar__user show-for-medium" data-set="nav-login-holder">
                   <div class="topbar__user__login js-append">
-                    <% if current_organization.sign_up_enabled? %>
-                      <%= link_to t("layouts.decidim.header.sign_up"), decidim.new_user_registration_path, class: "sign-up-link" %>
-                    <% end %>
                     <%= link_to t("layouts.decidim.header.sign_in"), decidim.new_user_session_path, class: "sign-in-link" %>
                   </div>
                 </div>
               <% end %>
 
+              <%= render partial: "layouts/decidim/language_chooser" %>
               <%= render partial: "layouts/decidim/admin_links" %>
-            </div>
-          </div>
-          <div class="show-for-medium" data-set="nav-holder">
-            <div class="navbar js-append">
-              <div class="row column">
-                <%= main_menu.render %>
-              </div>
+              <%= render partial: "layouts/decidim/social_media" %>
             </div>
           </div>
         </div>
