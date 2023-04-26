@@ -20,14 +20,15 @@ gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slid
 gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
 # gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik"
+# Rspec:enable Bundler/OrderedGems
 
 gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: DECIDIM_VERSION do
+  # Rspec:disable Bundler/OrderedGems
   gem "decidim-budgets_booth"
   gem "decidim-smsauth"
   gem "decidim-sms-twilio"
+  # Rspec:enable Bundler/OrderedGems
 end
-# Rspec:enable Bundler/OrderedGems
-
 
 gem "dotenv-rails"
 
