@@ -33,6 +33,9 @@ en:
         name: Identity verification form
       osp_authorization_workflow:
         name: Authorization process
+    content_blocks:
+      html:
+        name_2: HTML Block 2
     devise:
       sessions:
         new:

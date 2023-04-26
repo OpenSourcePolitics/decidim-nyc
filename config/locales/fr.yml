@@ -33,6 +33,9 @@ fr:
         name: Formulaire de vérification d'identité
       osp_authorization_workflow:
         name: Procédure d'autorisation
+    content_blocks:
+      html:
+        name_2: Bloc HTML 2
     devise:
       sessions:
         new:

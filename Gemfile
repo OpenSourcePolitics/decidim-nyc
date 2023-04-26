@@ -22,6 +22,7 @@ gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-te
 gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: DECIDIM_VERSION do
   # Rspec:disable Bundler/OrderedGems
   gem "decidim-budgets_booth"
+  gem "decidim-smsauth"
   gem "decidim-sms-twilio"
   # Rspec:enable Bundler/OrderedGems
 end
