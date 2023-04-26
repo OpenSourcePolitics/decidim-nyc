@@ -6,7 +6,6 @@ DECIDIM_VERSION = "release/0.26-stable"
 
 ruby RUBY_VERSION
 
-# Rspec:disable Bundler/OrderedGems
 gem "decidim", git: "https://github.com/decidim/decidim.git", branch: DECIDIM_VERSION
 gem "decidim-conferences", git: "https://github.com/decidim/decidim.git", branch: DECIDIM_VERSION
 
@@ -20,7 +19,6 @@ gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slid
 gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git"
 # gem "omniauth-publik", git: "https://github.com/OpenSourcePolitics/omniauth-publik"
-# Rspec:enable Bundler/OrderedGems
 
 gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: DECIDIM_VERSION do
   # Rspec:disable Bundler/OrderedGems
