@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_18_132437) do
+ActiveRecord::Schema.define(version: 2023_04_21_143617) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "ltree"
@@ -821,6 +821,16 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
     t.index ["user_id"], name: "index_decidim_gamification_badge_scores_on_user_id"
   end
 
+  create_table "decidim_half_signup_auth_settings", force: :cascade do |t|
+    t.boolean "enable_partial_sms_signup", default: false
+    t.boolean "enable_partial_email_signup", default: false
+    t.string "slug"
+    t.bigint "decidim_organization_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["decidim_organization_id"], name: "index_half_signup_auth_settings_on_organization_id"
+  end
+
   create_table "decidim_hashtags", force: :cascade do |t|
     t.bigint "decidim_organization_id"
     t.string "name"
@@ -1292,6 +1302,10 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
     t.boolean "show_metrics", default: true
     t.integer "weight", default: 1, null: false
     t.integer "follows_count", default: 0, null: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.boolean "display_linked_assemblies", default: false
     t.index ["decidim_area_id"], name: "index_decidim_participatory_processes_on_decidim_area_id"
     t.index ["decidim_organization_id", "slug"], name: "index_unique_process_slug_and_organization", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_processes_on_decidim_organization_id"
@@ -1488,6 +1502,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
     t.integer "parent_id"
     t.string "code", null: false
     t.integer "part_of", default: [], null: false, array: true
+    t.jsonb "geojson"
     t.index ["decidim_organization_id", "code"], name: "index_decidim_scopes_on_decidim_organization_id_and_code", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_scopes_on_decidim_organization_id"
     t.index ["parent_id"], name: "index_decidim_scopes_on_parent_id"
@@ -1529,6 +1544,16 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
     t.index ["decidim_organization_id"], name: "index_decidim_share_tokens_on_decidim_organization_id"
     t.index ["decidim_user_id"], name: "index_decidim_share_tokens_on_decidim_user_id"
     t.index ["token_for_type", "token_for_id"], name: "decidim_share_tokens_token_for"
+  end
+
+  create_table "decidim_sms_twilio_deliveries", force: :cascade do |t|
+    t.string "from"
+    t.string "to"
+    t.string "body"
+    t.string "sid"
+    t.string "status"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "decidim_sortitions_sortitions", force: :cascade do |t|
@@ -1724,6 +1749,8 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
     t.integer "block_id"
     t.boolean "email_on_moderations", default: true
     t.integer "follows_count", default: 0, null: false
+    t.string "phone_number"
+    t.string "phone_country"
     t.index ["confirmation_token"], name: "index_decidim_users_on_confirmation_token", unique: true
     t.index ["decidim_organization_id"], name: "index_decidim_users_on_decidim_organization_id"
     t.index ["email", "decidim_organization_id"], name: "index_decidim_users_on_email_and_decidim_organization_id", unique: true, where: "((deleted_at IS NULL) AND (managed = false) AND ((type)::text = 'Decidim::User'::text))"
@@ -1837,6 +1864,7 @@ ActiveRecord::Schema.define(version: 2022_10_18_132437) do
   add_foreign_key "decidim_debates_debates", "decidim_scopes"
   add_foreign_key "decidim_editor_images", "decidim_organizations"
   add_foreign_key "decidim_editor_images", "decidim_users", column: "decidim_author_id"
+  add_foreign_key "decidim_half_signup_auth_settings", "decidim_organizations"
   add_foreign_key "decidim_identities", "decidim_organizations"
   add_foreign_key "decidim_newsletters", "decidim_users", column: "author_id"
   add_foreign_key "decidim_participatory_process_steps", "decidim_participatory_processes"
