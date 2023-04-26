@@ -45,6 +45,16 @@ module DevelopmentApp
 
     config.after_initialize do
       require "extends/controllers/decidim/devise/sessions_controller_extends"
+
+      Decidim.content_blocks.register(:homepage, :html2) do |content_block|
+        content_block.cell = "decidim/content_blocks/html"
+        content_block.public_name_key = "decidim.content_blocks.html.name_2"
+        content_block.settings_form_cell = "decidim/content_blocks/html_settings_form"
+
+        content_block.settings do |settings|
+          settings.attribute :html_content, type: :text, translated: true
+        end
+      end
     end
   end
 end
