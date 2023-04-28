@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: https://github.com/Pipeline-to-Power/decidim-module-ptp.git
-  revision: 7bc6fb4ef5b4a4bd5a27a1b1b08ea2d938ee3036
-  branch: release/0.26-stable
+  revision: 688242f9f53a5c791b22f27f169af54bad1b538d
+  branch: feature/0.26/zip-code-voting
   specs:
     decidim-budgets_booth (0.26.0)
       decidim-budgets (~> 0.26.0)
@@ -965,6 +965,7 @@ GEM
 PLATFORMS
   arm64-darwin-21
   x86_64-darwin-20
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -1016,7 +1017,7 @@ DEPENDENCIES
   web-console (= 4.0.4)
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 2.7.7p221
 
 BUNDLED WITH
-   2.4.6
+   2.4.1
