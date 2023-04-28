@@ -8,6 +8,7 @@ env:
   RAILS_ENV: test
   NODE_VERSION: 16.9.1
   RUBYOPT: '-W:no-deprecated'
+  RSPEC_FORMATTER: 'documentation'
 
 jobs:
   lint:
