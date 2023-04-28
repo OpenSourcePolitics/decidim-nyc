@@ -1,11 +1,13 @@
 <div class="main-footer">
+  <div class="row" style="display: flex;justify-content: space-between;align-items: center;">
   <% if current_organization.official_img_footer.attached? %>
-    <%= link_to current_organization.official_url, class: "main-footer__badge" do %>
-      <%= image_tag current_organization.attached_uploader(:official_img_footer).path, alt: current_organization.name %>
-    <% end %>
+    <div>
+      <%= link_to current_organization.official_url, class: "main-footer__badge" do %>
+        <%= image_tag current_organization.attached_uploader(:official_img_footer).path, alt: current_organization.name %>
+      <% end %>
+    </div>
   <% end %>
-  <div class="row">
-    <div class="medium-8 large-6 large-offset-3 column">
+    <div>
       <nav class="main__footer__nav">
         <ul class="footer-nav">
           <% organization_pages = current_organization.static_pages_accessible_for(current_user) %>
@@ -25,6 +27,9 @@
         </ul>
       </nav>
     </div>
-    <%= render partial: "layouts/decidim/social_media_links" %>
+    <div class="footer-socials">
+      <p style="margin: 0; text-transform: uppercase;">Follow us</p>
+      <%= render partial: "layouts/decidim/social_media_links" %>
+    </div>
   </div>
 </div>
