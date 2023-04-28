@@ -93,6 +93,8 @@ ignore_missing:
  - decidim.devise.sessions.new.*
  - decidim.meetings.withdraw.*
  - decidim.shared.login_modal.*
+ - layouts.decidim.social_media_links.*
+
 # Consider these keys used:
 ignore_unused:
   - faker.*
@@ -125,3 +127,6 @@ ignore_unused:
   - decidim.verifications.authorizations.first_login.actions.*
   - decidim.system.organizations.omniauth_settings.nyc.*
   - layouts.decidim.user_menu.sign_out
+  - decidim.accessibility.logo
+  - decidim.content_blocks.html.name_2
+  - layouts.decidim.header.sign_up

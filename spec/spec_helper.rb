@@ -9,6 +9,7 @@ AVAILABLE_LOCALES = [:en, :ca, :es].freeze
 
 RSpec.configure do |config|
   config.before do
+    config.formatter = ENV.fetch("RSPEC_FORMATTER", "progress").to_sym
     # I18n configuration
     I18n.available_locales = AVAILABLE_LOCALES
     I18n.default_locale = DEFAULT_LOCALE
