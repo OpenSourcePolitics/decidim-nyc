@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_budgets_booth (originally 20230303144938)
 
 class CreateDecidimBudgetsUserData < ActiveRecord::Migration[6.0]
