@@ -1,13 +1,13 @@
 <div class="main-footer">
-  <div class="row" style="display: flex;justify-content: space-between;align-items: center;">
+  <div class="row" data-equalizer>
   <% if current_organization.official_img_footer.attached? %>
-    <div>
+    <div class="column small-12 large-3" data-equalizer-watch>
       <%= link_to current_organization.official_url, class: "main-footer__badge" do %>
         <%= image_tag current_organization.attached_uploader(:official_img_footer).path, alt: current_organization.name %>
       <% end %>
     </div>
   <% end %>
-    <div>
+    <div class="column small-12 large-4 large-offset-2" data-equalizer-watch>
       <nav class="main__footer__nav">
         <ul class="footer-nav">
           <% organization_pages = current_organization.static_pages_accessible_for(current_user) %>
@@ -27,7 +27,7 @@
         </ul>
       </nav>
     </div>
-    <div class="footer-socials">
+    <div class="column small-12 large-3 footer-socials" data-equalizer-watch>
       <p style="margin: 0; text-transform: uppercase;">Follow us</p>
       <%= render partial: "layouts/decidim/social_media_links" %>
     </div>
