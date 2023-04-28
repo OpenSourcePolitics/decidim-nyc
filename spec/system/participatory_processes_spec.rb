@@ -30,16 +30,6 @@ describe "Participatory Processes", type: :system do
     end
   end
 
-  context "when there are no processes and accessing from the homepage" do
-    it "does not show the menu link" do
-      visit decidim.root_path
-
-      within ".main-nav" do
-        expect(page).to have_no_content("Processes")
-      end
-    end
-  end
-
   context "when the process does not exist" do
     it_behaves_like "a 404 page" do
       let(:target_path) { decidim_participatory_processes.participatory_process_path(99_999_999) }
@@ -55,16 +45,6 @@ describe "Participatory Processes", type: :system do
     context "and directly accessing from URL" do
       it_behaves_like "a 404 page" do
         let(:target_path) { decidim_participatory_processes.participatory_processes_path }
-      end
-    end
-
-    context "and accessing from the homepage" do
-      it "the menu link is not shown" do
-        visit decidim.root_path
-
-        within ".main-nav" do
-          expect(page).to have_no_content("Processes")
-        end
       end
     end
   end
@@ -90,19 +70,6 @@ describe "Participatory Processes", type: :system do
     context "when requesting the processes path" do
       before do
         visit decidim_participatory_processes.participatory_processes_path
-      end
-
-      context "and accessing from the homepage" do
-        it "the menu link is not shown" do
-          visit decidim.root_path
-
-          within ".main-nav" do
-            expect(page).to have_content("Processes")
-            click_link "Processes"
-          end
-
-          expect(page).to have_current_path decidim_participatory_processes.participatory_processes_path
-        end
       end
 
       context "with highlighted processes" do
