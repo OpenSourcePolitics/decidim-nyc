@@ -6,7 +6,6 @@
     "heroku-postgresql:hobby-dev",
     "heroku-redis:hobby-dev",
     "memcachedcloud:30",
-    "newrelic:wayne",
     "sendgrid:starter",
     "sentry:f1"
   ],
