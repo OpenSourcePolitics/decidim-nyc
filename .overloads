@@ -69,7 +69,6 @@ config/locales/decidim-direct-verifications/fr.yml
 config/locales/decidim-navigation-maps/fr.yml
 config/locales/en.yml
 config/locales/fr.yml
-config/newrelic.yml
 config/puma.rb
 config/routes.rb
 config/secrets.yml

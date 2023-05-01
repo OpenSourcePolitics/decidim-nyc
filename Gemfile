@@ -68,7 +68,6 @@ group :production do
   gem "dalli"
   gem "hiredis"
   gem "lograge"
-  gem "newrelic_rpm"
   gem "passenger"
   gem "redis"
   gem "rubocop"
