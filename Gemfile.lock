@@ -1,13 +1,4 @@
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim-module-half_sign_up
-  revision: 71560912a210fa3a7c90e6a13e75021c9f873b34
-  branch: release/0.26-stable
-  specs:
-    decidim-half_signup (0.26.0)
-      countries (~> 5.1, >= 5.1.2)
-      decidim-core (~> 0.26.0)
-
-GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git
   revision: 3bbd5fff51fbfa94ff6e784baa73af190b1c679d
   branch: release/0.26-stable
@@ -28,31 +19,8 @@ GIT
       decidim-core (~> 0.26)
 
 GIT
-  remote: https://github.com/Pipeline-to-Power/decidim-module-ptp.git
-  revision: 688242f9f53a5c791b22f27f169af54bad1b538d
-  branch: feature/0.26/zip-code-voting
-  specs:
-    decidim-budgets_booth (0.26.0)
-      decidim-budgets (~> 0.26.0)
-      decidim-core (~> 0.26.0)
-    decidim-l10n (0.26.0)
-      decidim-core (~> 0.26.0)
-    decidim-ptp (0.26.0)
-      decidim-budgets_booth (= 0.26.0)
-      decidim-core (~> 0.26.0)
-      decidim-l10n (= 0.26.0)
-      decidim-sms-twilio (= 0.26.0)
-      decidim-smsauth (= 0.26.0)
-    decidim-sms-twilio (0.26.0)
-      decidim-core (~> 0.26.0)
-      twilio-ruby (~> 5.72.0)
-    decidim-smsauth (0.26.0)
-      countries (~> 5.1, >= 5.1.2)
-      decidim-core (~> 0.26.0)
-
-GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-slider
-  revision: 71892578ff65ccb99919ce8b156ab2f74b7e2f81
+  revision: 2be3919684bbdc65c4a929228b38239f089d422b
   branch: main
   specs:
     decidim-slider (0.0.1)
@@ -421,8 +389,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.0)
-    countries (5.4.0)
-      unaccent (~> 0.3)
     crack (0.4.5)
       rexml
     crass (1.0.6)
@@ -557,7 +523,7 @@ GEM
       rails (>= 3.2.0)
     jmespath (1.6.2)
     json (2.6.3)
-    jwt (2.5.0)
+    jwt (2.7.0)
     kaminari (1.2.2)
       activesupport (>= 4.1.0)
       kaminari-actionview (= 1.2.2)
@@ -903,16 +869,11 @@ GEM
     tilt (2.1.0)
     timeout (0.3.2)
     tomlrb (2.0.3)
-    twilio-ruby (5.72.1)
-      faraday (>= 0.9, < 3.0)
-      jwt (>= 1.5, <= 2.5)
-      nokogiri (>= 1.6, < 2.0)
     tzinfo (1.2.11)
       thread_safe (~> 0.1)
     uber (0.1.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
-    unaccent (0.4.0)
     unicode-display_width (1.8.0)
     valid_email2 (2.3.1)
       activemodel (>= 3.2)
@@ -976,10 +937,8 @@ DEPENDENCIES
   decidim-conferences!
   decidim-decidim_awesome
   decidim-dev!
-  decidim-half_signup!
   decidim-homepage_interactive_map!
   decidim-phone_authorization_handler!
-  decidim-ptp!
   decidim-slider!
   decidim-spam_detection
   decidim-term_customizer!
@@ -1012,7 +971,7 @@ DEPENDENCIES
   web-console (= 4.0.4)
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 2.7.7p221
 
 BUNDLED WITH
    2.4.6
