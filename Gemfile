@@ -19,7 +19,8 @@ gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slid
 gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: DECIDIM_VERSION
 
-gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: DECIDIM_VERSION do
+# PTP_MODULE_VERSION = { github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" }
+gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" do
   # Rspec:disable Bundler/OrderedGems
   gem "decidim-budgets_booth"
   gem "decidim-smsauth"
@@ -67,7 +68,6 @@ group :production do
   gem "dalli"
   gem "hiredis"
   gem "lograge"
-  gem "newrelic_rpm"
   gem "passenger"
   gem "redis"
   gem "rubocop"

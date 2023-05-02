@@ -29,8 +29,8 @@ GIT
 
 GIT
   remote: https://github.com/Pipeline-to-Power/decidim-module-ptp.git
-  revision: caa6e5b1084eb7aa652ef907785b6a30a00b6fa8
-  branch: release/0.26-stable
+  revision: 688242f9f53a5c791b22f27f169af54bad1b538d
+  branch: feature/0.26/zip-code-voting
   specs:
     decidim-budgets_booth (0.26.0)
       decidim-budgets (~> 0.26.0)
@@ -631,7 +631,6 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
-    newrelic_rpm (9.2.0)
     nio4r (2.5.9)
     nokogiri (1.13.4-x86_64-darwin)
       racc (~> 1.4)
@@ -962,6 +961,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-20
+  x86_64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -991,7 +991,6 @@ DEPENDENCIES
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
   lograge
-  newrelic_rpm
   nokogiri (= 1.13.4)
   omniauth-rails_csrf_protection
   omniauth-saml
