@@ -1003,8 +1003,8 @@ DEPENDENCIES
   sentry-rails
   sentry-ruby
   sentry-sidekiq
-  sidekiq
-  sidekiq-scheduler
+  sidekiq (~> 7.0)
+  sidekiq-scheduler (~> 5.0)
   spring (~> 2.0)
   spring-watcher-listen (~> 2.0)
   sys-filesystem
@@ -1012,7 +1012,7 @@ DEPENDENCIES
   web-console (= 4.0.4)
 
 RUBY VERSION
-   ruby 2.7.5p203
+   ruby 2.7.7p221
 
 BUNDLED WITH
    2.4.6
