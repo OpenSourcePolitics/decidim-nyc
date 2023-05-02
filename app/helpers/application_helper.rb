@@ -41,4 +41,24 @@ module ApplicationHelper
 
     uri.to_s
   end
+
+  # Public: test if the translation mode (:google or :smartling) requested is active
+  def translation_mode?(mode)
+    current_config = Rails.application.secrets.dig(:decidim, :translation_mode).to_sym
+    if current_config == :both
+      is_switch_active = Rails.application.secrets.dig(:decidim, :translation_switch_regexp).present? &&
+                         request.path =~ Regexp.new(Rails.application.secrets.dig(:decidim, :translation_switch_regexp))
+      # when :both mode are active and the regexp is matched by the current routes then we go :smartling
+      mode.to_sym == (is_switch_active ? :smartling : :google)
+    else
+      mode.to_sym == current_config
+    end
+  end
+
+  # Public: detect a target language for automatic translation
+  def auto_target_language
+    if Rails.application.secrets.dig(:decidim, :translation_mode).to_sym == :both && response.headers["content-language"].present?
+      response.headers["content-language"].split("-").first
+    end
+  end
 end

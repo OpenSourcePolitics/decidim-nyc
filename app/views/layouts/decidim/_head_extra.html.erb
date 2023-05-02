@@ -6,15 +6,52 @@
     });
   </script>
 <% end %>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-      new google.translate.TranslateElement({
-          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-          autoDisplay: false
-      }, 'google_translate_element');
-  }
-</script>
-<script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<% if translation_mode?(:google) %>
+  <script>
+
+    const pageLanguage = 'en';
+    const autoTargetLanguage = '<%= auto_target_language %>';
+
+    function waitForElm(selector) {
+      return new Promise(resolve => {
+        if (document.querySelector(selector)) {
+          return resolve(document.querySelector(selector));
+        }
+
+        const observer = new MutationObserver(mutations => {
+          if (document.querySelector(selector)) {
+            resolve(document.querySelector(selector));
+            observer.disconnect();
+          }
+        });
+
+        observer.observe(document.body, {
+          childList: true,
+          subtree: true
+        });
+      });
+    }
+
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement(
+        {
+            pageLanguage: pageLanguage
+        },
+        'google_translate_element'
+      );
+
+      if (autoTargetLanguage != '' && autoTargetLanguage != pageLanguage ) {
+        waitForElm('#google_translate_element select option[value="' + autoTargetLanguage + '"]').then((gOption) => {
+          var gSelect = gOption.parentNode;
+          gSelect.selectedIndex= gOption.index;
+          gSelect.dispatchEvent(new Event('change'));
+        });
+      }
+
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<% end %>
 <!-- Google Tag Manager -->
 <script>
 (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=

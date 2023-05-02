@@ -73,6 +73,7 @@ jobs:
       RAILS_ENV: test
       # Set locales available for i18n tasks
       ENFORCED_LOCALES: "en"
+      TRANSLATION_MODE: "smartling"
     steps:
       - uses: rokroskar/workflow-run-cleanup-action@v0.2.2
         if: "github.ref != 'refs/heads/master' || github.ref != 'refs/heads/develop'"
