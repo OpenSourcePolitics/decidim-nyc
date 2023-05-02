@@ -335,7 +335,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     aws-eventstream (1.2.0)
-    aws-partitions (1.754.0)
+    aws-partitions (1.756.0)
     aws-sdk-core (3.171.0)
       aws-eventstream (~> 1, >= 1.0.2)
       aws-partitions (~> 1, >= 1.651.0)
@@ -350,7 +350,7 @@ GEM
       aws-sigv4 (~> 1.4)
     aws-sigv4 (1.5.2)
       aws-eventstream (~> 1, >= 1.0.2)
-    axe-core-api (4.6.1)
+    axe-core-api (4.7.0)
       dumb_delegator
       virtus
     axe-core-rspec (4.1.0)
@@ -455,7 +455,7 @@ GEM
       warden (~> 1.2.3)
     devise-i18n (1.11.0)
       devise (>= 4.9.0)
-    devise_invitable (2.0.7)
+    devise_invitable (2.0.8)
       actionmailer (>= 5.0)
       devise (>= 4.6)
     diff-lcs (1.5.0)
@@ -632,8 +632,6 @@ GEM
     net-smtp (0.3.3)
       net-protocol
     nio4r (2.5.9)
-    nokogiri (1.13.4-arm64-darwin)
-      racc (~> 1.4)
     nokogiri (1.13.4-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.13.4-x86_64-linux)
@@ -959,10 +957,9 @@ GEM
     wkhtmltopdf-binary (0.12.6.6)
     xpath (3.2.0)
       nokogiri (~> 1.8)
-    zeitwerk (2.6.7)
+    zeitwerk (2.6.8)
 
 PLATFORMS
-  arm64-darwin-21
   x86_64-darwin-20
   x86_64-darwin-22
   x86_64-linux
