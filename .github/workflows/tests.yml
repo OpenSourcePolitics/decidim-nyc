@@ -1,16 +1,30 @@
-name: Tests
-on: "push"
+name: "CI/CD"
+on: [push]
 
 env:
   CI: "true"
   SIMPLECOV: "true"
   RUBY_VERSION: 2.7.1
+  RAILS_ENV: test
+  NODE_VERSION: 16.9.1
+  RUBYOPT: '-W:no-deprecated'
+  RSPEC_FORMATTER: 'documentation'
 
 jobs:
+  lint:
+    name: Lint code
+    runs-on: ubuntu-latest
+    if: "!startsWith(github.head_ref, 'chore/l10n')"
+    timeout-minutes: 60
+    steps:
+      - uses: rokroskar/workflow-run-cleanup-action@v0.3.0
+        if: "github.ref != 'refs/heads/develop'"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: OpenSourcePolitics/lint-action@master
   tests:
     name: Tests
     runs-on: ubuntu-latest
-    if: "!startsWith(github.head_ref, 'chore/l10n')"
     services:
       postgres:
         image: postgres:11
@@ -28,32 +42,44 @@ jobs:
       DATABASE_HOST: localhost
       RAILS_ENV: test
       # Set locales available for i18n tasks
-      ENFORCED_LOCALES: "en,fr"
+      ENFORCED_LOCALES: "en"
     steps:
       - uses: rokroskar/workflow-run-cleanup-action@v0.2.2
         if: "github.ref != 'refs/heads/master' || github.ref != 'refs/heads/develop'"
         env:
           GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-      - uses: actions/checkout@v2.0.0
+      - uses: OpenSourcePolitics/rspec-action@master
         with:
-          fetch-depth: 1
-      - uses: ruby/setup-ruby@v1
+          command: 'bundle exec rspec --exclude-pattern "spec/system/**/*_spec.rb"'
+          prepare_command: "bundle exec rails db:create db:migrate"
+  system_tests:
+    name: System tests
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:11
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
+    env:
+      DATABASE_USERNAME: postgres
+      DATABASE_PASSWORD: postgres
+      DATABASE_HOST: localhost
+      RAILS_ENV: test
+      # Set locales available for i18n tasks
+      ENFORCED_LOCALES: "en"
+      TRANSLATION_MODE: "smartling"
+    steps:
+      - uses: rokroskar/workflow-run-cleanup-action@v0.2.2
+        if: "github.ref != 'refs/heads/master' || github.ref != 'refs/heads/develop'"
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      - uses: OpenSourcePolitics/rspec-action@master
         with:
-          ruby-version: ${{ env.RUBY_VERSION }}
-          bundler-cache: true
-      - name: Create db
-        run: |
-          bundle exec rails db:create
-          bundle exec rails db:migrate
-      - run: mkdir -p ./spec/tmp/screenshots
-        name: Create the screenshots folder
-      - uses: nanasess/setup-chromedriver@v1.0.1
-      - run: bundle exec rspec
-        name: RSpec
-      - run: ./.github/upload_coverage.sh $DECIDIM_MODULE $GITHUB_EVENT_PATH
-        name: Upload coverage
-      - uses: actions/upload-artifact@v2-preview
-        if: always()
-        with:
-          name: screenshots
-          path: ./spec/decidim_dummy_app/tmp/screenshots
+          command: 'bundle exec rspec "spec/system"'
+          prepare_command: "bundle exec rails db:create db:migrate"

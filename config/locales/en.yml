@@ -5,13 +5,13 @@ en:
       osp_authorization_handler:
         birthday: Birthday
         document_number: Unique number
-        postal_code: Code postal
+        postal_code: Postal code
       participatory_process:
         private_space: Private space
   decidim:
     accessibility:
       logo: Logo
-      skip_button: Skip to main content
+      skip_button: Skip button
     admin:
       participatory_space_private_users:
         create:
@@ -21,11 +21,11 @@ en:
       emendation:
         announcement:
           evaluating: |-
-            Cet amendement pour le %{amendable_type} %{proposal_link}
-            est en cours d’évaluation.
+            This amendment for %{amendable_type} %{proposal_link}
+            is in evaluation state.
     authorization_handlers:
       osp_authorization_handler:
-        explanation: Verify your identity by adding a unique number
+        explanation: Verify your identity by entering a unique number
         fields:
           birthday: Birthday
           document_number: Unique number
@@ -33,6 +33,9 @@ en:
         name: Identity verification form
       osp_authorization_workflow:
         name: Authorization process
+    content_blocks:
+      html:
+        name_2: HTML Block 2
     devise:
       sessions:
         new:
@@ -49,25 +52,66 @@ en:
           email_outro: You have received this notification because you are participating in "%{participatory_space_title}"
           email_subject: Your vote is still pending in %{participatory_space_title}
           notification_title: The vote on budget <a href="%{resource_path}">%{resource_title}</a> is still waiting for your confirmation in %{participatory_space_title}
+      users:
+        user_officialized:
+          email_intro: Participant %{name} (%{nickname}) has been officialized.
+          email_outro: You have received this notification because you are an administrator of the organization.
+          email_subject: "%{name} has been officialized"
+          notification_title: Participant %{name} (%{nickname}) has been officialized.
+      verifications:
+        verify_with_managed_user:
+          email_intro: The participant <a href="%{resource_path}">%{resource_title}</a> has tried to verify themself with the data of the managed participant <a href="%{managed_user_path}">%{managed_user_name}</a>.
+          email_outro: Check the <a href="%{conflicts_path}">Verifications's conflicts list</a> and contact the participant to verify their details and solve the issue.
+          email_subject: Failed verification attempt against a managed participant
+          notification_title: The participant <a href="%{resource_path}">%{resource_title}</a> has tried to verify themself with the data of the managed participant <a href="%{managed_user_path}">%{managed_user_name}</a>.
     meetings:
       directory:
         meetings:
           index:
             all: All
       meeting:
-        not_allowed: You are not allowed to register for this meeting.
+        not_allowed: You are not allowed to view this meeting
       meetings:
         create:
-          invalid: There was an error when creating the meeting.
-          success: The meeting was successfully created.
+          invalid: There was a problem creating this meeting.
+          success: You have created the meeting successfully.
         update:
-          invalid: There was an error when updating the meeting.
-          success: The meeting was successfully updated.
+          invalid: There was a problem updating the meeting.
+          success: You have updated the meeting successfully.
     pages:
       terms_and_conditions:
         form:
           agreement: I agree with these terms
           legend: Accept the terms of use
+    proposals:
+      create:
+        error: There was a problem saving
+        success: Success
+      destroy_draft:
+        error: Error
+        success: Success
+      proposals:
+        compare:
+          no_similars_found: No similars found
+      publish:
+        error: Error
+        success: Success
+      update:
+        error: There was a problem saving
+        success: Proposal successfully updated.
+      update_draft:
+        error: There was a problem saving
+        success: Success
+      withdraw:
+        errors:
+          has_supports: This proposal can not be withdrawn because it already has supports.
+    scopes:
+      global: Global
+      picker:
+        cancel: Cancel
+        change: Change
+        choose: Choose
+        currently_selected: Currently selected
     shared:
       login_modal:
         close_modal: Close modal
@@ -86,12 +130,19 @@ en:
             idp_sso_target_url: idp sso target url
             issuer: Issuer
             provider_name: Provider name
+          publik:
+            client_id: Client ID
+            client_secret: Client secret
+            site_url: Site URL
     verifications:
       authorizations:
+        create:
+          error: Error
+          success: Success
         first_login:
           actions:
-            osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
-            osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+            osp_authorization_handler: Verify with the identity verification form
+            osp_authorization_workflow: Verify with the identity verification form
   devise:
     sessions:
       new:
@@ -102,6 +153,20 @@ en:
         forgot_your_password: Forgot your password
         sign_in_with_provider: Sign in with %{provider}
         sign_up_with_provider: Create an account with %{provider}
+  faker:
+    address:
+      country_code:
+      - EN
+      - EN0
+      - EN1
+      - EN2
+      - EN3
+      - EN4
+      - EN5
+      - EN6
+      - EN7
+      - EN8
+      - EN9
   layouts:
     decidim:
       footer:

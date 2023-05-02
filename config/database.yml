@@ -27,6 +27,7 @@ default: &default
   username: <%= ENV.fetch("DATABASE_USERNAME") { "" } %>
   password: <%= ENV.fetch("DATABASE_PASSWORD") { "" } %>
   database: <%= ENV.fetch("DATABASE_NAME") { "osp_app" } %>
+  prepared_statements: <%= ENV.fetch("DATABASE_PREPARED_STATEMENTS") { true } %>
 
 development:
   <<: *default
@@ -86,4 +87,10 @@ test:
 #
 production:
   <<: *default
-  # url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  encoding: unicode
+  database: <%= ENV['RDS_DB_NAME'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOSTNAME'] %>
+  port: <%= ENV['RDS_PORT'] %>

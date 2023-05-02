@@ -1,6 +1,8 @@
+<<<<<<< HEAD
   # How to contribute to the Decidim of the New York City
 
 We're really glad you're reading this, you might be interested by the code source of the New York City Decidim application.
+
 
 If you haven't already, come find the Decidim community in [Gitter](https://gitter.im/decidim/decidim). Community wants you working on things you're excited about.
 

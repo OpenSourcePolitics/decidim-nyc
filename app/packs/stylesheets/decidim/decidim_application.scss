@@ -1,0 +1,225 @@
+// This is a file that can be overridden by the application in order to override styles
+// Notice that this file is included at the very end of the stylesheets packs to have
+// more priority
+//
+// To override CSS variables or Foundation settings use _decidim-settings.scss
+//
+// By default this is empty.
+
+@import "email/email-custom";
+@import "modules/footer";
+
+@import "fontface";
+// TODO : PR on decidim-core/app/assets/stylesheets/decidim/utils/_settings.scss to add !default on this variable.
+$body-font-family: 'Ultramagnetic', Helvetica, Arial, sans-serif;
+
+body, h1, h2, h3, h4, h5, h6, p, a, span {
+  font-family: $body-font-family;
+}
+
+.application-header {
+  background-color: black;
+  color: white;
+  padding: 0;
+
+  .logo-official {
+    padding-right: 6px;
+    margin: 0 7px 0 2px;
+    border-right: 1px solid #666;
+    img {
+      height: 14px;
+      position: relative;
+      top: -1px;
+    }
+  }
+
+  .organization-name {
+    color: white;
+    font-weight: 700;
+    font-size: .8rem;
+    line-height: 1rem;
+    vertical-align: middle;
+  }
+}
+
+
+@media screen and (max-width: 39.99875em) {
+  .title-bar {
+    border-top: none;
+  }
+
+  .language-choose {
+    float: right;
+    font-size: .8rem;
+    margin-left: 0;
+    position: static;
+
+    .dropdown.menu > li > a {
+      background-color: transparent;
+      padding: 0 1.2rem;
+      color: white;
+    }
+
+    .dropdown.menu > li.is-dropdown-submenu-parent > a::after {
+      border-color: white transparent transparent;
+    }
+
+    .dropdown.menu > li.opens-left > .is-dropdown-submenu {
+      top: 20px;
+      right: -10px;
+
+      a {
+        color: var(--secondary);
+        padding: 10px 1.7rem;
+        text-align: right;
+        border-bottom: 1px solid #e8e8e8;
+      }
+
+      li:last-child a {
+        border-bottom: none;
+      }
+    }
+  }
+
+  .topbar__user__logged {
+    padding: 0;
+  }
+}
+
+
+.topbar__menu button {
+  color: var(--secondary);
+  margin-left: 1rem;
+  margin-bottom: 5px;
+
+  .icon {
+    vertical-align: middle;
+  }
+}
+
+#loginModal .columns.large-4.mediumlarge-6.medium-8.medium-centered {
+  width: auto;
+  max-width: fit-content;
+}
+
+.button--social--mini {
+  padding: 0 1rem;
+}
+
+.initiative-types-select {
+  white-space: normal !important;
+  word-break: break-all !important;
+  overflow-wrap: break-word !important;
+
+  padding-bottom: 0;
+
+  option {
+    position: relative;
+    display: block;
+    margin: 0 -15px 5px  0;
+    padding: 5px 10px;
+    font-size: 90%;
+    line-height: 17px;
+    color: $secondary;
+    border: 1px solid #e8e8e8;
+    border-radius: 3px;
+    cursor: pointer;
+    white-space: normal !important;
+    word-break: break-all !important;
+    overflow-wrap: break-word !important;
+    text-overflow: clip;
+    overflow-x: hidden;
+
+    &:hover {
+      background: #e8e8e8;
+    }
+  }
+
+  &:focus {
+    border-color: #238FF7;
+    option:checked {
+      background: #238FF7;
+      color: white;
+    }
+  }
+}
+
+.highlighted_proposals .card--proposal {
+  width: 100%;
+}
+
+// Hide autorisation handler profile tab
+// #user-settings-tabs > li:nth-child(3) {
+//   display: none;
+// }
+
+.main-footer__badge {
+  text-align: center;
+}
+
+@media print, screen and (min-width: 64em) {
+  .main-footer__badge {
+    position: relative;
+    text-align: left;
+  }
+}
+
+.topbar div {
+  align-items: center;
+}
+
+.mini-footer .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .decidim-logo {
+    display: flex;
+    flex-grow: 0;
+    width: auto;
+    margin: 0 .5rem;
+  }
+
+  img {
+    height: 1rem;
+    margin-top: -0.25rem;
+  }
+
+  .mf-text {
+    font-size: 80%;
+    line-height: 1rem;
+    color: white;
+
+    a {
+      color: white;
+      font-weight: 600;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}
+
+.g-language-choose {
+  .goog-te-gadget {
+    text-indent: -9999px;
+    font-size: 0;
+
+    & > span {
+      display: none;
+    }
+
+    & > div {
+      text-indent: 0; 
+    }
+
+    select {
+      font-family: $body-font-family;
+      font-size: 1rem;
+      background-color: transparent;
+      color: var(--secondary);
+      border-color: transparent;
+    }
+  }
+}

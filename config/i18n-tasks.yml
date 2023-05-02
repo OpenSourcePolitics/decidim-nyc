@@ -84,6 +84,16 @@ translation:
 ignore_missing:
  - faker.*
  - decidim.proposals.*
+ - decidim.devise.shared.omniauth_buttons.or
+ - devise.shared.links.sign_in_with_provider
+ - layouts.decidim.header.user_menu
+ - layouts.decidim.header.user_menu
+ - decidim.devise.shared.omniauth_buttons.or
+ - devise.shared.links.sign_in_with_provider
+ - decidim.devise.sessions.new.*
+ - decidim.meetings.withdraw.*
+ - decidim.shared.login_modal.*
+ - layouts.decidim.social_media_links.*
 
 # Consider these keys used:
 ignore_unused:
@@ -99,3 +109,24 @@ ignore_unused:
   - decidim.verifications.authorizations.first_login.actions.osp_authorization_workflow
   - layouts.decidim.user_menu.account
   - decidim.system.organizations.omniauth_settings.nyc.*
+  - decidim.amendments.emendation.announcement.evaluating
+  - decidim.authorization_handlers.osp_authorization_handler.{explanation, name}
+  - decidim.authorization_handlers.osp_authorization_handler.fields.*
+  - decidim.authorization_handlers.osp_authorization_workflow.name
+  - decidim.events.budgets.pending_order.*
+  - decidim.events.users.user_officialized.*
+  - decidim.events.verifications.verify_with_managed_user.*
+  - decidim.meetings.meeting.not_allowed
+  - decidim.meetings.directory.meetings.index.all
+  - decidim.meetings.meetings.{create, update}.{invalid, success}
+  - decidim.scopes.global
+  - decidim.scopes.picker.*
+  - decidim.system.organizations.omniauth_settings.{france_connect, france_connect_profile, france_connect_uid}.*
+  - decidim.system.organizations.omniauth_settings.publik.*
+  - decidim.verifications.authorizations.create.*
+  - decidim.verifications.authorizations.first_login.actions.*
+  - decidim.system.organizations.omniauth_settings.nyc.*
+  - layouts.decidim.user_menu.sign_out
+  - decidim.accessibility.logo
+  - decidim.content_blocks.html.name_2
+  - layouts.decidim.header.sign_up

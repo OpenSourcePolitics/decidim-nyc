@@ -1,36 +1,26 @@
 # Overrides
 
-## Fix geocoded map broken when latitude or longitude is NaN
-
-* `app/controllers/decidim/proposals/proposals_controller.rb`
-
-```ruby
-# on line 44
-@all_geocoded_proposals = @base_query.geocoded.where.not(latitude: Float::NAN, longitude: Float::NAN)
-```
-
-## Update admin settings and fix title bar
-### Modified
-- **app/views/layouts/decidim/admin/_title_bar.html.erb**
-- **app/views/layouts/decidim/admin/settings.html.erb**
-
-## Fix metrics issue in admin dashboard
- - **app/stylesheets/decidim/vizzs/_areachart.scss**
-```scss
-    .area{
-        fill: rgba(140,198,63,0.36);;
-    }
-```
-
 ## Fix date display on meeting show view
 When updating decidim date format from french to american format, date on meeting show view doesn't change
- - **app/cells/decidim/author/date.erb**
+* `app/cells/decidim/author/date.erb`
 ```html
     <%= l creation_date.to_date, format: :decidim_short %>
 ```
+
 ## Fix meetings orders in indexes
 * `app/controllers/decidim/meetings/meetings_controller.rb`
 * `app/controllers/decidim/meetings/directory/meetings_controller.rb`
+
+
+## Load decidim-awesome assets only if dependencie is present
+* `app/views/layouts/decidim/_head.html.erb:33`
+
+## Fix geocoded proposals
+* `app/controllers/decidim/proposals/proposals_controller.rb:44`
+```ruby
+  @all_geocoded_proposals = @base_query.geocoded.where.not(latitude: Float::NAN, longitude: Float::NAN)
+```
+
 ##  Fix meetings registration serializer
 * `app/serializers/decidim/meetings/registration_serializer.rb`
 ## Fix UserAnswersSerializer for CSV exports
@@ -133,3 +123,31 @@ f510f63 - Remove order reminder from Sidekiq configuration and comment REDIS_URL
 * `lib/omniauth/strategies/nyc.rb`
 7a005e1 - Merge branch 'develop', 2021-12-03
 
+## Fix metrics issue in admin dashboard
+ - **app/stylesheets/decidim/vizzs/_areachart.scss**
+```scss
+    .area{
+        fill: rgba($primary, .2);;
+    }
+```
+
+## Add FC Connect SSO
+ - **app/views/decidim/devise/shared/_omniauth_buttons.html.erb**
+```ruby
+<% if provider.match?("france") %>
+```
+
+* `app/views/decidim/scopes/picker.html.erb`
+c76437f - Modify cancel button behaviour to match close button, 2022-02-08
+
+* `app/helpers/decidim/backup_helper.rb`
+83830be - Add retention service for daily backups (#19), 2021-11-09
+
+* `app/services/decidim/s3_retention_service.rb`
+de6d804 - fix multipart object tagging (#40) (#41), 2021-12-24
+
+* `config/initializers/omniauth_publik.rb`
+9d50925 - Feature omniauth publik (#46), 2022-01-18
+
+* `lib/tasks/restore_dump.rake`
+705e0ad - Run rubocop, 2021-12-01
