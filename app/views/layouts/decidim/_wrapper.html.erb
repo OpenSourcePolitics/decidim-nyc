@@ -62,6 +62,9 @@ end
               </div>
 
               <% if current_user %>
+                <%= render partial: "layouts/decidim/language_chooser" %>
+                <%= render partial: "layouts/decidim/social_media_links" %>
+                <%= render partial: "layouts/decidim/admin_links" %>
                 <nav class="topbar__dropmenu topbar__user__logged" aria-label="<%= t("layouts.decidim.header.user_menu") %>">
                   <%= link_to decidim.notifications_path, class: "topbar__notifications #{current_user.notifications.any? ? "is-active" : ""}" do %>
                     <%= icon "bell", role: "img", aria_label: t("layouts.decidim.user_menu.notifications") %>
@@ -95,11 +98,10 @@ end
                     <%= link_to t("layouts.decidim.header.sign_in"), decidim.new_user_session_path, class: "sign-in-link" %>
                   </div>
                 </div>
+                <%= render partial: "layouts/decidim/language_chooser" %>
+                <%= render partial: "layouts/decidim/social_media_links" %>
+                <%= render partial: "layouts/decidim/admin_links" %>
               <% end %>
-
-              <%= render partial: "layouts/decidim/language_chooser" %>
-              <%= render partial: "layouts/decidim/admin_links" %>
-              <%= render partial: "layouts/decidim/social_media_links" %>
             </div>
           </div>
         </div>
