@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-slider
-  revision: 2be3919684bbdc65c4a929228b38239f089d422b
+  revision: f99d06ba4bd6241a4641d6e6d3d4d88ec695f9dc
   branch: main
   specs:
     decidim-slider (0.0.1)
@@ -971,7 +971,7 @@ DEPENDENCIES
   web-console (= 4.0.4)
 
 RUBY VERSION
-   ruby 2.7.7p221
+   ruby 2.7.5p203
 
 BUNDLED WITH
    2.4.6
