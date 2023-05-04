@@ -20,7 +20,7 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-slider
-  revision: f99d06ba4bd6241a4641d6e6d3d4d88ec695f9dc
+  revision: d2a2090382b24be3f45267d61fc82546ca2235e9
   branch: main
   specs:
     decidim-slider (0.0.1)
