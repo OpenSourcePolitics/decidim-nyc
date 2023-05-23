@@ -1,4 +1,13 @@
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-half_sign_up
+  revision: 61ae2356689beabfd4ff9dd762f86267786a37cc
+  branch: release/0.26-stable
+  specs:
+    decidim-half_signup (0.26.0)
+      countries (~> 5.1, >= 5.1.2)
+      decidim-core (~> 0.26.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git
   revision: 3bbd5fff51fbfa94ff6e784baa73af190b1c679d
   branch: release/0.26-stable
@@ -20,11 +29,11 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-slider
-  revision: d2a2090382b24be3f45267d61fc82546ca2235e9
+  revision: 1004d0abff85b74e323d00bc14bd2aa35eb0fdce
   branch: main
   specs:
-    decidim-slider (0.0.1)
-      decidim-core (= 0.26.5)
+    decidim-slider (0.0.2)
+      decidim-core (~> 0.26.0)
 
 GIT
   remote: https://github.com/decidim/decidim.git
@@ -389,6 +398,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.0)
+    countries (5.4.0)
+      unaccent (~> 0.3)
     crack (0.4.5)
       rexml
     crass (1.0.6)
@@ -874,6 +885,7 @@ GEM
     uber (0.1.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
+    unaccent (0.4.0)
     unicode-display_width (1.8.0)
     valid_email2 (2.3.1)
       activemodel (>= 3.2)
@@ -921,7 +933,9 @@ GEM
     zeitwerk (2.6.8)
 
 PLATFORMS
+  ruby
   x86_64-darwin-20
+  x86_64-darwin-21
   x86_64-darwin-22
   x86_64-linux
 
@@ -937,6 +951,7 @@ DEPENDENCIES
   decidim-conferences!
   decidim-decidim_awesome
   decidim-dev!
+  decidim-half_signup!
   decidim-homepage_interactive_map!
   decidim-phone_authorization_handler!
   decidim-slider!
@@ -974,4 +989,4 @@ RUBY VERSION
    ruby 2.7.7p221
 
 BUNDLED WITH
-   2.4.6
+   2.3.26
