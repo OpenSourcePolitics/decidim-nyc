@@ -57,7 +57,6 @@ gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feat
   gem "decidim-sms-twilio"
 end
 
-
 group :development, :test do
   gem "brakeman", "~> 5.1"
   gem "byebug", "~> 11.0", platform: :mri
