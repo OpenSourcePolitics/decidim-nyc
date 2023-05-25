@@ -95,6 +95,7 @@ fr:
           actions:
             osp_authorization_handler: Vérifier avec le formulaire de vérification de l'identité
             osp_authorization_workflow: Vérifier avec le formulaire de vérification de l'identité
+            phone_authorization_handler: Vérifier avec le numéro de téléphone
   devise:
     sessions:
       new:

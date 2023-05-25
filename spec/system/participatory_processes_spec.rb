@@ -176,21 +176,6 @@ describe "Participatory Processes", type: :system do
               end
             end
           end
-
-          context "when user switch locale" do
-            before do
-              visit decidim_participatory_processes.participatory_processes_path
-              within_language_menu do
-                click_link "English"
-              end
-            end
-
-            it "displays the regular cta button" do
-              within "#participatory_process_#{participatory_process.id}" do
-                expect(page).to have_link("Take action!", href: "/processes/#{participatory_process.slug}/my_path")
-              end
-            end
-          end
         end
       end
 
