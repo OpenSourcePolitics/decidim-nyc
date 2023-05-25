@@ -20,13 +20,13 @@ gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: DECIDIM_VERSION
 
 # PTP_MODULE_VERSION = { github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" }
-# gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" do
-#   # Rspec:disable Bundler/OrderedGems
-#   gem "decidim-budgets_booth"
-#   gem "decidim-smsauth"
-#   gem "decidim-sms-twilio"
-#   # Rspec:enable Bundler/OrderedGems
-# end
+gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" do
+  # Rspec:disable Bundler/OrderedGems
+  gem "decidim-budgets_booth"
+  gem "decidim-smsauth"
+  gem "decidim-sms-twilio"
+  # Rspec:enable Bundler/OrderedGems
+end
 
 gem "dotenv-rails"
 
