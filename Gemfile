@@ -52,9 +52,11 @@ gem "omniauth-saml"
 
 # PTP_MODULE_VERSION = { github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" }
 gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" do
+  # Rspec:disable Bundler/OrderedGems
   gem "decidim-budgets_booth"
   gem "decidim-smsauth"
   gem "decidim-sms-twilio"
+  # Rspec:enable Bundler/OrderedGems
 end
 
 group :development, :test do
