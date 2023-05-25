@@ -50,6 +50,14 @@ gem "sys-filesystem"
 gem "omniauth-rails_csrf_protection"
 gem "omniauth-saml"
 
+# PTP_MODULE_VERSION = { github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" }
+gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" do
+  gem "decidim-budgets_booth"
+  gem "decidim-smsauth"
+  gem "decidim-sms-twilio"
+end
+
+
 group :development, :test do
   gem "brakeman", "~> 5.1"
   gem "byebug", "~> 11.0", platform: :mri
