@@ -41,11 +41,7 @@ module Decidim
       end
 
       def after_sign_out_path_for(user)
-        if session["saml_uid"] && session["saml_session_index"] && current_organization.enabled_omniauth_providers.dig(:nyc, :idp_slo_target_url)
-          "#{user_nyc_omniauth_authorize_path}/spslo"
-        else
-          request.referer || super
-        end
+        request.referer || super
       end
 
       private
