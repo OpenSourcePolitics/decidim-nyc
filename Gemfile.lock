@@ -20,6 +20,14 @@ GIT
       rgeo-proj4 (~> 3.1)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals
+  revision: 2b8395c7db658e3d226cf41438c5828e48f486c2
+  branch: release/0.26-stable
+  specs:
+    decidim-homepage_proposals (1.0.0)
+      decidim-core (~> 0.26)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
   revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
   branch: release/0.26-stable
@@ -970,6 +978,7 @@ DEPENDENCIES
   decidim-dev (~> 0.26.0)
   decidim-half_signup!
   decidim-homepage_interactive_map!
+  decidim-homepage_proposals!
   decidim-phone_authorization_handler!
   decidim-ptp!
   decidim-slider!

@@ -6,6 +6,7 @@
     "@decidim/core": "file:packages/core",
     "@decidim/elections": "file:packages/elections",
     "@decidim/webpacker": "file:packages/webpacker",
+    "@glidejs/glide": "^3.6.0",
     "@rails/webpacker": "^6.0.0-rc.6",
     "codemirror": "^5.65.9",
     "europa": "^4.0.0",

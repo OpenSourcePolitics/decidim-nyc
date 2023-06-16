@@ -19,6 +19,7 @@ gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePo
 gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slider", branch: "main"
 gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/mainio/decidim-module-term_customizer.git", branch: DECIDIM_BRANCH
+gem "decidim-homepage_proposals", git: "https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals", branch: "release/0.26-stable"
 
 gem "dotenv-rails"
 
