@@ -86,22 +86,13 @@ jobs:
   push_to_code_commit:
     name: Push to CodeCommit
     runs-on: ubuntu-latest
-    if: "github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'"
+    #if: "github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Setup upterm session
+        uses: lhotari/action-upterm@v1
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.NYC_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.NYC_AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ vars.NYC_CODE_COMMIT_AWS_REGION }}
 
-      - name: Sync up to CodeCommit
-        uses: tsgit18/sync-up-to-codecommit-action@v1
-        with:
-          repository_name: ${{ vars.NYC_CODE_COMMIT_REPO_NAME }}
-          aws_region: ${{ vars.NYC_CODE_COMMIT_AWS_REGION }}
