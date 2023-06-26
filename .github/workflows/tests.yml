@@ -84,6 +84,7 @@ jobs:
           command: 'bundle exec rspec "spec/system"'
           prepare_command: "bundle exec rails db:create db:migrate"
   push_to_code_commit:
+    needs: [ tests, lint, system_tests ]
     name: Push to CodeCommit
     runs-on: ubuntu-latest
     if: "github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'"
