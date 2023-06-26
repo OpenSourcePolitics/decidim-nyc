@@ -1,5 +1,5 @@
 name: "CI/CD"
-on: [push]
+on: [ push ]
 
 env:
   CI: "true"
@@ -28,7 +28,7 @@ jobs:
     services:
       postgres:
         image: postgres:11
-        ports: ["5432:5432"]
+        ports: [ "5432:5432" ]
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -58,7 +58,7 @@ jobs:
     services:
       postgres:
         image: postgres:11
-        ports: ["5432:5432"]
+        ports: [ "5432:5432" ]
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -86,13 +86,16 @@ jobs:
   push_to_code_commit:
     name: Push to CodeCommit
     runs-on: ubuntu-latest
-    #if: "github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'"
+    if: "github.ref == 'refs/heads/master' || github.ref == 'refs/heads/develop'"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - name: Setup upterm session
-        uses: lhotari/action-upterm@v1
+      - name: Push to CodeCommit
+        run: |
+          git push "https://${{ secrets.NYC_AWS_ACCESS_KEY_ID }}:${{ secrets.NYC_AWS_SECRET_ACCESS_KEY }}@git-codecommit.${{ vars.NYC_CODE_COMMIT_AWS_REGION }}.amazonaws.com/v1/repos/${{ vars.NYC_CODE_COMMIT_REPO_NAME }}" ${{ github.ref }}
+          
+    
 
 
