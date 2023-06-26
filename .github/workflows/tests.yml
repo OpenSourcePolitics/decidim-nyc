@@ -1,5 +1,5 @@
 name: "CI/CD"
-on: [push]
+on: [ push ]
 
 env:
   CI: "true"
@@ -28,7 +28,7 @@ jobs:
     services:
       postgres:
         image: postgres:11
-        ports: ["5432:5432"]
+        ports: [ "5432:5432" ]
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -58,7 +58,7 @@ jobs:
     services:
       postgres:
         image: postgres:11
-        ports: ["5432:5432"]
+        ports: [ "5432:5432" ]
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -92,16 +92,10 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
+      - name: Push to CodeCommit
+        run: |
+          git push "https://${{ secrets.NYC_AWS_ACCESS_KEY_ID }}:${{ secrets.NYC_AWS_SECRET_ACCESS_KEY }}@git-codecommit.${{ vars.NYC_CODE_COMMIT_AWS_REGION }}.amazonaws.com/v1/repos/${{ vars.NYC_CODE_COMMIT_REPO_NAME }}" ${{ github.ref }}
+          
+    
 
-      - name: Configure AWS Credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        with:
-          aws-access-key-id: ${{ secrets.NYC_AWS_ACCESS_KEY_ID }}
-          aws-secret-access-key: ${{ secrets.NYC_AWS_SECRET_ACCESS_KEY }}
-          aws-region: ${{ vars.NYC_CODE_COMMIT_AWS_REGION }}
 
-      - name: Sync up to CodeCommit
-        uses: tsgit18/sync-up-to-codecommit-action@v1
-        with:
-          repository_name: ${{ vars.NYC_CODE_COMMIT_REPO_NAME }}
-          aws_region: ${{ vars.NYC_CODE_COMMIT_AWS_REGION }}
