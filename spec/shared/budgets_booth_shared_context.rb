@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 shared_context "with scopes" do
   let(:parent_scope) { create(:scope, organization: organization) }
   let!(:subscopes) { create_list(:scope, 3, parent: parent_scope, organization: organization) }
@@ -26,7 +28,6 @@ shared_context "with scopes" do
     end
   end
 end
-
 
 shared_context "with scoped budgets" do
   include_context "with scopes"
@@ -79,7 +80,6 @@ shared_examples "ensure user data" do
     end
   end
 end
-
 
 shared_examples "not allowable voting" do
   it "redirects the user" do
