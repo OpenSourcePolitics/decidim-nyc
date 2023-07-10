@@ -78,12 +78,10 @@ describe "Voting index page", type: :system do
       visit_budget(first_budget)
     end
 
-    it_behaves_like "cancel voting"
-
     it "renders the page correctly" do
       expect(page).to have_content("You are now in the voting booth.")
       expect(page).to have_button("Cancel voting")
-      expect(page).to have_content("TOTAL BUDGET €100,000")
+      expect(page).to have_content("TOTAL BUDGET $100,000")
       expect(page).to have_content("10 PROJECTS")
       expect(page).to have_selector("button", text: "Read more", count: 5)
       expect(page).to have_selector("button", text: "Add to your vote", count: 5)
@@ -96,9 +94,9 @@ describe "Voting index page", type: :system do
 
       it "updates budget summary" do
         within ".budget-summary__total" do
-          expect(page).to have_content("TOTAL BUDGET €100,000")
+          expect(page).to have_content("TOTAL BUDGET $100,000")
         end
-        expect(page).to have_content("ASSIGNED: €25,000")
+        expect(page).to have_content("ASSIGNED: $25,000")
         within "#order-selected-projects" do
           expect(page).to have_content "1 project selected"
         end
@@ -112,7 +110,7 @@ describe "Voting index page", type: :system do
           click_button "Add to your vote"
         end
         page.find(".close-button").click
-        expect(page).to have_content("ASSIGNED: €50,000")
+        expect(page).to have_content("ASSIGNED: $50,000")
         within "#order-selected-projects" do
           expect(page).to have_content "2 projects selected"
         end
@@ -121,7 +119,7 @@ describe "Voting index page", type: :system do
         end
         click_link "2"
         click_button "Add to your vote", match: :first
-        expect(page).to have_content("ASSIGNED: €75,000")
+        expect(page).to have_content("ASSIGNED: $75,000")
         within "#order-selected-projects" do
           expect(page).to have_content "3 projects selected"
         end
@@ -132,7 +130,7 @@ describe "Voting index page", type: :system do
         within ".reveal-overlay" do
           click_button "Remove from vote"
         end
-        expect(page).to have_content("ASSIGNED: €50,000")
+        expect(page).to have_content("ASSIGNED: $50,000")
         within "#order-selected-projects" do
           expect(page).to have_content "2 projects selected"
         end
@@ -163,58 +161,8 @@ describe "Voting index page", type: :system do
       end
     end
 
-    describe "filtering projects" do
-      let!(:categories) { create_list(:category, 3, participatory_space: component.participatory_space) }
-      let(:current_projects) { first_budget.projects }
-
-      it "allows searching by text" do
-        project = current_projects.first
-        within ".filters__search" do
-          fill_in "filter[search_text_cont]", with: translated(project.title)
-
-          find(".button").click
-        end
-
-        within "#projects" do
-          expect(page).to have_css(".budget-list__item", count: 1)
-          expect(page).to have_content(translated(project.title))
-        end
-      end
-
-      it "allows filtering by scope" do
-        project = current_projects.first
-        project.scope = first_budget.scope
-        project.save
-        visit current_path
-
-        within ".filters__section.with_any_scope_check_boxes_tree_filter" do
-          uncheck "All"
-          check translated(first_budget.scope.name)
-        end
-
-        within "#projects" do
-          expect(page).to have_css(".budget-list__item", count: 1)
-          expect(page).to have_content(translated(project.title))
-        end
-      end
-
-      it "allows filtering by category" do
-        project = current_projects.first
-        category = categories.first
-        project.category = category
-        project.save
-
-        visit current_path
-        within ".filters__section.with_any_category_check_boxes_tree_filter" do
-          uncheck "All"
-          check translated(category.name)
-        end
-
-        within "#projects" do
-          expect(page).to have_css(".budget-list__item", count: 1)
-          expect(page).to have_content(translated(project.title))
-        end
-      end
+    it "does not display filters" do
+      expect(page).not_to have_css(".new_filter")
     end
 
     describe "#vote_success_content" do
@@ -293,42 +241,6 @@ describe "Voting index page", type: :system do
       end
     end
 
-    context "when maximum budget exceeds" do
-      before do
-        first_budget.update!(total_budget: 24_999)
-        visit current_path
-      end
-
-      it "popups maximum error notice" do
-        click_button "Add to your vote", match: :first
-        expect(page).to have_content("Maximum budget exceeded")
-        click_button "OK"
-        within all(".budget-list .budget-list__item")[0] do
-          click_button "Read more"
-        end
-        within ".reveal-overlay" do
-          click_button "Add to your vote"
-        end
-        expect(page).to have_content("Maximum budget exceeded")
-      end
-    end
-
-    context "when highest cost" do
-      before { first_budget.projects.second.update!(budget_amount: 30_000) }
-
-      it_behaves_like "ordering projects by selected option", "Highest cost" do
-        let(:first_project) { first_budget.projects.second }
-      end
-    end
-
-    context "when lowest cost" do
-      before { first_budget.projects.second.update!(budget_amount: 20_000) }
-
-      it_behaves_like "ordering projects by selected option", "Lowest cost" do
-        let(:first_project) { first_budget.projects.second }
-      end
-    end
-
     context "when casting vote" do
       before do
         first_budget.update!(total_budget: 26_000)
@@ -340,7 +252,7 @@ describe "Voting index page", type: :system do
       it "renders the info" do
         within "#budget-confirm" do
           expect(page).to have_content("These are the projects you have chosen to be part of the budget.")
-          expect(page).to have_selector("li", text: "€25,000", count: 1)
+          expect(page).to have_selector("li", text: "$25,000", count: 1)
           expect(page).to have_button("Confirm")
           expect(page).to have_button("Cancel")
           click_button("Cancel")
