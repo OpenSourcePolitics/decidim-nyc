@@ -151,3 +151,7 @@ de6d804 - fix multipart object tagging (#40) (#41), 2021-12-24
 
 * `lib/tasks/restore_dump.rake`
 705e0ad - Run rubocop, 2021-12-01
+
+## Update layout for budgets view
+ * `app/views/decidim/budgets/projects/index.html.erb`
+ Delete filters on budget view, 2023-07-10

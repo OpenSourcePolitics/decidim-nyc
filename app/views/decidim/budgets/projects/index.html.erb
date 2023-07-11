@@ -1,0 +1,49 @@
+<%= render partial: "decidim/shared/component_announcement" %>
+
+<% if budgets.count== 1 && voting_booth_forced? %>
+  <div class="row margin-top-1">
+    <div class="columns mediumlarge-12">
+      <div class="section">
+        <h2 class="section-heading">
+          <%= t("title_single", scope: "decidim.budgets.budgets_header") %>
+        </h2>
+        <p>
+          <%= t("based_on_zip_code", scope: "decidim.budgets.budgets_header", zip_code: user_zip_code)%>
+          <% if !voted_any? %>
+            <em class="margin-left-1"><%= t("not_right_one", scope: "decidim.budgets.budgets_header", link: link_to(t("change_it_here", scope: "decidim.budgets.budgets_header"), new_zip_code_path)).try(:html_safe) %></em>
+          <% end %>
+        </p>
+      </div>
+    </div>
+  </div>
+<% end %>
+
+<% cell("decidim/budgets/limit_announcement", budget) %>
+
+<div class="voting-wrapper <%="margin-top-3" if voting_booth_forced? %>">
+  <div class="row columns">
+    <% if voting_finished? %>
+      <h2 class="heading2">
+        <%= t("decidim.budgets.projects.projects_for", name: translated_attribute(budget.title)) %>
+      </h2>
+    <% else %>
+      <%= render partial: "budget_summary" %>
+      <%= render partial: "cancel_voting_modal" %>
+    <% end %>
+  </div>
+
+  <div class="row columns">
+    <h2 class="section-heading">
+      <%= render partial: "count" %>
+    </h2>
+  </div>
+
+  <div class="row">
+    <div id="projects" class="columns mediumlarge-10 large-12" aria-live="polite">
+      <%= render partial: "projects" %>
+    </div>
+  </div>
+</div>
+<%= render partial: "decidim/budgets/partials/voting_help_modal" unless current_workflow.try(:disable_voting_instructions?) %>
+
+<%= javascript_pack_tag("decidim_budgets_booth_voting") %>
