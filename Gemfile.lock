@@ -29,7 +29,7 @@ GIT
 
 GIT
   remote: https://github.com/Pipeline-to-Power/decidim-module-ptp.git
-  revision: 62f71c0ae9cc9a9a2b15c7a155d105f32f05b945
+  revision: 79f07fee09671661ab23e8a8c18e464a78d29966
   branch: feature/0.26/zip-code-voting
   specs:
     decidim-budgets_booth (0.26.0)
@@ -401,7 +401,7 @@ GEM
       wkhtmltopdf-binary (~> 0.12)
     decidim-generators (0.26.7)
       decidim-core (= 0.26.7)
-    decidim-homepage_proposals (1.0.0)
+    decidim-homepage_proposals (1.0.1)
       decidim-core (~> 0.26)
     decidim-meetings (0.26.7)
       decidim-core (= 0.26.7)
