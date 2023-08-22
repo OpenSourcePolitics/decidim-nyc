@@ -8,7 +8,7 @@ namespace :anonymization do
     logger.info("Running anonymization of users data")
 
     Decidim::User.where(admin: false).find_each do |user|
-      name = "#{Faker::Name.unique.name.tr(".","")}"
+      name = Faker::Name.unique.name.tr(".", "").to_s
       user.update_columns(email: Faker::Internet.unique.email,
                           name: name,
                           nickname: name[0..18].split(" ").join("_").downcase)
@@ -16,7 +16,7 @@ namespace :anonymization do
       logger.info("[Updating] user ID (#{user.id}) with email '#{user.email}'...")
     rescue ActiveRecord::RecordInvalid, NameError
       user.update_columns(email: Faker::Internet.unique.email,
-                          name: "#{Faker::Name.unique.name.tr(".","")}",
+                          name: Faker::Name.unique.name.tr(".", "").to_s,
                           nickname: user.name[0..18].split(" ").join("_").downcase)
 
       logger.info("[Updating error] An error occured when updating user ID (#{user.id}), retrying with email '#{user.email}'...")
