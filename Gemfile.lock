@@ -43,14 +43,6 @@ GIT
     decidim-budgets_booth (0.26.0)
       decidim-budgets (~> 0.26.0)
       decidim-core (~> 0.26.0)
-    decidim-l10n (0.26.0)
-      decidim-core (~> 0.26.0)
-    decidim-ptp (0.26.0)
-      decidim-budgets_booth (= 0.26.0)
-      decidim-core (~> 0.26.0)
-      decidim-l10n (= 0.26.0)
-      decidim-sms-twilio (= 0.26.0)
-      decidim-smsauth (= 0.26.0)
     decidim-sms-twilio (0.26.0)
       decidim-core (~> 0.26.0)
       twilio-ruby (~> 5.72.0)
@@ -972,6 +964,7 @@ DEPENDENCIES
   byebug (~> 11.0)
   dalli
   decidim (~> 0.26.0)
+  decidim-budgets_booth!
   decidim-budgets_paper_ballots!
   decidim-conferences (~> 0.26.0)
   decidim-decidim_awesome
@@ -980,8 +973,9 @@ DEPENDENCIES
   decidim-homepage_interactive_map!
   decidim-homepage_proposals!
   decidim-phone_authorization_handler!
-  decidim-ptp!
   decidim-slider!
+  decidim-sms-twilio!
+  decidim-smsauth!
   decidim-spam_detection
   decidim-term_customizer!
   dotenv-rails
