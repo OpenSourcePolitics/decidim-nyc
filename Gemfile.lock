@@ -36,29 +36,6 @@ GIT
       decidim-core (~> 0.26)
 
 GIT
-  remote: https://github.com/Pipeline-to-Power/decidim-module-ptp.git
-  revision: 79f07fee09671661ab23e8a8c18e464a78d29966
-  branch: feature/0.26/zip-code-voting
-  specs:
-    decidim-budgets_booth (0.26.0)
-      decidim-budgets (~> 0.26.0)
-      decidim-core (~> 0.26.0)
-    decidim-l10n (0.26.0)
-      decidim-core (~> 0.26.0)
-    decidim-ptp (0.26.0)
-      decidim-budgets_booth (= 0.26.0)
-      decidim-core (~> 0.26.0)
-      decidim-l10n (= 0.26.0)
-      decidim-sms-twilio (= 0.26.0)
-      decidim-smsauth (= 0.26.0)
-    decidim-sms-twilio (0.26.0)
-      decidim-core (~> 0.26.0)
-      twilio-ruby (~> 5.72.0)
-    decidim-smsauth (0.26.0)
-      countries (~> 5.1, >= 5.1.2)
-      decidim-core (~> 0.26.0)
-
-GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-slider
   revision: 1004d0abff85b74e323d00bc14bd2aa35eb0fdce
   branch: main
@@ -82,6 +59,26 @@ GIT
   specs:
     decidim-term_customizer (0.26.0)
       decidim-admin (~> 0.26.0)
+      decidim-core (~> 0.26.0)
+
+GIT
+  remote: https://github.com/opensourcepolitics/decidim-module-ptp.git
+  revision: 16551795a0ef766ddd0df03e149a6b9a5de0fece
+  branch: fix/without_l10n_026
+  specs:
+    decidim-budgets_booth (0.26.0)
+      decidim-budgets (~> 0.26.0)
+      decidim-core (~> 0.26.0)
+    decidim-ptp (0.26.0)
+      decidim-budgets_booth (= 0.26.0)
+      decidim-core (~> 0.26.0)
+      decidim-sms-twilio (= 0.26.0)
+      decidim-smsauth (= 0.26.0)
+    decidim-sms-twilio (0.26.0)
+      decidim-core (~> 0.26.0)
+      twilio-ruby (~> 5.72.0)
+    decidim-smsauth (0.26.0)
+      countries (~> 5.1, >= 5.1.2)
       decidim-core (~> 0.26.0)
 
 GIT

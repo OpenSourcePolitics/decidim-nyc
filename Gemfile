@@ -43,7 +43,7 @@ gem "omniauth-rails_csrf_protection"
 gem "omniauth-saml"
 
 # PTP_MODULE_VERSION = { github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" }
-gem "decidim-ptp", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" do
+gem "decidim-ptp", github: "opensourcepolitics/decidim-module-ptp", branch: "fix/without_l10n_026" do
   # Rspec:disable Bundler/OrderedGems
   gem "decidim-budgets_booth"
   gem "decidim-smsauth"
