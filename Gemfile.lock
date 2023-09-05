@@ -68,6 +68,15 @@ GIT
       decidim-core (>= 0.26.0)
 
 GIT
+  remote: https://github.com/mainio/decidim-module-simple_proposal
+  revision: b91e238151ec818896bb77d296313406adce7880
+  branch: release/0.26-stable
+  specs:
+    decidim-simple_proposal (0.26.0)
+      decidim-core (~> 0.26.0)
+      decidim-proposals (~> 0.26.0)
+
+GIT
   remote: https://github.com/mainio/decidim-module-term_customizer.git
   revision: f0d720710822f1231ea249dd71f978143d38a6c4
   branch: release/0.26-stable
@@ -973,6 +982,7 @@ DEPENDENCIES
   decidim-homepage_interactive_map!
   decidim-homepage_proposals!
   decidim-phone_authorization_handler!
+  decidim-simple_proposal!
   decidim-slider!
   decidim-sms-twilio!
   decidim-smsauth!
