@@ -30,7 +30,6 @@ if Rails.env.production?
       "ip" => request.ip,
       "path" => request.path,
       "get" => request.GET,
-      "post" => request.POST,
       "host" => request.host,
       "referer" => request.referer
     }
