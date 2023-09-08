@@ -1,3 +1,7 @@
+<div class="field hashtags__container">
+  <%= form.text_field :title, class: "js-hashtags", value: form_presenter.title %>
+</div>
+
 <% if @form.categories_enabled? %>
   <div class="field">
      <%= form.categories_select :category_id, @form.categories, include_blank: t("decidim.proposals.proposals.edit.select_a_category") %>
@@ -11,10 +15,6 @@
 <% end %>
 
 <%= form_required_explanation %>
-
-     <div class="field hashtags__container">
-     <%= form.text_field :title, class: "js-hashtags", value: form_presenter.title %>
-</div>
 
 <div class="field hashtags__container">
      <%= text_editor_for_proposal_body(form) %>
