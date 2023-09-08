@@ -1201,6 +1201,11 @@
   resolved "https://registry.npmjs.org/@gar/promisify/-/promisify-1.1.3.tgz"
   integrity sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==
 
+"@glidejs/glide@^3.6.0":
+  version "3.6.0"
+  resolved "https://registry.npmjs.org/@glidejs/glide/-/glide-3.6.0.tgz"
+  integrity sha512-47Aa+JmYjY4xTFpTtYCwrqirmI1arnp1UZETwtWpbTPisXUAuxrdJxKJLH8KHFWMsSrLi9+AcfyfzDIuO75rEA==
+
 "@graphiql/react@^0.10.0":
   version "0.10.0"
   resolved "https://registry.npmjs.org/@graphiql/react/-/react-0.10.0.tgz"
@@ -4372,6 +4377,11 @@ graphql-tag@^2.12.6:
   dependencies:
     tslib "^2.1.0"
 
+graphql-ws@^5.13.1:
+  version "5.13.1"
+  resolved "https://registry.npmjs.org/graphql-ws/-/graphql-ws-5.13.1.tgz"
+  integrity sha512-eiX7ES/ZQr0q7hSM5UBOEIFfaAUmAY9/CSDyAnsETuybByU7l/v46drRg9DQoTvVABEHp3QnrvwgTRMhqy7zxQ==
+
 graphql@^15.4.0:
   version "15.8.0"
   resolved "https://registry.npmjs.org/graphql/-/graphql-15.8.0.tgz"
@@ -5219,9 +5229,9 @@ jsprim@^1.2.2:
     verror "1.10.0"
 
 jsrender@^1.0.11:
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/jsrender/-/jsrender-1.0.11.tgz#96b95f0b15c95742b398b2e018e913c51cf94516"
-  integrity sha512-1BFRSKCgO8T1o3QB16/CYqnxLVxgIdXnXBmZcyLQOlEwxVfktCHXcC7n2o9lziI//pKEc5QzI92vglvBnoddRw==
+  version "1.0.13"
+  resolved "https://registry.yarnpkg.com/jsrender/-/jsrender-1.0.13.tgz#f7546ed13010dd82d65a28cb5bc6a8231c68959e"
+  integrity sha512-WAHG4EBPygNZqv8b3oFDprM5Zi+v2TG5/GLk5f0TYIej+xJiGoQNRvGSbhdh25vggWJP3YfzTpAqVSNDaXwY5Q==
   dependencies:
     through2 "^3.0.1"
 
@@ -6934,9 +6944,9 @@ qs@6.10.3:
     side-channel "^1.0.4"
 
 qs@^6.5.2:
-  version "6.11.0"
-  resolved "https://registry.yarnpkg.com/qs/-/qs-6.11.0.tgz#fd0d963446f7a65e1367e01abd85429453f0c37a"
-  integrity sha512-MvjoMCJwEarSbUYk5O+nmoSzSutSsTwF85zcHPQ9OrlFoZOYIjaqBAJIqIXjptyD5vThxGq52Xu/MaJzRkIk4Q==
+  version "6.11.2"
+  resolved "https://registry.yarnpkg.com/qs/-/qs-6.11.2.tgz#64bea51f12c1f5da1bc01496f48ffcff7c69d7d9"
+  integrity sha512-tDNIz22aBzCDxLtVH++VnTfzxlfeK5CbqohpSqpJgj1Wg/cQbStNAz3NuqCs5vV+pjBsK4x4pN9HlVh7rcYRiA==
   dependencies:
     side-channel "^1.0.4"
 
