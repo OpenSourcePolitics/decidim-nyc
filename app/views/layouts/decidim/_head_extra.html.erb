@@ -34,20 +34,11 @@
 
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-        {
-            pageLanguage: pageLanguage
-        },
-        'google_translate_element'
+          {
+              pageLanguage: autoTargetLanguage
+          },
+          'google_translate_element'
       );
-
-      if (autoTargetLanguage != '' && autoTargetLanguage != pageLanguage ) {
-        waitForElm('#google_translate_element select option[value="' + autoTargetLanguage + '"]').then((gOption) => {
-          var gSelect = gOption.parentNode;
-          gSelect.selectedIndex= gOption.index;
-          gSelect.dispatchEvent(new Event('change'));
-        });
-      }
-
     }
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
