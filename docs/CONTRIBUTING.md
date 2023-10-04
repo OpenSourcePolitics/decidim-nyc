@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-  # How to contribute to the Decidim of the New York City
+# How to contribute to the Decidim of the New York City
 
 We're really glad you're reading this, you might be interested by the code source of the New York City Decidim application.
 
