@@ -78,6 +78,9 @@ end
               </div>
 
               <% if current_user %>
+                <div class="topbar__dropmenu language-choose g-language-choose show-for-medium" data-set="language-holder">
+                  <div class="js-append" id="google_translate_element"></div>
+                </div>
                 <%= render partial: "layouts/decidim/social_media_links" %>
                 <%= render partial: "layouts/decidim/admin_links" %>
                 <nav class="topbar__dropmenu topbar__user__logged" aria-label="<%= t("layouts.decidim.header.user_menu") %>">
@@ -103,12 +106,13 @@ end
                         <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
                           <%= render partial: "layouts/decidim/user_menu" %>
                         </ul>
-                        <div class="js-append">
-                          <%= render partial: "layouts/decidim/language_chooser" %>
-                        </div>
+                      <div class="js-append hide-for-medium">
+                        <%= render partial: "layouts/decidim/language_chooser" %>
+                      </div>
                       </div>
                     </li>
                   </ul>
+
                 </nav>
               <% else %>
                 <div class="topbar__user show-for-medium" data-set="nav-login-holder">
