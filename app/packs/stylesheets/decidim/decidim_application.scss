@@ -223,3 +223,27 @@ body, h1, h2, h3, h4, h5, h6, p, a, span {
     }
   }
 }
+
+.g-language-choose-medium {
+  .goog-te-gadget {
+    text-indent: -9999px;
+    font-size: 0;
+
+    & > span {
+      display: none;
+    }
+
+    & > div {
+      text-indent: 0;
+    }
+
+    select {
+      font-family: $body-font-family;
+      font-size: 1rem;
+      text-align: center;
+      background-color: transparent;
+      color: var(--secondary);
+      border-color: transparent;
+    }
+  }
+}

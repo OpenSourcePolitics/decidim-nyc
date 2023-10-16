@@ -22,26 +22,22 @@ end
       </button>
       <!-- Menu -->
       <div class="hide-for-medium" data-set="nav-holder">
-
-      <div class="navbar js-append">
-        <div class="row column">
-          <nav class="main-nav">
-            <ul>
-              <li class="main-nav__link">
-                <a class="main-nav" href="/processes/Citywidepb2023">About</a>
-              </li>
-              <li class="main-nav__link">
-                <a class="main-nav" href="/processes/vote">Election Center</a>
-              </li>
-              <li class="main-nav__link">
-                <%= render partial: "layouts/decidim/language_chooser" %>
-              </li>
-            </ul>
-          </nav>
+        <div class="navbar js-append">
+          <div class="row column">
+            <nav class="main-nav">
+              <ul>
+                <li class="main-nav__link">
+                  <a class="main-nav" href="/processes/Citywidepb2023">About</a>
+                </li>
+                <li class="main-nav__link">
+                  <a class="main-nav" href="/processes/vote">Election Center</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
         </div>
       </div>
 
-      </div>
       <div class="hide-for-medium usermenu-off-canvas-holder"
            data-set="nav-login-holder"></div>
       <div class="hide-for-medium mt-s ml-s mr-s search-off-canvas-holder"
@@ -82,7 +78,6 @@ end
               </div>
 
               <% if current_user %>
-                <%= render partial: "layouts/decidim/language_chooser" %>
                 <%= render partial: "layouts/decidim/social_media_links" %>
                 <%= render partial: "layouts/decidim/admin_links" %>
                 <nav class="topbar__dropmenu topbar__user__logged" aria-label="<%= t("layouts.decidim.header.user_menu") %>">
@@ -107,8 +102,10 @@ end
                         <!-- Repeated due to dropdown limitations -->
                         <ul class="menu is-dropdown-submenu js-append usermenu-off-canvas">
                           <%= render partial: "layouts/decidim/user_menu" %>
-
                         </ul>
+                        <div class="js-append">
+                          <%= render partial: "layouts/decidim/language_chooser" %>
+                        </div>
                       </div>
                     </li>
                   </ul>
@@ -118,8 +115,10 @@ end
                   <div class="topbar__user__login js-append">
                     <%= link_to t("layouts.decidim.header.sign_in"), decidim.new_user_session_path, class: "sign-in-link" %>
                   </div>
+                  <div class="js-append">
+                    <%= render partial: "layouts/decidim/language_chooser" %>
+                  </div>
                 </div>
-                <%= render partial: "layouts/decidim/language_chooser" %>
                 <%= render partial: "layouts/decidim/social_media_links" %>
                 <%= render partial: "layouts/decidim/admin_links" %>
               <% end %>
