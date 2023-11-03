@@ -60,5 +60,10 @@ module ApplicationHelper
     if Rails.application.secrets.dig(:decidim, :translation_mode).to_sym == :both && response.headers["content-language"].present?
       response.headers["content-language"].split("-").first
     end
+
+    if translation_mode?(:google)
+      default_trad = Rails.configuration.i18n.default_locale.to_s
+      cookies[:googtrans] ||= { value: "/auto/#{default_trad}", expires: 1.year.from_now }
+    end
   end
 end

@@ -8,8 +8,6 @@
 <% end %>
 <% if translation_mode?(:google) %>
   <script>
-
-    const pageLanguage = 'en';
     const autoTargetLanguage = '<%= auto_target_language %>';
 
     function waitForElm(selector) {
@@ -34,9 +32,6 @@
 
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
-          {
-              pageLanguage: autoTargetLanguage
-          },
           'google_translate_element'
       );
     }
