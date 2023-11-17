@@ -20,14 +20,6 @@ GIT
       rgeo-proj4 (~> 3.1)
 
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals.git
-  revision: 3e17f0fe9403ea222f6c3f279a2ed264cc6109a5
-  branch: release/0.26-stable
-  specs:
-    decidim-homepage_proposals (1.0.2)
-      decidim-core (~> 0.26)
-
-GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
   revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
   branch: release/0.26-stable
@@ -57,6 +49,14 @@ GIT
   specs:
     decidim-slider (0.0.2)
       decidim-core (~> 0.26.0)
+
+GIT
+  remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
+  revision: 992ed0fcfa32e5b86479e706c71eb6523d61de2b
+  ref: 992ed0fcfa32e5b86479e706c71eb6523d61de2b
+  specs:
+    decidim-homepage_proposals (1.0.2)
+      decidim-core (~> 0.26)
 
 GIT
   remote: https://github.com/digidemlab/decidim-module-budgets_paper_ballots

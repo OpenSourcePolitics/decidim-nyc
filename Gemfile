@@ -15,7 +15,8 @@ gem "decidim-budgets_paper_ballots", git: "https://github.com/digidemlab/decidim
 gem "decidim-decidim_awesome"
 gem "decidim-half_signup", git: "https://github.com/OpenSourcePolitics/decidim-module-half_sign_up", branch: DECIDIM_BRANCH
 gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: DECIDIM_BRANCH
-gem "decidim-homepage_proposals", git: "https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals.git", branch: DECIDIM_BRANCH
+# gem "decidim-homepage_proposals", git: "https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals.git", branch: DECIDIM_BRANCH
+gem "decidim-homepage_proposals", git: "https://github.com/alecslupu-pfa/decidim-module_homepage_proposals", ref: "992ed0fcfa32e5b86479e706c71eb6523d61de2b"
 gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: DECIDIM_BRANCH
 gem "decidim-simple_proposal", git: "https://github.com/mainio/decidim-module-simple_proposal", branch: DECIDIM_BRANCH
 gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slider", branch: "main"
