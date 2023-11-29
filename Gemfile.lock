@@ -52,8 +52,8 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
-  revision: 6e3b7a2bfc6e531bb77a4d8ebfb7dd190acee681
-  branch: release/0.26-bulk-deploy
+  revision: 905b8a43403b7042fab9ad7d229ef5df4c11c632
+  branch: release/0.26-stable
   specs:
     decidim-homepage_proposals (1.0.2)
       decidim-core (~> 0.26)
