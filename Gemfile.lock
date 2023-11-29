@@ -51,7 +51,6 @@ GIT
       decidim-core (~> 0.26.0)
 
 GIT
-  remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
   revision: 905b8a43403b7042fab9ad7d229ef5df4c11c632
   branch: release/0.26-stable
   specs:
