@@ -20,14 +20,6 @@ GIT
       rgeo-proj4 (~> 3.1)
 
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals.git
-  revision: 3e17f0fe9403ea222f6c3f279a2ed264cc6109a5
-  branch: release/0.26-stable
-  specs:
-    decidim-homepage_proposals (1.0.2)
-      decidim-core (~> 0.26)
-
-GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
   revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
   branch: release/0.26-stable
@@ -59,6 +51,14 @@ GIT
       decidim-core (~> 0.26.0)
 
 GIT
+  remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
+  revision: 37ac5b73893ab532e06729bef6f5d3b4b6553f35
+  branch: feature/reset-filters
+  specs:
+    decidim-homepage_proposals (1.0.2)
+      decidim-core (~> 0.26)
+
+GIT
   remote: https://github.com/digidemlab/decidim-module-budgets_paper_ballots
   revision: 3e5d2794f43b1c353e8a3116edf6daab9e3a26a7
   branch: release/0.26-stable
@@ -77,9 +77,9 @@ GIT
       decidim-proposals (~> 0.26.0)
 
 GIT
-  remote: https://github.com/mainio/decidim-module-term_customizer.git
-  revision: f0d720710822f1231ea249dd71f978143d38a6c4
-  branch: release/0.26-stable
+  remote: https://github.com/opensourcepolitics/decidim-module-term_customizer.git
+  revision: f5208f3cad23cb68e502e77cb0d2d3d441d09e40
+  branch: fix/multi-threading-compliant-0.26
   specs:
     decidim-term_customizer (0.26.0)
       decidim-admin (~> 0.26.0)
