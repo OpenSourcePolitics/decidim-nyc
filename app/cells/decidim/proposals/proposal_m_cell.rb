@@ -47,7 +47,7 @@ module Decidim
       end
 
       def description
-        strip_tags(body).truncate(200, separator: /\s/)
+        strip_tags(body).truncate(120, separator: /\s/)
       end
 
       def badge_classes
