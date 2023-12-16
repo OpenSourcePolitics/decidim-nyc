@@ -22,6 +22,7 @@ gem "decidim-simple_proposal", git: "https://github.com/mainio/decidim-module-si
 gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slider", branch: "main"
 gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/opensourcepolitics/decidim-module-term_customizer.git", branch: "fix/multi-threading-compliant-0.26"
+gem "decidim-custom_proposal_states", github: "alecslupu-pfa/decidim-module-custom_proposal_states", branch: "chore/fix-module-dependency"
 
 gem "dotenv-rails"
 
