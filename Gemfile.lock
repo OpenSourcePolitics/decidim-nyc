@@ -52,7 +52,8 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
-  revision: 37ac5b73893ab532e06729bef6f5d3b4b6553f35
+  revision: 498631e9a5c2fa1628b25c6d6fecbedd8fc507f9
+  ref: 498631e9a5c2fa1628b25c6d6fecbedd8fc507f9
   branch: feature/reset-filters
   specs:
     decidim-homepage_proposals (1.0.2)
