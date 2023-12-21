@@ -16,7 +16,8 @@ gem "decidim-decidim_awesome"
 gem "decidim-half_signup", git: "https://github.com/OpenSourcePolitics/decidim-module-half_sign_up", branch: DECIDIM_BRANCH
 gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: DECIDIM_BRANCH
 # gem "decidim-homepage_proposals", git: "https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals.git", branch: DECIDIM_BRANCH
-gem "decidim-homepage_proposals", git: "https://github.com/alecslupu-pfa/decidim-module_homepage_proposals", branch: "feature/reset-filters", ref: "498631e9a5c2fa1628b25c6d6fecbedd8fc507f9"
+gem "decidim-homepage_proposals", git: "https://github.com/alecslupu-pfa/decidim-module_homepage_proposals", branch: "feature/reset-filters", \
+                                  ref: "498631e9a5c2fa1628b25c6d6fecbedd8fc507f9"
 gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: DECIDIM_BRANCH
 gem "decidim-simple_proposal", git: "https://github.com/mainio/decidim-module-simple_proposal", branch: DECIDIM_BRANCH
 gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slider", branch: "main"
