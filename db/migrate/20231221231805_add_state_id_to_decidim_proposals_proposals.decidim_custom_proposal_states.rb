@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 # This migration comes from decidim_custom_proposal_states (originally 20231102173214)
 
 class AddStateIdToDecidimProposalsProposals < ActiveRecord::Migration[6.0]
