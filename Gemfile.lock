@@ -43,6 +43,16 @@ GIT
       decidim-core (~> 0.26.0)
 
 GIT
+  remote: https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states
+  revision: 92b02c1ed2311547b9b4688d16411b4d9be99af6
+  branch: chore/fix-module-dependency
+  specs:
+    decidim-custom_proposal_states (0.26.8)
+      decidim-core (~> 0.26.0)
+      decidim-proposals (~> 0.26.0)
+      deface (>= 1.9)
+
+GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-slider
   revision: 1004d0abff85b74e323d00bc14bd2aa35eb0fdce
   branch: main
@@ -52,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
-  revision: 37ac5b73893ab532e06729bef6f5d3b4b6553f35
+  revision: 498631e9a5c2fa1628b25c6d6fecbedd8fc507f9
   branch: feature/reset-filters
   specs:
     decidim-homepage_proposals (1.0.2)
@@ -448,6 +458,12 @@ GEM
     declarative-builder (0.1.0)
       declarative-option (< 0.2.0)
     declarative-option (0.1.0)
+    deface (1.9.0)
+      actionview (>= 5.2)
+      nokogiri (>= 1.6)
+      polyglot
+      railties (>= 5.2)
+      rainbow (>= 2.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
     devise (4.9.2)
@@ -694,6 +710,7 @@ GEM
     pg_search (2.3.6)
       activerecord (>= 5.2)
       activesupport (>= 5.2)
+    polyglot (0.3.5)
     premailer (1.21.0)
       addressable
       css_parser (>= 1.12.0)
@@ -976,6 +993,7 @@ DEPENDENCIES
   decidim-budgets_booth!
   decidim-budgets_paper_ballots!
   decidim-conferences (~> 0.26.0)
+  decidim-custom_proposal_states!
   decidim-decidim_awesome
   decidim-dev (~> 0.26.0)
   decidim-half_signup!
