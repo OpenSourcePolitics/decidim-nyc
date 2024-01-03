@@ -15,14 +15,15 @@ gem "decidim-budgets_paper_ballots", git: "https://github.com/digidemlab/decidim
 gem "decidim-decidim_awesome"
 gem "decidim-half_signup", git: "https://github.com/OpenSourcePolitics/decidim-module-half_sign_up", branch: DECIDIM_BRANCH
 gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: DECIDIM_BRANCH
-# gem "decidim-homepage_proposals", git: "https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals.git", branch: DECIDIM_BRANCH
-gem "decidim-homepage_proposals", git: "https://github.com/alecslupu-pfa/decidim-module_homepage_proposals", branch: "feature/reset-filters", \
-                                  ref: "498631e9a5c2fa1628b25c6d6fecbedd8fc507f9"
+gem "decidim-homepage_proposals", git: "https://github.com/alecslupu-pfa/decidim-module_homepage_proposals", branch: "feature/reset-filters"
 gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: DECIDIM_BRANCH
-gem "decidim-simple_proposal", git: "https://github.com/mainio/decidim-module-simple_proposal", branch: DECIDIM_BRANCH
 gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slider", branch: "main"
 gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/opensourcepolitics/decidim-module-term_customizer.git", branch: "fix/multi-threading-compliant-0.26"
+
+# NOTE: Custom proposal states must be before simple_proposal
+gem "decidim-custom_proposal_states", git: "https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states", branch: "chore/fix-module-dependency"
+gem "decidim-simple_proposal", git: "https://github.com/mainio/decidim-module-simple_proposal", branch: DECIDIM_BRANCH
 
 gem "dotenv-rails"
 

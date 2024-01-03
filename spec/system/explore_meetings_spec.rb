@@ -500,7 +500,7 @@ describe "Explore meetings", :slow, type: :system do
 
     context "with linked proposals" do
       let(:proposal_component) do
-        create(:component, manifest_name: :proposals, participatory_space: meeting.component.participatory_space)
+        create(:extended_proposal_component, manifest_name: :proposals, participatory_space: meeting.component.participatory_space)
       end
       let(:proposals) { create_list(:proposal, 3, component: proposal_component) }
 
