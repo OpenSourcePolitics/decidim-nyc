@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states
-  revision: 92b02c1ed2311547b9b4688d16411b4d9be99af6
+  revision: 5a01dcd0c61f7760adb929d53a6ccdbe6af5b050
   branch: chore/fix-module-dependency
   specs:
     decidim-custom_proposal_states (0.26.8)
@@ -62,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
-  revision: 498631e9a5c2fa1628b25c6d6fecbedd8fc507f9
+  revision: 1e5753b2db6caaba5b38c7de7865de8cf22c11db
   branch: feature/reset-filters
   specs:
     decidim-homepage_proposals (1.0.2)
