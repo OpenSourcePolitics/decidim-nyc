@@ -22,7 +22,7 @@ gem "decidim-spam_detection"
 gem "decidim-term_customizer", git: "https://github.com/opensourcepolitics/decidim-module-term_customizer.git", branch: "fix/multi-threading-compliant-0.26"
 
 # NOTE: Custom proposal states must be before simple_proposal
-gem "decidim-custom_proposal_states", git: "https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states", branch: "chore/fix-module-dependency"
+gem "decidim-custom_proposal_states", git: "https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states", branch: "release/0.26-stable"
 gem "decidim-simple_proposal", git: "https://github.com/mainio/decidim-module-simple_proposal", branch: DECIDIM_BRANCH
 
 gem "dotenv-rails"
