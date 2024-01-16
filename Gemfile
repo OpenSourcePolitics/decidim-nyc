@@ -47,7 +47,7 @@ gem "omniauth-rails_csrf_protection"
 gem "omniauth-saml"
 
 # PTP_MODULE_VERSION = { github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" }
-gem "decidim-budgets_booth", github: "OpenSourcePolitics/decidim-module-ptp", branch: "fix/button_focus_css-0.26"
+gem "decidim-budgets_booth", github: "OpenSourcePolitics/decidim-module-ptp", branch: "feature/0.26/zip-code-voting"
 gem "decidim-smsauth", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting"
 gem "decidim-sms-twilio", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting"
 
