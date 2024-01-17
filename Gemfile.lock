@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-ptp.git
-  revision: 0c1b84cb7c4fa13e84c81d2d01f833f6babbcde3
+  revision: 6148a817251256d6f536f1f3478c8be895a518b0
   branch: feature/0.26/zip-code-voting
   specs:
     decidim-budgets_booth (0.26.0)
