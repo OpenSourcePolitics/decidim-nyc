@@ -20,6 +20,15 @@ GIT
       rgeo-proj4 (~> 3.1)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module-ptp.git
+  revision: 6148a817251256d6f536f1f3478c8be895a518b0
+  branch: feature/0.26/zip-code-voting
+  specs:
+    decidim-budgets_booth (0.26.0)
+      decidim-budgets (~> 0.26.0)
+      decidim-core (~> 0.26.0)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
   revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
   branch: release/0.26-stable
@@ -32,9 +41,6 @@ GIT
   revision: 79f07fee09671661ab23e8a8c18e464a78d29966
   branch: feature/0.26/zip-code-voting
   specs:
-    decidim-budgets_booth (0.26.0)
-      decidim-budgets (~> 0.26.0)
-      decidim-core (~> 0.26.0)
     decidim-sms-twilio (0.26.0)
       decidim-core (~> 0.26.0)
       twilio-ruby (~> 5.72.0)
