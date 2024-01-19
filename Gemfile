@@ -23,8 +23,8 @@ gem "decidim-term_customizer", git: "https://github.com/opensourcepolitics/decid
 
 # PTP_MODULE_VERSION = { github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting" }
 gem "decidim-budgets_booth", github: "OpenSourcePolitics/decidim-module-ptp", branch: "feature/0.26/zip-code-voting"
-gem "decidim-smsauth", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting"
-gem "decidim-sms-twilio", github: "Pipeline-to-Power/decidim-module-ptp", branch: "feature/0.26/zip-code-voting"
+gem "decidim-smsauth", github: "OpenSourcePolitics/decidim-module-ptp", branch: "feature/0.26/zip-code-voting"
+gem "decidim-sms-twilio", github: "OpenSourcePolitics/decidim-module-ptp", branch: "feature/0.26/zip-code-voting"
 
 # NOTE: Custom proposal states must be before simple_proposal
 gem "decidim-custom_proposal_states", git: "https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states", branch: "chore/fix-module-dependency"
@@ -41,7 +41,9 @@ gem "uglifier", "~> 4.1"
 
 gem "faker", "~> 2.14"
 
+gem "net-http"
 gem "nokogiri", "1.13.4"
+gem "uri", "0.10.0"
 
 gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
 gem "aws-sdk-s3", require: false
