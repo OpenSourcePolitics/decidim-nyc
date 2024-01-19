@@ -43,6 +43,7 @@ gem "faker", "~> 2.14"
 
 gem "net-http"
 gem "nokogiri", "1.13.4"
+gem "uri", "0.10.0"
 
 gem "activejob-uniqueness", require: "active_job/uniqueness/sidekiq_patch"
 gem "aws-sdk-s3", require: false

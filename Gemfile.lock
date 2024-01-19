@@ -935,7 +935,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unaccent (0.4.0)
     unicode-display_width (1.8.0)
-    uri (0.13.0)
+    uri (0.10.0)
     valid_email2 (2.3.1)
       activemodel (>= 3.2)
       mail (~> 2.5)
@@ -1036,10 +1036,11 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0)
   sys-filesystem
   uglifier (~> 4.1)
+  uri (= 0.10.0)
   web-console (= 4.0.4)
 
 RUBY VERSION
    ruby 2.7.7p221
 
 BUNDLED WITH
-   2.3.4
+   2.4.22
