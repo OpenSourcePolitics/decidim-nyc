@@ -20,16 +20,8 @@ GIT
       rgeo-proj4 (~> 3.1)
 
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
-  revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
-  branch: release/0.26-stable
-  specs:
-    decidim-phone_authorization_handler (1.0.0)
-      decidim-core (~> 0.26)
-
-GIT
-  remote: https://github.com/Pipeline-to-Power/decidim-module-ptp.git
-  revision: 79f07fee09671661ab23e8a8c18e464a78d29966
+  remote: https://github.com/OpenSourcePolitics/decidim-module-ptp.git
+  revision: 6148a817251256d6f536f1f3478c8be895a518b0
   branch: feature/0.26/zip-code-voting
   specs:
     decidim-budgets_booth (0.26.0)
@@ -43,8 +35,16 @@ GIT
       decidim-core (~> 0.26.0)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
+  revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
+  branch: release/0.26-stable
+  specs:
+    decidim-phone_authorization_handler (1.0.0)
+      decidim-core (~> 0.26)
+
+GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states
-  revision: 92b02c1ed2311547b9b4688d16411b4d9be99af6
+  revision: 5a01dcd0c61f7760adb929d53a6ccdbe6af5b050
   branch: chore/fix-module-dependency
   specs:
     decidim-custom_proposal_states (0.26.8)
@@ -62,7 +62,7 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
-  revision: 498631e9a5c2fa1628b25c6d6fecbedd8fc507f9
+  revision: 1e5753b2db6caaba5b38c7de7865de8cf22c11db
   branch: feature/reset-filters
   specs:
     decidim-homepage_proposals (1.0.2)
@@ -642,6 +642,8 @@ GEM
     multi_json (1.15.0)
     multi_xml (0.6.0)
     mustache (1.1.1)
+    net-http (0.4.1)
+      uri
     net-imap (0.3.4)
       date
       net-protocol
@@ -933,6 +935,7 @@ GEM
       execjs (>= 0.3.0, < 3)
     unaccent (0.4.0)
     unicode-display_width (1.8.0)
+    uri (0.10.0)
     valid_email2 (2.3.1)
       activemodel (>= 3.2)
       mail (~> 2.5)
@@ -1014,6 +1017,7 @@ DEPENDENCIES
   letter_opener_web (~> 1.3)
   listen (~> 3.1)
   lograge
+  net-http
   nokogiri (= 1.13.4)
   omniauth-rails_csrf_protection
   omniauth-saml
@@ -1032,10 +1036,11 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0)
   sys-filesystem
   uglifier (~> 4.1)
+  uri (= 0.10.0)
   web-console (= 4.0.4)
 
 RUBY VERSION
    ruby 2.7.7p221
 
 BUNDLED WITH
-   2.3.4
+   2.4.22

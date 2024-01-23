@@ -6,6 +6,7 @@
     });
   </script>
 <% end %>
+
 <% if translation_mode?(:google) %>
   <script>
 
@@ -39,6 +40,11 @@
           },
           'google_translate_element'
       );
+
+      waitForElm("iframe.skiptranslate").then((elm) => {
+        $(elm).hide();
+        $("body").attr("style", "");
+      });
     }
   </script>
   <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
