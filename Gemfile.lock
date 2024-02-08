@@ -44,8 +44,8 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states
-  revision: e58fbf2ef677fccf4cb6b1ab40634e853b3fc169
-  branch: chore/fix-module-dependency
+  revision: 5e275e703cfb06230841e50b9498804d70a804f2
+  branch: release/0.26-stable
   specs:
     decidim-custom_proposal_states (0.26.9)
       decidim-core (~> 0.26.9)
@@ -62,8 +62,8 @@ GIT
 
 GIT
   remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
-  revision: 1e5753b2db6caaba5b38c7de7865de8cf22c11db
-  branch: feature/reset-filters
+  revision: da1159268ae3430150df8a3e5b174b2e5da2f33f
+  branch: release/0.26-custom-states
   specs:
     decidim-homepage_proposals (1.0.2)
       decidim-core (~> 0.26)
@@ -651,7 +651,7 @@ GEM
     mustache (1.1.1)
     net-http (0.4.1)
       uri
-    net-imap (0.4.9.1)
+    net-imap (0.3.4)
       date
       net-protocol
     net-pop (0.1.2)
@@ -663,8 +663,6 @@ GEM
     nio4r (2.7.0)
     nokogiri (1.13.4)
       mini_portile2 (~> 2.8.0)
-      racc (~> 1.4)
-    nokogiri (1.13.4-arm64-darwin)
       racc (~> 1.4)
     oauth (1.1.0)
       oauth-tty (~> 1.0, >= 1.0.1)
@@ -994,7 +992,6 @@ GEM
     zeitwerk (2.6.12)
 
 PLATFORMS
-  arm64-darwin-22
   ruby
 
 DEPENDENCIES
