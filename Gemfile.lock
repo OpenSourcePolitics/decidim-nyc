@@ -35,6 +35,14 @@ GIT
       decidim-core (~> 0.26.0)
 
 GIT
+  remote: https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals
+  revision: dc1a7211ae53f8aa94e70fc6b96604a6216f4fda
+  branch: release/0.26-stable
+  specs:
+    decidim-homepage_proposals (1.0.2)
+      decidim-core (~> 0.26)
+
+GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
   revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
   branch: release/0.26-stable
@@ -59,14 +67,6 @@ GIT
   specs:
     decidim-slider (0.0.3)
       decidim-core (~> 0.26.0)
-
-GIT
-  remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
-  revision: da1159268ae3430150df8a3e5b174b2e5da2f33f
-  branch: release/0.26-custom-states
-  specs:
-    decidim-homepage_proposals (1.0.2)
-      decidim-core (~> 0.26)
 
 GIT
   remote: https://github.com/digidemlab/decidim-module-budgets_paper_ballots
