@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-half_sign_up
-  revision: b79714f84fbf5a96ba500c3479afd07e466a097b
+  revision: 6e0a55f633247b3027ac75d87f07f8e620d34cf8
   branch: release/0.26-stable
   specs:
     decidim-half_signup (0.26.0)
@@ -175,7 +175,7 @@ GEM
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
     aws-eventstream (1.3.0)
-    aws-partitions (1.910.0)
+    aws-partitions (1.911.0)
     aws-sdk-core (3.191.6)
       aws-eventstream (~> 1, >= 1.3.0)
       aws-partitions (~> 1, >= 1.651.0)
