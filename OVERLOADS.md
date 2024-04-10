@@ -127,3 +127,6 @@ de6d804 - fix multipart object tagging (#40) (#41), 2021-12-24
 
 * `lib/tasks/restore_dump.rake`
 705e0ad - Run rubocop, 2021-12-01
+
+* `app/controllers/decidim/forms/admin/concerns/has_questionnaire.rb`
+Local backport of https://github.com/decidim/decidim/commit/420623d647d2020665cfbaa118514f5e92672c68
