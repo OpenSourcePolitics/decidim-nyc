@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module-half_sign_up
-  revision: 6e0a55f633247b3027ac75d87f07f8e620d34cf8
+  revision: 489adff762ecc654f2a502efbb28f89f5ef2d272
   branch: release/0.26-stable
   specs:
     decidim-half_signup (0.26.0)
@@ -471,7 +471,7 @@ GEM
       rainbow (>= 2.1.0)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (4.9.3)
+    devise (4.9.4)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0)
