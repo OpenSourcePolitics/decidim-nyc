@@ -27,7 +27,7 @@ gem "decidim-sms-twilio", github: "OpenSourcePolitics/decidim-module-ptp", branc
 
 # NOTE: Custom proposal states must be before simple_proposal
 gem "decidim-custom_proposal_states", git: "https://github.com/alecslupu-pfa/decidim-module-custom_proposal_states", branch: DECIDIM_BRANCH
-gem "decidim-half_signup", git: "https://github.com/OpenSourcePolitics/decidim-module-half_sign_up", branch: DECIDIM_BRANCH
+gem "decidim-half_signup", git: "https://github.com/OpenSourcePolitics/decidim-module-half_sign_up", branch: "feat/budget_booth_0.26"
 gem "decidim-simple_proposal", git: "https://github.com/mainio/decidim-module-simple_proposal", branch: DECIDIM_BRANCH
 
 gem "dotenv-rails"
