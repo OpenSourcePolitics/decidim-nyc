@@ -3,29 +3,47 @@
 <% cell("decidim/budgets/limit_announcement", budget) %>
 
 <div class="voting-wrapper <%="margin-top-3" if voting_booth_forced? %>">
+
   <div class="row columns">
+    <%= render partial: "budget_backButton" %>
+    <h2 class="section-heading budget-title">
+      <%= t(".budget_title", budget_title_h2: translated_attribute(budget.title)) %>
+    </h2>
+    <p class="budget-description">
+      <%= t(".budget_description_before") %>
+      <%= render partial: "count" %>
+      <%= t(".budget_description_after") %>
+    </p>
+    <% unless voting_mode? %>
+      <%= render partial: "budget_summary" %>
+    <% end %>
+  </div>
+
+  <div class="row">
+    <div id="projects" class="columns mediumlarge-8 large-9" aria-live="polite">
+      <%= render partial: "projects" %>
+    </div>
+  </div>
+</div>
+
+<div class="row columns">
     <% if voting_finished? %>
       <h2 class="heading2">
         <%= t("decidim.budgets.projects.projects_for", name: translated_attribute(budget.title)) %>
       </h2>
     <% else %>
-      <%= render partial: "budget_summary" %>
+      <% if voting_mode? %>
+        <%= render partial: "budget_summary" %>
+      <% end %>
       <%= render partial: "cancel_voting_modal" %>
     <% end %>
   </div>
 
-  <div class="row columns">
-    <h2 class="section-heading">
-      <%= render partial: "count" %>
-    </h2>
-  </div>
-
-  <div class="row">
-    <div id="projects" class="columns mediumlarge-12" aria-live="polite">
-      <%= render partial: "projects" %>
-    </div>
-  </div>
-</div>
 <%= render partial: "decidim/budgets/partials/voting_help_modal" unless current_workflow.try(:disable_voting_instructions?) %>
 
 <%= javascript_pack_tag("decidim_budgets_booth_voting") %>
+
+<style>
+  .budget-title {margin-bottom: 0;}
+  .budget-description {margin-left: 12px;}
+</style>
