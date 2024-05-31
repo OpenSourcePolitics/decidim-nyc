@@ -36,7 +36,7 @@ GIT
 
 GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals
-  revision: dc1a7211ae53f8aa94e70fc6b96604a6216f4fda
+  revision: fa3dcfed065aefd00b504ff6efac43dfdf5fb6e4
   branch: release/0.26-stable
   specs:
     decidim-homepage_proposals (1.0.2)
