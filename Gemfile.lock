@@ -35,14 +35,6 @@ GIT
       decidim-core (~> 0.26.0)
 
 GIT
-  remote: https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals
-  revision: fa3dcfed065aefd00b504ff6efac43dfdf5fb6e4
-  branch: release/0.26-stable
-  specs:
-    decidim-homepage_proposals (1.0.2)
-      decidim-core (~> 0.26)
-
-GIT
   remote: https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler
   revision: 488cc8827845ec1c5266aa499df2ebf9b20e02a3
   branch: release/0.26-stable
@@ -67,6 +59,14 @@ GIT
   specs:
     decidim-slider (0.0.3)
       decidim-core (~> 0.26.0)
+
+GIT
+  remote: https://github.com/alecslupu-pfa/decidim-module_homepage_proposals
+  revision: 986382bc6c2076f17346939139d5426c5e5d0e84
+  branch: fix/scopes-filter
+  specs:
+    decidim-homepage_proposals (1.0.2)
+      decidim-core (~> 0.26.9)
 
 GIT
   remote: https://github.com/digidemlab/decidim-module-budgets_paper_ballots
@@ -171,6 +171,7 @@ GEM
       zeitwerk (~> 2.2, >= 2.2.2)
     acts_as_list (0.9.19)
       activerecord (>= 3.0)
+    acts_as_textcaptcha (4.5.2)
     addressable (2.8.6)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
@@ -996,6 +997,7 @@ PLATFORMS
 
 DEPENDENCIES
   activejob-uniqueness
+  acts_as_textcaptcha (~> 4.5.1)
   aws-sdk-s3
   bootsnap (~> 1.4)
   brakeman (~> 5.1)

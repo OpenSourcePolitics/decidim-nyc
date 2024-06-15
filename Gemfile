@@ -10,11 +10,11 @@ ruby RUBY_VERSION
 gem "decidim", "~> #{DECIDIM_VERSION}.0"
 gem "decidim-conferences", "~> #{DECIDIM_VERSION}.0"
 
-# gem "acts_as_textcaptcha", "~> 4.5.1"
+gem "acts_as_textcaptcha", "~> 4.5.1"
 gem "decidim-budgets_paper_ballots", git: "https://github.com/digidemlab/decidim-module-budgets_paper_ballots", branch: DECIDIM_BRANCH
 gem "decidim-decidim_awesome"
 gem "decidim-homepage_interactive_map", git: "https://github.com/OpenSourcePolitics/decidim-module-homepage_interactive_map.git", branch: DECIDIM_BRANCH
-gem "decidim-homepage_proposals", git: "https://github.com/OpenSourcePolitics/decidim-module_homepage_proposals", branch: "release/0.26-stable"
+gem "decidim-homepage_proposals", git: "https://github.com/alecslupu-pfa/decidim-module_homepage_proposals", branch: "fix/scopes-filter"
 gem "decidim-phone_authorization_handler", git: "https://github.com/OpenSourcePolitics/decidim-module_phone_authorization_handler", branch: DECIDIM_BRANCH
 gem "decidim-slider", git: "https://github.com/alecslupu-pfa/decidim-module-slider", branch: "main"
 gem "decidim-spam_detection"
