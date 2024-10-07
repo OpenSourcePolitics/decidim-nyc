@@ -105,6 +105,11 @@ en:
       withdraw:
         errors:
           has_supports: This proposal can not be withdrawn because it already has supports.
+      models:
+        proposal:
+          fields:
+            official_proposal: In-person Workshop Idea	
+      
     scopes:
       global: Global
       picker:
